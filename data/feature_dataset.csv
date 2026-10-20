@@ -1,0 +1,1001 @@
+Record_ID,Date,Product_ID,Product_Name,Category,Unit_Price,Promotion_Active,Stock_On_Hand,Demand_Units,Estimated_Revenue,Supplier,Region,Lead_Time_Days,Reorder_Level,Projected_Closing_Stock,Stock_Status,Stockout_Risk,day_of_week,day_of_month,month,day_of_year,is_weekend,trend_day,lag_1,lag_7,rolling_mean_7,rolling_mean_28
+INV-0001,2023-01-01,A,Smart Electronics,Electronics,116,1,121,95,11020,NovaTech Supplies,North,7,143,26,Reorder,Medium,6,1,1,1,1,0,,,,
+INV-0006,2023-01-02,A,Smart Electronics,Electronics,199,0,495,85,16915,NovaTech Supplies,South,7,128,410,Sufficient,Low,0,2,1,2,0,1,95.0,95.0,95.0,95.0
+INV-0011,2023-01-03,A,Smart Electronics,Electronics,17,0,480,76,1292,NovaTech Supplies,East,7,114,404,Sufficient,Low,1,3,1,3,0,2,85.0,90.0,90.0,90.0
+INV-0016,2023-01-04,A,Smart Electronics,Electronics,197,0,429,80,15760,NovaTech Supplies,West,7,120,349,Sufficient,Low,2,4,1,4,0,3,76.0,85.33333333333333,85.33333333333333,85.33333333333333
+INV-0021,2023-01-05,A,Smart Electronics,Electronics,160,0,111,66,10560,NovaTech Supplies,Central,7,99,45,Sufficient,Low,3,5,1,5,0,4,80.0,84.0,84.0,84.0
+INV-0026,2023-01-06,A,Smart Electronics,Electronics,160,1,280,45,7200,NovaTech Supplies,North,7,68,235,Sufficient,Low,4,6,1,6,0,5,66.0,80.4,80.4,80.4
+INV-0031,2023-01-07,A,Smart Electronics,Electronics,130,0,332,96,12480,NovaTech Supplies,South,7,144,236,Sufficient,Low,5,7,1,7,1,6,45.0,74.5,74.5,74.5
+INV-0036,2023-01-08,A,Smart Electronics,Electronics,122,0,51,61,7442,NovaTech Supplies,East,7,92,0,Stockout Risk,High,6,8,1,8,1,7,96.0,95.0,77.57142857142857,77.57142857142857
+INV-0041,2023-01-09,A,Smart Electronics,Electronics,153,0,146,93,14229,NovaTech Supplies,West,7,140,53,Sufficient,Low,0,9,1,9,0,8,61.0,85.0,72.71428571428571,75.5
+INV-0046,2023-01-10,A,Smart Electronics,Electronics,138,0,353,70,9660,NovaTech Supplies,Central,7,105,283,Sufficient,Low,1,10,1,10,0,9,93.0,76.0,73.85714285714286,77.44444444444444
+INV-0051,2023-01-11,A,Smart Electronics,Electronics,198,0,218,64,12672,NovaTech Supplies,North,7,96,154,Sufficient,Low,2,11,1,11,0,10,70.0,80.0,73.0,76.7
+INV-0056,2023-01-12,A,Smart Electronics,Electronics,70,1,353,119,8330,NovaTech Supplies,South,7,179,234,Sufficient,Low,3,12,1,12,0,11,64.0,66.0,70.71428571428571,75.54545454545455
+INV-0061,2023-01-13,A,Smart Electronics,Electronics,34,0,272,80,2720,NovaTech Supplies,East,7,120,192,Sufficient,Low,4,13,1,13,0,12,119.0,45.0,78.28571428571429,79.16666666666667
+INV-0066,2023-01-14,A,Smart Electronics,Electronics,124,0,192,47,5828,NovaTech Supplies,West,7,71,145,Sufficient,Low,5,14,1,14,1,13,80.0,96.0,83.28571428571429,79.23076923076923
+INV-0071,2023-01-15,A,Smart Electronics,Electronics,125,1,399,162,20250,NovaTech Supplies,Central,7,243,237,Sufficient,Low,6,15,1,15,1,14,47.0,61.0,76.28571428571429,76.92857142857143
+INV-0076,2023-01-16,A,Smart Electronics,Electronics,126,0,434,56,7056,NovaTech Supplies,North,7,84,378,Sufficient,Low,0,16,1,16,0,15,162.0,93.0,90.71428571428571,82.6
+INV-0081,2023-01-17,A,Smart Electronics,Electronics,109,1,339,47,5123,NovaTech Supplies,South,7,71,292,Sufficient,Low,1,17,1,17,0,16,56.0,70.0,85.42857142857143,80.9375
+INV-0086,2023-01-18,A,Smart Electronics,Electronics,38,0,446,100,3800,NovaTech Supplies,East,7,150,346,Sufficient,Low,2,18,1,18,0,17,47.0,64.0,82.14285714285714,78.94117647058823
+INV-0091,2023-01-19,A,Smart Electronics,Electronics,186,0,148,83,15438,NovaTech Supplies,West,7,125,65,Sufficient,Low,3,19,1,19,0,18,100.0,119.0,87.28571428571429,80.11111111111111
+INV-0096,2023-01-20,A,Smart Electronics,Electronics,120,0,193,77,9240,NovaTech Supplies,Central,7,116,116,Sufficient,Low,4,20,1,20,0,19,83.0,80.0,82.14285714285714,80.26315789473684
+INV-0101,2023-01-21,A,Smart Electronics,Electronics,154,1,302,152,23408,NovaTech Supplies,North,7,228,150,Sufficient,Low,5,21,1,21,1,20,77.0,47.0,81.71428571428571,80.1
+INV-0106,2023-01-22,A,Smart Electronics,Electronics,48,1,175,147,7056,NovaTech Supplies,South,7,221,28,Reorder,Medium,6,22,1,22,1,21,152.0,162.0,96.71428571428571,83.52380952380952
+INV-0111,2023-01-23,A,Smart Electronics,Electronics,89,0,423,98,8722,NovaTech Supplies,East,7,147,325,Sufficient,Low,0,23,1,23,0,22,147.0,56.0,94.57142857142857,86.4090909090909
+INV-0116,2023-01-24,A,Smart Electronics,Electronics,195,0,365,57,11115,NovaTech Supplies,West,7,86,308,Sufficient,Low,1,24,1,24,0,23,98.0,47.0,100.57142857142857,86.91304347826087
+INV-0121,2023-01-25,A,Smart Electronics,Electronics,155,0,273,52,8060,NovaTech Supplies,Central,7,78,221,Sufficient,Low,2,25,1,25,0,24,57.0,100.0,102.0,85.66666666666667
+INV-0126,2023-01-26,A,Smart Electronics,Electronics,13,1,495,27,351,NovaTech Supplies,North,7,41,468,Sufficient,Low,3,26,1,26,0,25,52.0,83.0,95.14285714285714,84.32
+INV-0131,2023-01-27,A,Smart Electronics,Electronics,151,0,115,114,17214,NovaTech Supplies,South,7,171,1,Reorder,Medium,4,27,1,27,0,26,27.0,77.0,87.14285714285714,82.11538461538461
+INV-0136,2023-01-28,A,Smart Electronics,Electronics,62,1,499,157,9734,NovaTech Supplies,East,7,236,342,Sufficient,Low,5,28,1,28,1,27,114.0,152.0,92.42857142857143,83.29629629629629
+INV-0141,2023-01-29,A,Smart Electronics,Electronics,156,0,326,86,13416,NovaTech Supplies,West,7,129,240,Sufficient,Low,6,29,1,29,1,28,157.0,147.0,93.14285714285714,85.92857142857143
+INV-0146,2023-01-30,A,Smart Electronics,Electronics,17,1,162,67,1139,NovaTech Supplies,Central,7,101,95,Sufficient,Low,0,30,1,30,0,29,86.0,98.0,84.42857142857143,85.60714285714286
+INV-0151,2023-01-31,A,Smart Electronics,Electronics,37,0,251,108,3996,NovaTech Supplies,North,7,162,143,Sufficient,Low,1,31,1,31,0,30,67.0,57.0,80.0,84.96428571428571
+INV-0156,2023-02-01,A,Smart Electronics,Electronics,130,0,338,106,13780,NovaTech Supplies,South,7,159,232,Sufficient,Low,2,1,2,32,0,31,108.0,52.0,87.28571428571429,86.10714285714286
+INV-0161,2023-02-02,A,Smart Electronics,Electronics,88,1,252,106,9328,NovaTech Supplies,East,7,159,146,Sufficient,Low,3,2,2,33,0,32,106.0,27.0,95.0,87.03571428571429
+INV-0166,2023-02-03,A,Smart Electronics,Electronics,147,0,221,30,4410,NovaTech Supplies,West,7,45,191,Sufficient,Low,4,3,2,34,0,33,106.0,114.0,106.28571428571429,88.46428571428571
+INV-0171,2023-02-04,A,Smart Electronics,Electronics,73,0,398,101,7373,NovaTech Supplies,Central,7,152,297,Sufficient,Low,5,4,2,35,1,34,30.0,157.0,94.28571428571429,87.92857142857143
+INV-0176,2023-02-05,A,Smart Electronics,Electronics,162,0,194,119,19278,NovaTech Supplies,North,7,179,75,Sufficient,Low,6,5,2,36,1,35,101.0,86.0,86.28571428571429,88.10714285714286
+INV-0181,2023-02-06,A,Smart Electronics,Electronics,95,0,371,59,5605,NovaTech Supplies,South,7,89,312,Sufficient,Low,0,6,2,37,0,36,119.0,67.0,91.0,90.17857142857143
+INV-0186,2023-02-07,A,Smart Electronics,Electronics,143,0,249,105,15015,NovaTech Supplies,East,7,158,144,Sufficient,Low,1,7,2,38,0,37,59.0,108.0,89.85714285714286,88.96428571428571
+INV-0191,2023-02-08,A,Smart Electronics,Electronics,20,1,456,171,3420,NovaTech Supplies,West,7,257,285,Sufficient,Low,2,8,2,39,0,38,105.0,106.0,89.42857142857143,90.21428571428571
+INV-0196,2023-02-09,A,Smart Electronics,Electronics,171,0,396,26,4446,NovaTech Supplies,Central,7,39,370,Sufficient,Low,3,9,2,40,0,39,171.0,106.0,98.71428571428571,94.03571428571429
+INV-0201,2023-02-10,A,Smart Electronics,Electronics,188,0,428,18,3384,NovaTech Supplies,North,7,27,410,Sufficient,Low,4,10,2,41,0,40,26.0,30.0,87.28571428571429,90.71428571428571
+INV-0206,2023-02-11,A,Smart Electronics,Electronics,119,0,211,24,2856,NovaTech Supplies,South,7,36,187,Sufficient,Low,5,11,2,42,1,41,18.0,101.0,85.57142857142857,88.5
+INV-0211,2023-02-12,A,Smart Electronics,Electronics,153,1,214,90,13770,NovaTech Supplies,East,7,135,124,Sufficient,Low,6,12,2,43,1,42,24.0,119.0,74.57142857142857,87.67857142857143
+INV-0216,2023-02-13,A,Smart Electronics,Electronics,181,0,404,44,7964,NovaTech Supplies,West,7,66,360,Sufficient,Low,0,13,2,44,0,43,90.0,59.0,70.42857142857143,85.10714285714286
+INV-0221,2023-02-14,A,Smart Electronics,Electronics,175,0,83,94,16450,NovaTech Supplies,Central,7,141,0,Stockout Risk,High,1,14,2,45,0,44,44.0,105.0,68.28571428571429,84.67857142857143
+INV-0226,2023-02-15,A,Smart Electronics,Electronics,60,0,230,79,4740,NovaTech Supplies,North,7,119,151,Sufficient,Low,2,15,2,46,0,45,94.0,171.0,66.71428571428571,86.35714285714286
+INV-0231,2023-02-16,A,Smart Electronics,Electronics,163,1,499,149,24287,NovaTech Supplies,South,7,224,350,Sufficient,Low,3,16,2,47,0,46,79.0,26.0,53.57142857142857,85.60714285714286
+INV-0236,2023-02-17,A,Smart Electronics,Electronics,90,0,264,34,3060,NovaTech Supplies,East,7,51,230,Sufficient,Low,4,17,2,48,0,47,149.0,18.0,71.14285714285714,87.96428571428571
+INV-0241,2023-02-18,A,Smart Electronics,Electronics,196,0,152,72,14112,NovaTech Supplies,West,7,108,80,Sufficient,Low,5,18,2,49,1,48,34.0,24.0,73.42857142857143,86.42857142857143
+INV-0246,2023-02-19,A,Smart Electronics,Electronics,132,1,88,105,13860,NovaTech Supplies,Central,7,158,0,Stockout Risk,High,6,19,2,50,1,49,72.0,90.0,80.28571428571429,83.57142857142857
+INV-0251,2023-02-20,A,Smart Electronics,Electronics,46,0,202,113,5198,NovaTech Supplies,North,7,170,89,Sufficient,Low,0,20,2,51,0,50,105.0,44.0,82.42857142857143,82.07142857142857
+INV-0256,2023-02-21,A,Smart Electronics,Electronics,66,0,267,121,7986,NovaTech Supplies,South,7,182,146,Sufficient,Low,1,21,2,52,0,51,113.0,94.0,92.28571428571429,82.60714285714286
+INV-0261,2023-02-22,A,Smart Electronics,Electronics,98,0,378,17,1666,NovaTech Supplies,East,7,26,361,Sufficient,Low,2,22,2,53,0,52,121.0,79.0,96.14285714285714,84.89285714285714
+INV-0266,2023-02-23,A,Smart Electronics,Electronics,71,1,398,113,8023,NovaTech Supplies,West,7,170,285,Sufficient,Low,3,23,2,54,0,53,17.0,149.0,87.28571428571429,83.64285714285714
+INV-0271,2023-02-24,A,Smart Electronics,Electronics,197,0,56,113,22261,NovaTech Supplies,Central,7,170,0,Stockout Risk,High,4,24,2,55,0,54,113.0,34.0,82.14285714285714,86.71428571428571
+INV-0276,2023-02-25,A,Smart Electronics,Electronics,167,0,123,54,9018,NovaTech Supplies,North,7,81,69,Sufficient,Low,5,25,2,56,1,55,113.0,72.0,93.42857142857143,86.67857142857143
+INV-0281,2023-02-26,A,Smart Electronics,Electronics,189,0,430,114,21546,NovaTech Supplies,South,7,171,316,Sufficient,Low,6,26,2,57,1,56,54.0,105.0,90.85714285714286,83.0
+INV-0286,2023-02-27,A,Smart Electronics,Electronics,90,0,431,46,4140,NovaTech Supplies,East,7,69,385,Sufficient,Low,0,27,2,58,0,57,114.0,113.0,92.14285714285714,84.0
+INV-0291,2023-02-28,A,Smart Electronics,Electronics,154,0,142,107,16478,NovaTech Supplies,West,7,161,35,Reorder,Medium,1,28,2,59,0,58,46.0,121.0,82.57142857142857,83.25
+INV-0296,2023-03-01,A,Smart Electronics,Electronics,91,0,415,47,4277,NovaTech Supplies,Central,7,71,368,Sufficient,Low,2,1,3,60,0,59,107.0,17.0,80.57142857142857,83.21428571428571
+INV-0301,2023-03-02,A,Smart Electronics,Electronics,167,0,466,22,3674,NovaTech Supplies,North,7,33,444,Sufficient,Low,3,2,3,61,0,60,47.0,113.0,84.85714285714286,81.10714285714286
+INV-0306,2023-03-03,A,Smart Electronics,Electronics,93,0,367,92,8556,NovaTech Supplies,South,7,138,275,Sufficient,Low,4,3,3,62,0,61,22.0,113.0,71.85714285714286,78.10714285714286
+INV-0311,2023-03-04,A,Smart Electronics,Electronics,62,1,232,57,3534,NovaTech Supplies,East,7,86,175,Sufficient,Low,5,4,3,63,1,62,92.0,54.0,68.85714285714286,80.32142857142857
+INV-0316,2023-03-05,A,Smart Electronics,Electronics,107,0,277,81,8667,NovaTech Supplies,West,7,122,196,Sufficient,Low,6,5,3,64,1,63,57.0,114.0,69.28571428571429,78.75
+INV-0321,2023-03-06,A,Smart Electronics,Electronics,50,1,367,106,5300,NovaTech Supplies,Central,7,159,261,Sufficient,Low,0,6,3,65,0,64,81.0,46.0,64.57142857142857,77.39285714285714
+INV-0326,2023-03-07,A,Smart Electronics,Electronics,19,0,381,138,2622,NovaTech Supplies,North,7,207,243,Sufficient,Low,1,7,3,66,0,65,106.0,107.0,73.14285714285714,79.07142857142857
+INV-0331,2023-03-08,A,Smart Electronics,Electronics,10,0,168,44,440,NovaTech Supplies,South,7,66,124,Sufficient,Low,2,8,3,67,0,66,138.0,47.0,77.57142857142857,80.25
+INV-0336,2023-03-09,A,Smart Electronics,Electronics,166,0,401,31,5146,NovaTech Supplies,East,7,47,370,Sufficient,Low,3,9,3,68,0,67,44.0,22.0,77.14285714285714,75.71428571428571
+INV-0341,2023-03-10,A,Smart Electronics,Electronics,199,0,269,118,23482,NovaTech Supplies,West,7,177,151,Sufficient,Low,4,10,3,69,0,68,31.0,92.0,78.42857142857143,75.89285714285714
+INV-0346,2023-03-11,A,Smart Electronics,Electronics,152,0,454,34,5168,NovaTech Supplies,Central,7,51,420,Sufficient,Low,5,11,3,70,1,69,118.0,57.0,82.14285714285714,79.46428571428571
+INV-0351,2023-03-12,A,Smart Electronics,Electronics,57,0,342,39,2223,NovaTech Supplies,North,7,59,303,Sufficient,Low,6,12,3,71,1,70,34.0,81.0,78.85714285714286,79.82142857142857
+INV-0356,2023-03-13,A,Smart Electronics,Electronics,166,0,288,91,15106,NovaTech Supplies,South,7,137,197,Sufficient,Low,0,13,3,72,0,71,39.0,106.0,72.85714285714286,78.0
+INV-0361,2023-03-14,A,Smart Electronics,Electronics,93,1,423,122,11346,NovaTech Supplies,East,7,183,301,Sufficient,Low,1,14,3,73,0,72,91.0,138.0,70.71428571428571,79.67857142857143
+INV-0366,2023-03-15,A,Smart Electronics,Electronics,192,0,291,57,10944,NovaTech Supplies,West,7,86,234,Sufficient,Low,2,15,3,74,0,73,122.0,44.0,68.42857142857143,80.67857142857143
+INV-0371,2023-03-16,A,Smart Electronics,Electronics,127,0,174,58,7366,NovaTech Supplies,Central,7,87,116,Sufficient,Low,3,16,3,75,0,74,57.0,31.0,70.28571428571429,79.89285714285714
+INV-0376,2023-03-17,A,Smart Electronics,Electronics,53,0,430,104,5512,NovaTech Supplies,North,7,156,326,Sufficient,Low,4,17,3,76,0,75,58.0,118.0,74.14285714285714,76.64285714285714
+INV-0381,2023-03-18,A,Smart Electronics,Electronics,149,0,185,35,5215,NovaTech Supplies,South,7,53,150,Sufficient,Low,5,18,3,77,1,76,104.0,34.0,72.14285714285714,79.14285714285714
+INV-0386,2023-03-19,A,Smart Electronics,Electronics,163,0,245,98,15974,NovaTech Supplies,East,7,147,147,Sufficient,Low,6,19,3,78,1,77,35.0,39.0,72.28571428571429,77.82142857142857
+INV-0391,2023-03-20,A,Smart Electronics,Electronics,172,0,255,112,19264,NovaTech Supplies,West,7,168,143,Sufficient,Low,0,20,3,79,0,78,98.0,91.0,80.71428571428571,77.57142857142857
+INV-0396,2023-03-21,A,Smart Electronics,Electronics,101,0,190,72,7272,NovaTech Supplies,Central,7,108,118,Sufficient,Low,1,21,3,80,0,79,112.0,122.0,83.71428571428571,77.53571428571429
+INV-0401,2023-03-22,A,Smart Electronics,Electronics,199,0,420,58,11542,NovaTech Supplies,North,7,87,362,Sufficient,Low,2,22,3,81,0,80,72.0,57.0,76.57142857142857,75.78571428571429
+INV-0406,2023-03-23,A,Smart Electronics,Electronics,88,0,198,51,4488,NovaTech Supplies,South,7,77,147,Sufficient,Low,3,23,3,82,0,81,58.0,58.0,76.71428571428571,77.25
+INV-0411,2023-03-24,A,Smart Electronics,Electronics,51,1,70,144,7344,NovaTech Supplies,East,7,216,0,Stockout Risk,High,4,24,3,83,0,82,51.0,104.0,75.71428571428571,75.03571428571429
+INV-0416,2023-03-25,A,Smart Electronics,Electronics,17,0,382,104,1768,NovaTech Supplies,West,7,156,278,Sufficient,Low,5,25,3,84,1,83,144.0,35.0,81.42857142857143,76.14285714285714
+INV-0421,2023-03-26,A,Smart Electronics,Electronics,162,0,378,23,3726,NovaTech Supplies,Central,7,35,355,Sufficient,Low,6,26,3,85,1,84,104.0,98.0,91.28571428571429,77.92857142857143
+INV-0426,2023-03-27,A,Smart Electronics,Electronics,26,0,473,50,1300,NovaTech Supplies,North,7,75,423,Sufficient,Low,0,27,3,86,0,85,23.0,112.0,80.57142857142857,74.67857142857143
+INV-0431,2023-03-28,A,Smart Electronics,Electronics,158,0,175,58,9164,NovaTech Supplies,South,7,87,117,Sufficient,Low,1,28,3,87,0,86,50.0,72.0,71.71428571428571,74.82142857142857
+INV-0436,2023-03-29,A,Smart Electronics,Electronics,32,0,462,135,4320,NovaTech Supplies,East,7,203,327,Sufficient,Low,2,29,3,88,0,87,58.0,58.0,69.71428571428571,73.07142857142857
+INV-0441,2023-03-30,A,Smart Electronics,Electronics,121,0,62,77,9317,NovaTech Supplies,West,7,116,0,Stockout Risk,High,3,30,3,89,0,88,135.0,51.0,80.71428571428571,76.21428571428571
+INV-0446,2023-03-31,A,Smart Electronics,Electronics,63,0,408,66,4158,NovaTech Supplies,Central,7,99,342,Sufficient,Low,4,31,3,90,0,89,77.0,144.0,84.42857142857143,78.17857142857143
+INV-0451,2023-04-01,A,Smart Electronics,Electronics,156,0,354,56,8736,NovaTech Supplies,North,7,84,298,Sufficient,Low,5,1,4,91,1,90,66.0,104.0,73.28571428571429,77.25
+INV-0456,2023-04-02,A,Smart Electronics,Electronics,152,0,247,41,6232,NovaTech Supplies,South,7,62,206,Sufficient,Low,6,2,4,92,1,91,56.0,23.0,66.42857142857143,77.21428571428571
+INV-0461,2023-04-03,A,Smart Electronics,Electronics,109,1,119,181,19729,NovaTech Supplies,East,7,272,0,Stockout Risk,High,0,3,4,93,0,92,41.0,50.0,69.0,75.78571428571429
+INV-0466,2023-04-04,A,Smart Electronics,Electronics,191,0,155,31,5921,NovaTech Supplies,West,7,47,124,Sufficient,Low,1,4,4,94,0,93,181.0,58.0,87.71428571428571,78.46428571428571
+INV-0471,2023-04-05,A,Smart Electronics,Electronics,67,0,70,51,3417,NovaTech Supplies,Central,7,77,19,Reorder,Medium,2,5,4,95,0,94,31.0,135.0,83.85714285714286,74.64285714285714
+INV-0476,2023-04-06,A,Smart Electronics,Electronics,107,0,114,92,9844,NovaTech Supplies,North,7,138,22,Reorder,Medium,3,6,4,96,0,95,51.0,77.0,71.85714285714286,74.89285714285714
+INV-0481,2023-04-07,A,Smart Electronics,Electronics,29,0,203,79,2291,NovaTech Supplies,South,7,119,124,Sufficient,Low,4,7,4,97,0,96,92.0,66.0,74.0,77.07142857142857
+INV-0486,2023-04-08,A,Smart Electronics,Electronics,60,0,316,96,5760,NovaTech Supplies,East,7,144,220,Sufficient,Low,5,8,4,98,1,97,79.0,56.0,75.85714285714286,75.67857142857143
+INV-0491,2023-04-09,A,Smart Electronics,Electronics,17,0,150,77,1309,NovaTech Supplies,West,7,116,73,Sufficient,Low,6,9,4,99,1,98,96.0,41.0,81.57142857142857,77.89285714285714
+INV-0496,2023-04-10,A,Smart Electronics,Electronics,34,0,453,21,714,NovaTech Supplies,Central,7,32,432,Sufficient,Low,0,10,4,100,0,99,77.0,181.0,86.71428571428571,79.25
+INV-0501,2023-04-11,A,Smart Electronics,Electronics,199,1,466,88,17512,NovaTech Supplies,North,7,132,378,Sufficient,Low,1,11,4,101,0,100,21.0,31.0,63.857142857142854,76.75
+INV-0506,2023-04-12,A,Smart Electronics,Electronics,157,0,173,51,8007,NovaTech Supplies,South,7,77,122,Sufficient,Low,2,12,4,102,0,101,88.0,51.0,72.0,75.53571428571429
+INV-0511,2023-04-13,A,Smart Electronics,Electronics,124,1,274,187,23188,NovaTech Supplies,East,7,281,87,Reorder,Medium,3,13,4,103,0,102,51.0,92.0,72.0,75.32142857142857
+INV-0516,2023-04-14,A,Smart Electronics,Electronics,182,1,376,186,33852,NovaTech Supplies,West,7,279,190,Sufficient,Low,4,14,4,104,0,103,187.0,79.0,85.57142857142857,79.92857142857143
+INV-0521,2023-04-15,A,Smart Electronics,Electronics,77,0,313,76,5852,NovaTech Supplies,Central,7,114,237,Sufficient,Low,5,15,4,105,1,104,186.0,96.0,100.85714285714286,82.85714285714286
+INV-0526,2023-04-16,A,Smart Electronics,Electronics,96,0,480,116,11136,NovaTech Supplies,North,7,174,364,Sufficient,Low,6,16,4,106,1,105,76.0,77.0,98.0,84.32142857142857
+INV-0531,2023-04-17,A,Smart Electronics,Electronics,171,0,396,114,19494,NovaTech Supplies,South,7,171,282,Sufficient,Low,0,17,4,107,0,106,116.0,21.0,103.57142857142857,84.96428571428571
+INV-0536,2023-04-18,A,Smart Electronics,Electronics,55,0,418,98,5390,NovaTech Supplies,East,7,147,320,Sufficient,Low,1,18,4,108,0,107,114.0,88.0,116.85714285714286,85.03571428571429
+INV-0541,2023-04-19,A,Smart Electronics,Electronics,20,0,196,87,1740,NovaTech Supplies,West,7,131,109,Sufficient,Low,2,19,4,109,0,108,98.0,51.0,118.28571428571429,85.96428571428571
+INV-0546,2023-04-20,A,Smart Electronics,Electronics,91,0,196,56,5096,NovaTech Supplies,Central,7,84,140,Sufficient,Low,3,20,4,110,0,109,87.0,187.0,123.42857142857143,87.0
+INV-0551,2023-04-21,A,Smart Electronics,Electronics,11,0,142,118,1298,NovaTech Supplies,North,7,177,24,Reorder,Medium,4,21,4,111,0,110,56.0,186.0,104.71428571428571,87.17857142857143
+INV-0556,2023-04-22,A,Smart Electronics,Electronics,190,0,171,102,19380,NovaTech Supplies,South,7,153,69,Sufficient,Low,5,22,4,112,1,111,118.0,76.0,95.0,86.25
+INV-0561,2023-04-23,A,Smart Electronics,Electronics,65,0,370,24,1560,NovaTech Supplies,East,7,36,346,Sufficient,Low,6,23,4,113,1,112,102.0,116.0,98.71428571428571,86.17857142857143
+INV-0566,2023-04-24,A,Smart Electronics,Electronics,97,0,492,120,11640,NovaTech Supplies,West,7,180,372,Sufficient,Low,0,24,4,114,0,113,24.0,114.0,85.57142857142857,86.21428571428571
+INV-0571,2023-04-25,A,Smart Electronics,Electronics,184,0,175,47,8648,NovaTech Supplies,Central,7,71,128,Sufficient,Low,1,25,4,115,0,114,120.0,98.0,86.42857142857143,88.71428571428571
+INV-0576,2023-04-26,A,Smart Electronics,Electronics,33,0,174,38,1254,NovaTech Supplies,North,7,57,136,Sufficient,Low,2,26,4,116,0,115,47.0,87.0,79.14285714285714,88.32142857142857
+INV-0581,2023-04-27,A,Smart Electronics,Electronics,149,0,295,98,14602,NovaTech Supplies,South,7,147,197,Sufficient,Low,3,27,4,117,0,116,38.0,56.0,72.14285714285714,84.85714285714286
+INV-0586,2023-04-28,A,Smart Electronics,Electronics,91,1,141,139,12649,NovaTech Supplies,East,7,209,2,Reorder,Medium,4,28,4,118,0,117,98.0,118.0,78.14285714285714,85.60714285714286
+INV-0591,2023-04-29,A,Smart Electronics,Electronics,178,0,201,110,19580,NovaTech Supplies,West,7,165,91,Sufficient,Low,5,29,4,119,1,118,139.0,102.0,81.14285714285714,88.21428571428571
+INV-0596,2023-04-30,A,Smart Electronics,Electronics,183,0,433,65,11895,NovaTech Supplies,Central,7,98,368,Sufficient,Low,6,30,4,120,1,119,110.0,24.0,82.28571428571429,90.14285714285714
+INV-0601,2023-05-01,A,Smart Electronics,Electronics,22,0,233,92,2024,NovaTech Supplies,North,7,138,141,Sufficient,Low,0,1,5,121,0,120,65.0,120.0,88.14285714285714,91.0
+INV-0606,2023-05-02,A,Smart Electronics,Electronics,63,0,101,125,7875,NovaTech Supplies,South,7,188,0,Stockout Risk,High,1,2,5,122,0,121,92.0,47.0,84.14285714285714,87.82142857142857
+INV-0611,2023-05-03,A,Smart Electronics,Electronics,102,0,203,105,10710,NovaTech Supplies,East,7,158,98,Sufficient,Low,2,3,5,123,0,122,125.0,38.0,95.28571428571429,91.17857142857143
+INV-0616,2023-05-04,A,Smart Electronics,Electronics,174,1,450,144,25056,NovaTech Supplies,West,7,216,306,Sufficient,Low,3,4,5,124,0,123,105.0,98.0,104.85714285714286,93.10714285714286
+INV-0621,2023-05-05,A,Smart Electronics,Electronics,108,1,352,94,10152,NovaTech Supplies,Central,7,141,258,Sufficient,Low,4,5,5,125,0,124,144.0,139.0,111.42857142857143,94.96428571428571
+INV-0626,2023-05-06,A,Smart Electronics,Electronics,63,0,487,37,2331,NovaTech Supplies,North,7,56,450,Sufficient,Low,5,6,5,126,1,125,94.0,110.0,105.0,95.5
+INV-0631,2023-05-07,A,Smart Electronics,Electronics,125,1,73,75,9375,NovaTech Supplies,South,7,113,0,Stockout Risk,High,6,7,5,127,1,126,37.0,65.0,94.57142857142857,93.39285714285714
+INV-0636,2023-05-08,A,Smart Electronics,Electronics,120,1,356,203,24360,NovaTech Supplies,East,7,305,153,Sufficient,Low,0,8,5,128,0,127,75.0,92.0,96.0,93.32142857142857
+INV-0641,2023-05-09,A,Smart Electronics,Electronics,65,0,145,48,3120,NovaTech Supplies,West,7,72,97,Sufficient,Low,1,9,5,129,0,128,203.0,125.0,111.85714285714286,99.82142857142857
+INV-0646,2023-05-10,A,Smart Electronics,Electronics,56,0,208,97,5432,NovaTech Supplies,Central,7,146,111,Sufficient,Low,2,10,5,130,0,129,48.0,105.0,100.85714285714286,98.39285714285714
+INV-0651,2023-05-11,A,Smart Electronics,Electronics,12,0,55,68,816,NovaTech Supplies,North,7,102,0,Stockout Risk,High,3,11,5,131,0,130,97.0,144.0,99.71428571428571,100.03571428571429
+INV-0656,2023-05-12,A,Smart Electronics,Electronics,163,0,439,80,13040,NovaTech Supplies,South,7,120,359,Sufficient,Low,4,12,5,132,0,131,68.0,94.0,88.85714285714286,95.78571428571429
+INV-0661,2023-05-13,A,Smart Electronics,Electronics,83,0,85,86,7138,NovaTech Supplies,East,7,129,0,Stockout Risk,High,5,13,5,133,1,132,80.0,37.0,86.85714285714286,92.0
+INV-0666,2023-05-14,A,Smart Electronics,Electronics,172,0,148,62,10664,NovaTech Supplies,West,7,93,86,Sufficient,Low,6,14,5,134,1,133,86.0,75.0,93.85714285714286,92.35714285714286
+INV-0671,2023-05-15,A,Smart Electronics,Electronics,148,1,361,119,17612,NovaTech Supplies,Central,7,179,242,Sufficient,Low,0,15,5,135,0,134,62.0,203.0,92.0,90.42857142857143
+INV-0676,2023-05-16,A,Smart Electronics,Electronics,174,0,434,114,19836,NovaTech Supplies,North,7,171,320,Sufficient,Low,1,16,5,136,0,135,119.0,48.0,80.0,90.60714285714286
+INV-0681,2023-05-17,A,Smart Electronics,Electronics,12,0,433,83,996,NovaTech Supplies,South,7,125,350,Sufficient,Low,2,17,5,137,0,136,114.0,97.0,89.42857142857143,91.17857142857143
+INV-0686,2023-05-18,A,Smart Electronics,Electronics,196,0,211,58,11368,NovaTech Supplies,East,7,87,153,Sufficient,Low,3,18,5,138,0,137,83.0,68.0,87.42857142857143,91.03571428571429
+INV-0691,2023-05-19,A,Smart Electronics,Electronics,160,1,427,173,27680,NovaTech Supplies,West,7,260,254,Sufficient,Low,4,19,5,139,0,138,58.0,80.0,86.0,91.10714285714286
+INV-0696,2023-05-20,A,Smart Electronics,Electronics,52,0,421,54,2808,NovaTech Supplies,Central,7,81,367,Sufficient,Low,5,20,5,140,1,139,173.0,86.0,99.28571428571429,93.07142857142857
+INV-0701,2023-05-21,A,Smart Electronics,Electronics,156,0,253,107,16692,NovaTech Supplies,North,7,161,146,Sufficient,Low,6,21,5,141,1,140,54.0,62.0,94.71428571428571,91.35714285714286
+INV-0706,2023-05-22,A,Smart Electronics,Electronics,106,0,54,34,3604,NovaTech Supplies,South,7,51,20,Sufficient,Low,0,22,5,142,0,141,107.0,119.0,101.14285714285714,94.32142857142857
+INV-0711,2023-05-23,A,Smart Electronics,Electronics,157,0,78,51,8007,NovaTech Supplies,East,7,77,27,Sufficient,Low,1,23,5,143,0,142,34.0,114.0,89.0,91.25
+INV-0716,2023-05-24,A,Smart Electronics,Electronics,83,0,215,27,2241,NovaTech Supplies,West,7,41,188,Sufficient,Low,2,24,5,144,0,143,51.0,83.0,80.0,91.39285714285714
+INV-0721,2023-05-25,A,Smart Electronics,Electronics,166,0,114,94,15604,NovaTech Supplies,Central,7,141,20,Reorder,Medium,3,25,5,145,0,144,27.0,58.0,72.0,91.0
+INV-0726,2023-05-26,A,Smart Electronics,Electronics,41,0,311,84,3444,NovaTech Supplies,North,7,126,227,Sufficient,Low,4,26,5,146,0,145,94.0,173.0,77.14285714285714,90.85714285714286
+INV-0731,2023-05-27,A,Smart Electronics,Electronics,189,0,96,50,9450,NovaTech Supplies,South,7,75,46,Sufficient,Low,5,27,5,147,1,146,84.0,54.0,64.42857142857143,88.89285714285714
+INV-0736,2023-05-28,A,Smart Electronics,Electronics,100,0,287,115,11500,NovaTech Supplies,East,7,173,172,Sufficient,Low,6,28,5,148,1,147,50.0,107.0,63.857142857142854,86.75
+INV-0741,2023-05-29,A,Smart Electronics,Electronics,27,0,403,82,2214,NovaTech Supplies,West,7,123,321,Sufficient,Low,0,29,5,149,0,148,115.0,34.0,65.0,88.53571428571429
+INV-0746,2023-05-30,A,Smart Electronics,Electronics,44,0,118,89,3916,NovaTech Supplies,Central,7,134,29,Reorder,Medium,1,30,5,150,0,149,82.0,51.0,71.85714285714286,88.17857142857143
+INV-0751,2023-05-31,A,Smart Electronics,Electronics,118,0,84,99,11682,NovaTech Supplies,North,7,149,0,Stockout Risk,High,2,31,5,151,0,150,89.0,27.0,77.28571428571429,86.89285714285714
+INV-0756,2023-06-01,A,Smart Electronics,Electronics,42,0,463,53,2226,NovaTech Supplies,South,7,80,410,Sufficient,Low,3,1,6,152,0,151,99.0,94.0,87.57142857142857,86.67857142857143
+INV-0761,2023-06-02,A,Smart Electronics,Electronics,28,0,244,89,2492,NovaTech Supplies,East,7,134,155,Sufficient,Low,4,2,6,153,0,152,53.0,84.0,81.71428571428571,83.42857142857143
+INV-0766,2023-06-03,A,Smart Electronics,Electronics,62,0,242,102,6324,NovaTech Supplies,West,7,153,140,Sufficient,Low,5,3,6,154,1,153,89.0,50.0,82.42857142857143,83.25
+INV-0771,2023-06-04,A,Smart Electronics,Electronics,92,0,196,98,9016,NovaTech Supplies,Central,7,147,98,Sufficient,Low,6,4,6,155,1,154,102.0,115.0,89.85714285714286,85.57142857142857
+INV-0776,2023-06-05,A,Smart Electronics,Electronics,76,1,388,160,12160,NovaTech Supplies,North,7,240,228,Sufficient,Low,0,5,6,156,0,155,98.0,82.0,87.42857142857143,86.39285714285714
+INV-0781,2023-06-06,A,Smart Electronics,Electronics,67,0,406,43,2881,NovaTech Supplies,South,7,65,363,Sufficient,Low,1,6,6,157,0,156,160.0,89.0,98.57142857142857,84.85714285714286
+INV-0786,2023-06-07,A,Smart Electronics,Electronics,179,0,494,106,18974,NovaTech Supplies,East,7,159,388,Sufficient,Low,2,7,6,158,0,157,43.0,99.0,92.0,84.67857142857143
+INV-0791,2023-06-08,A,Smart Electronics,Electronics,175,0,271,96,16800,NovaTech Supplies,West,7,144,175,Sufficient,Low,3,8,6,159,0,158,106.0,53.0,93.0,85.0
+INV-0796,2023-06-09,A,Smart Electronics,Electronics,88,1,54,67,5896,NovaTech Supplies,Central,7,101,0,Stockout Risk,High,4,9,6,160,0,159,96.0,89.0,99.14285714285714,86.0
+INV-0801,2023-06-10,A,Smart Electronics,Electronics,100,1,110,97,9700,NovaTech Supplies,North,7,146,13,Reorder,Medium,5,10,6,161,1,160,67.0,102.0,96.0,85.53571428571429
+INV-0806,2023-06-11,A,Smart Electronics,Electronics,28,0,220,109,3052,NovaTech Supplies,South,7,164,111,Sufficient,Low,6,11,6,162,1,161,97.0,98.0,95.28571428571429,85.92857142857143
+INV-0811,2023-06-12,A,Smart Electronics,Electronics,198,1,451,171,33858,NovaTech Supplies,East,7,257,280,Sufficient,Low,0,12,6,163,0,162,109.0,160.0,96.85714285714286,87.60714285714286
+INV-0816,2023-06-13,A,Smart Electronics,Electronics,170,0,424,47,7990,NovaTech Supplies,West,7,71,377,Sufficient,Low,1,13,6,164,0,163,171.0,43.0,98.42857142857143,89.46428571428571
+INV-0821,2023-06-14,A,Smart Electronics,Electronics,93,1,165,91,8463,NovaTech Supplies,Central,7,137,74,Sufficient,Low,2,14,6,165,0,164,47.0,106.0,99.0,87.07142857142857
+INV-0826,2023-06-15,A,Smart Electronics,Electronics,186,1,322,117,21762,NovaTech Supplies,North,7,176,205,Sufficient,Low,3,15,6,166,0,165,91.0,96.0,96.85714285714286,87.35714285714286
+INV-0831,2023-06-16,A,Smart Electronics,Electronics,160,0,409,71,11360,NovaTech Supplies,South,7,107,338,Sufficient,Low,4,16,6,167,0,166,117.0,67.0,99.85714285714286,89.46428571428571
+INV-0836,2023-06-17,A,Smart Electronics,Electronics,19,0,473,101,1919,NovaTech Supplies,East,7,152,372,Sufficient,Low,5,17,6,168,1,167,71.0,97.0,100.42857142857143,85.82142857142857
+INV-0841,2023-06-18,A,Smart Electronics,Electronics,41,0,442,39,1599,NovaTech Supplies,West,7,59,403,Sufficient,Low,6,18,6,169,1,168,101.0,109.0,101.0,87.5
+INV-0846,2023-06-19,A,Smart Electronics,Electronics,86,1,209,106,9116,NovaTech Supplies,Central,7,159,103,Sufficient,Low,0,19,6,170,0,169,39.0,171.0,91.0,85.07142857142857
+INV-0851,2023-06-20,A,Smart Electronics,Electronics,102,0,304,100,10200,NovaTech Supplies,North,7,150,204,Sufficient,Low,1,20,6,171,0,170,106.0,47.0,81.71428571428571,87.64285714285714
+INV-0856,2023-06-21,A,Smart Electronics,Electronics,165,0,238,79,13035,NovaTech Supplies,South,7,119,159,Sufficient,Low,2,21,6,172,0,171,100.0,91.0,89.28571428571429,89.39285714285714
+INV-0861,2023-06-22,A,Smart Electronics,Electronics,146,1,231,77,11242,NovaTech Supplies,East,7,116,154,Sufficient,Low,3,22,6,173,0,172,79.0,117.0,87.57142857142857,91.25
+INV-0866,2023-06-23,A,Smart Electronics,Electronics,63,0,249,82,5166,NovaTech Supplies,West,7,123,167,Sufficient,Low,4,23,6,174,0,173,77.0,71.0,81.85714285714286,90.64285714285714
+INV-0871,2023-06-24,A,Smart Electronics,Electronics,114,0,277,66,7524,NovaTech Supplies,Central,7,99,211,Sufficient,Low,5,24,6,175,1,174,82.0,101.0,83.42857142857143,90.57142857142857
+INV-0876,2023-06-25,A,Smart Electronics,Electronics,113,0,59,83,9379,NovaTech Supplies,North,7,125,0,Stockout Risk,High,6,25,6,176,1,175,66.0,39.0,78.42857142857143,91.14285714285714
+INV-0881,2023-06-26,A,Smart Electronics,Electronics,199,1,421,109,21691,NovaTech Supplies,South,7,164,312,Sufficient,Low,0,26,6,177,0,176,83.0,106.0,84.71428571428571,90.0
+INV-0886,2023-06-27,A,Smart Electronics,Electronics,196,0,286,70,13720,NovaTech Supplies,East,7,105,216,Sufficient,Low,1,27,6,178,0,177,109.0,100.0,85.14285714285714,90.96428571428571
+INV-0891,2023-06-28,A,Smart Electronics,Electronics,110,0,160,68,7480,NovaTech Supplies,West,7,102,92,Sufficient,Low,2,28,6,179,0,178,70.0,79.0,80.85714285714286,90.28571428571429
+INV-0896,2023-06-29,A,Smart Electronics,Electronics,22,0,290,72,1584,NovaTech Supplies,Central,7,108,218,Sufficient,Low,3,29,6,180,0,179,68.0,77.0,79.28571428571429,89.17857142857143
+INV-0901,2023-06-30,A,Smart Electronics,Electronics,172,0,386,23,3956,NovaTech Supplies,North,7,35,363,Sufficient,Low,4,30,6,181,0,180,72.0,82.0,78.57142857142857,89.85714285714286
+INV-0906,2023-07-01,A,Smart Electronics,Electronics,99,0,333,81,8019,NovaTech Supplies,South,7,122,252,Sufficient,Low,5,1,7,182,1,181,23.0,66.0,70.14285714285714,87.5
+INV-0911,2023-07-02,A,Smart Electronics,Electronics,103,0,439,69,7107,NovaTech Supplies,East,7,104,370,Sufficient,Low,6,2,7,183,1,182,81.0,83.0,72.28571428571429,86.75
+INV-0916,2023-07-03,A,Smart Electronics,Electronics,159,1,417,87,13833,NovaTech Supplies,West,7,131,330,Sufficient,Low,0,3,7,184,0,183,69.0,109.0,70.28571428571429,85.71428571428571
+INV-0921,2023-07-04,A,Smart Electronics,Electronics,67,1,143,155,10385,NovaTech Supplies,Central,7,233,0,Stockout Risk,High,1,4,7,185,0,184,87.0,70.0,67.14285714285714,83.10714285714286
+INV-0926,2023-07-05,A,Smart Electronics,Electronics,51,0,125,68,3468,NovaTech Supplies,North,7,102,57,Sufficient,Low,2,5,7,186,0,185,155.0,68.0,79.28571428571429,87.10714285714286
+INV-0931,2023-07-06,A,Smart Electronics,Electronics,45,1,333,42,1890,NovaTech Supplies,South,7,63,291,Sufficient,Low,3,6,7,187,0,186,68.0,72.0,79.28571428571429,85.75
+INV-0936,2023-07-07,A,Smart Electronics,Electronics,25,0,195,49,1225,NovaTech Supplies,East,7,74,146,Sufficient,Low,4,7,7,188,0,187,42.0,23.0,75.0,83.82142857142857
+INV-0941,2023-07-08,A,Smart Electronics,Electronics,141,0,99,28,3948,NovaTech Supplies,West,7,42,71,Sufficient,Low,5,8,7,189,1,188,49.0,81.0,78.71428571428571,83.17857142857143
+INV-0946,2023-07-09,A,Smart Electronics,Electronics,25,0,351,28,700,NovaTech Supplies,Central,7,42,323,Sufficient,Low,6,9,7,190,1,189,28.0,69.0,71.14285714285714,80.71428571428571
+INV-0951,2023-07-10,A,Smart Electronics,Electronics,49,0,355,47,2303,NovaTech Supplies,North,7,71,308,Sufficient,Low,0,10,7,191,0,190,28.0,87.0,65.28571428571429,77.82142857142857
+INV-0956,2023-07-11,A,Smart Electronics,Electronics,31,0,234,68,2108,NovaTech Supplies,South,7,102,166,Sufficient,Low,1,11,7,192,0,191,47.0,155.0,59.57142857142857,73.39285714285714
+INV-0961,2023-07-12,A,Smart Electronics,Electronics,87,0,243,37,3219,NovaTech Supplies,East,7,56,206,Sufficient,Low,2,12,7,193,0,192,68.0,68.0,47.142857142857146,74.14285714285714
+INV-0966,2023-07-13,A,Smart Electronics,Electronics,149,0,449,79,11771,NovaTech Supplies,West,7,119,370,Sufficient,Low,3,13,7,194,0,193,37.0,42.0,42.714285714285715,72.21428571428571
+INV-0971,2023-07-14,A,Smart Electronics,Electronics,44,1,182,38,1672,NovaTech Supplies,Central,7,57,144,Sufficient,Low,4,14,7,195,0,194,79.0,49.0,48.0,70.85714285714286
+INV-0976,2023-07-15,A,Smart Electronics,Electronics,79,0,57,80,6320,NovaTech Supplies,North,7,120,0,Stockout Risk,High,5,15,7,196,1,195,38.0,28.0,46.42857142857143,69.67857142857143
+INV-0981,2023-07-16,A,Smart Electronics,Electronics,52,0,260,73,3796,NovaTech Supplies,South,7,110,187,Sufficient,Low,6,16,7,197,1,196,80.0,28.0,53.857142857142854,68.92857142857143
+INV-0986,2023-07-17,A,Smart Electronics,Electronics,108,0,281,67,7236,NovaTech Supplies,East,7,101,214,Sufficient,Low,0,17,7,198,0,197,73.0,47.0,60.285714285714285,70.14285714285714
+INV-0991,2023-07-18,A,Smart Electronics,Electronics,182,0,328,36,6552,NovaTech Supplies,West,7,54,292,Sufficient,Low,1,18,7,199,0,198,67.0,68.0,63.142857142857146,68.75
+INV-0996,2023-07-19,A,Smart Electronics,Electronics,16,0,327,46,736,NovaTech Supplies,Central,7,69,281,Sufficient,Low,2,19,7,200,0,199,36.0,37.0,58.57142857142857,66.46428571428571
+INV-0002,2023-01-01,B,Daily Grocery Pack,Grocery,126,0,149,97,12222,FreshMart Distribution,West,2,146,52,Sufficient,Low,6,1,1,1,1,0,,,,
+INV-0007,2023-01-02,B,Daily Grocery Pack,Grocery,117,0,104,66,7722,FreshMart Distribution,Central,2,99,38,Sufficient,Low,0,2,1,2,0,1,97.0,97.0,97.0,97.0
+INV-0012,2023-01-03,B,Daily Grocery Pack,Grocery,11,0,439,58,638,FreshMart Distribution,North,2,87,381,Sufficient,Low,1,3,1,3,0,2,66.0,81.5,81.5,81.5
+INV-0017,2023-01-04,B,Daily Grocery Pack,Grocery,54,0,114,60,3240,FreshMart Distribution,South,2,90,54,Sufficient,Low,2,4,1,4,0,3,58.0,73.66666666666667,73.66666666666667,73.66666666666667
+INV-0022,2023-01-05,B,Daily Grocery Pack,Grocery,110,0,480,46,5060,FreshMart Distribution,East,2,69,434,Sufficient,Low,3,5,1,5,0,4,60.0,70.25,70.25,70.25
+INV-0027,2023-01-06,B,Daily Grocery Pack,Grocery,45,0,62,32,1440,FreshMart Distribution,West,2,48,30,Sufficient,Low,4,6,1,6,0,5,46.0,65.4,65.4,65.4
+INV-0032,2023-01-07,B,Daily Grocery Pack,Grocery,164,0,186,19,3116,FreshMart Distribution,Central,2,29,167,Sufficient,Low,5,7,1,7,1,6,32.0,59.833333333333336,59.833333333333336,59.833333333333336
+INV-0037,2023-01-08,B,Daily Grocery Pack,Grocery,96,0,273,19,1824,FreshMart Distribution,North,2,29,254,Sufficient,Low,6,8,1,8,1,7,19.0,97.0,54.0,54.0
+INV-0042,2023-01-09,B,Daily Grocery Pack,Grocery,157,0,301,91,14287,FreshMart Distribution,South,2,137,210,Sufficient,Low,0,9,1,9,0,8,19.0,66.0,42.857142857142854,49.625
+INV-0047,2023-01-10,B,Daily Grocery Pack,Grocery,169,0,58,42,7098,FreshMart Distribution,East,2,63,16,Reorder,Medium,1,10,1,10,0,9,91.0,58.0,46.42857142857143,54.22222222222222
+INV-0052,2023-01-11,B,Daily Grocery Pack,Grocery,154,1,177,42,6468,FreshMart Distribution,West,2,63,135,Sufficient,Low,2,11,1,11,0,10,42.0,60.0,44.142857142857146,53.0
+INV-0057,2023-01-12,B,Daily Grocery Pack,Grocery,58,0,66,40,2320,FreshMart Distribution,Central,2,60,26,Sufficient,Low,3,12,1,12,0,11,42.0,46.0,41.57142857142857,52.0
+INV-0062,2023-01-13,B,Daily Grocery Pack,Grocery,26,0,153,63,1638,FreshMart Distribution,North,2,95,90,Sufficient,Low,4,13,1,13,0,12,40.0,32.0,40.714285714285715,51.0
+INV-0067,2023-01-14,B,Daily Grocery Pack,Grocery,95,0,100,114,10830,FreshMart Distribution,South,2,171,0,Stockout Risk,High,5,14,1,14,1,13,63.0,19.0,45.142857142857146,51.92307692307692
+INV-0072,2023-01-15,B,Daily Grocery Pack,Grocery,123,0,173,83,10209,FreshMart Distribution,East,2,125,90,Sufficient,Low,6,15,1,15,1,14,114.0,19.0,58.714285714285715,56.357142857142854
+INV-0077,2023-01-16,B,Daily Grocery Pack,Grocery,78,0,327,26,2028,FreshMart Distribution,West,2,39,301,Sufficient,Low,0,16,1,16,0,15,83.0,91.0,67.85714285714286,58.13333333333333
+INV-0082,2023-01-17,B,Daily Grocery Pack,Grocery,25,0,329,103,2575,FreshMart Distribution,Central,2,155,226,Sufficient,Low,1,17,1,17,0,16,26.0,42.0,58.57142857142857,56.125
+INV-0087,2023-01-18,B,Daily Grocery Pack,Grocery,139,0,302,36,5004,FreshMart Distribution,North,2,54,266,Sufficient,Low,2,18,1,18,0,17,103.0,42.0,67.28571428571429,58.88235294117647
+INV-0092,2023-01-19,B,Daily Grocery Pack,Grocery,46,1,317,58,2668,FreshMart Distribution,South,2,87,259,Sufficient,Low,3,19,1,19,0,18,36.0,40.0,66.42857142857143,57.611111111111114
+INV-0097,2023-01-20,B,Daily Grocery Pack,Grocery,34,0,485,108,3672,FreshMart Distribution,East,2,162,377,Sufficient,Low,4,20,1,20,0,19,58.0,63.0,69.0,57.63157894736842
+INV-0102,2023-01-21,B,Daily Grocery Pack,Grocery,187,0,332,77,14399,FreshMart Distribution,West,2,116,255,Sufficient,Low,5,21,1,21,1,20,108.0,114.0,75.42857142857143,60.15
+INV-0107,2023-01-22,B,Daily Grocery Pack,Grocery,135,0,107,104,14040,FreshMart Distribution,Central,2,156,3,Reorder,Medium,6,22,1,22,1,21,77.0,83.0,70.14285714285714,60.95238095238095
+INV-0112,2023-01-23,B,Daily Grocery Pack,Grocery,58,0,63,74,4292,FreshMart Distribution,North,2,111,0,Stockout Risk,High,0,23,1,23,0,22,104.0,26.0,73.14285714285714,62.90909090909091
+INV-0117,2023-01-24,B,Daily Grocery Pack,Grocery,110,0,90,74,8140,FreshMart Distribution,South,2,111,16,Reorder,Medium,1,24,1,24,0,23,74.0,103.0,80.0,63.391304347826086
+INV-0122,2023-01-25,B,Daily Grocery Pack,Grocery,170,1,147,146,24820,FreshMart Distribution,East,2,219,1,Reorder,Medium,2,25,1,25,0,24,74.0,36.0,75.85714285714286,63.833333333333336
+INV-0127,2023-01-26,B,Daily Grocery Pack,Grocery,41,0,83,87,3567,FreshMart Distribution,West,2,131,0,Stockout Risk,High,3,26,1,26,0,25,146.0,58.0,91.57142857142857,67.12
+INV-0132,2023-01-27,B,Daily Grocery Pack,Grocery,39,0,384,79,3081,FreshMart Distribution,Central,2,119,305,Sufficient,Low,4,27,1,27,0,26,87.0,108.0,95.71428571428571,67.88461538461539
+INV-0137,2023-01-28,B,Daily Grocery Pack,Grocery,52,0,289,115,5980,FreshMart Distribution,North,2,173,174,Sufficient,Low,5,28,1,28,1,27,79.0,77.0,91.57142857142857,68.29629629629629
+INV-0142,2023-01-29,B,Daily Grocery Pack,Grocery,79,0,50,84,6636,FreshMart Distribution,South,2,126,0,Stockout Risk,High,6,29,1,29,1,28,115.0,104.0,97.0,69.96428571428571
+INV-0147,2023-01-30,B,Daily Grocery Pack,Grocery,136,0,105,105,14280,FreshMart Distribution,East,2,158,0,Reorder,Medium,0,30,1,30,0,29,84.0,74.0,94.14285714285714,69.5
+INV-0152,2023-01-31,B,Daily Grocery Pack,Grocery,22,0,261,75,1650,FreshMart Distribution,West,2,113,186,Sufficient,Low,1,31,1,31,0,30,105.0,74.0,98.57142857142857,70.89285714285714
+INV-0157,2023-02-01,B,Daily Grocery Pack,Grocery,79,0,161,80,6320,FreshMart Distribution,Central,2,120,81,Sufficient,Low,2,1,2,32,0,31,75.0,146.0,98.71428571428571,71.5
+INV-0162,2023-02-02,B,Daily Grocery Pack,Grocery,163,0,167,79,12877,FreshMart Distribution,North,2,119,88,Sufficient,Low,3,2,2,33,0,32,80.0,87.0,89.28571428571429,72.21428571428571
+INV-0167,2023-02-03,B,Daily Grocery Pack,Grocery,139,0,133,33,4587,FreshMart Distribution,South,2,50,100,Sufficient,Low,4,3,2,34,0,33,79.0,79.0,88.14285714285714,73.39285714285714
+INV-0172,2023-02-04,B,Daily Grocery Pack,Grocery,44,0,262,34,1496,FreshMart Distribution,East,2,51,228,Sufficient,Low,5,4,2,35,1,34,33.0,115.0,81.57142857142857,73.42857142857143
+INV-0177,2023-02-05,B,Daily Grocery Pack,Grocery,113,0,153,91,10283,FreshMart Distribution,West,2,137,62,Sufficient,Low,6,5,2,36,1,35,34.0,84.0,70.0,73.96428571428571
+INV-0182,2023-02-06,B,Daily Grocery Pack,Grocery,56,0,277,71,3976,FreshMart Distribution,Central,2,107,206,Sufficient,Low,0,6,2,37,0,36,91.0,105.0,71.0,76.53571428571429
+INV-0187,2023-02-07,B,Daily Grocery Pack,Grocery,55,0,412,52,2860,FreshMart Distribution,North,2,78,360,Sufficient,Low,1,7,2,38,0,37,71.0,75.0,66.14285714285714,75.82142857142857
+INV-0192,2023-02-08,B,Daily Grocery Pack,Grocery,66,0,50,61,4026,FreshMart Distribution,South,2,92,0,Stockout Risk,High,2,8,2,39,0,38,52.0,80.0,62.857142857142854,76.17857142857143
+INV-0197,2023-02-09,B,Daily Grocery Pack,Grocery,196,0,413,41,8036,FreshMart Distribution,East,2,62,372,Sufficient,Low,3,9,2,40,0,39,61.0,79.0,60.142857142857146,76.85714285714286
+INV-0202,2023-02-10,B,Daily Grocery Pack,Grocery,182,0,335,70,12740,FreshMart Distribution,West,2,105,265,Sufficient,Low,4,10,2,41,0,40,41.0,33.0,54.714285714285715,76.89285714285714
+INV-0207,2023-02-11,B,Daily Grocery Pack,Grocery,187,0,440,88,16456,FreshMart Distribution,Central,2,132,352,Sufficient,Low,5,11,2,42,1,41,70.0,34.0,60.0,77.14285714285714
+INV-0212,2023-02-12,B,Daily Grocery Pack,Grocery,16,1,379,124,1984,FreshMart Distribution,North,2,186,255,Sufficient,Low,6,12,2,43,1,42,88.0,91.0,67.71428571428571,76.21428571428571
+INV-0217,2023-02-13,B,Daily Grocery Pack,Grocery,167,0,169,52,8684,FreshMart Distribution,South,2,78,117,Sufficient,Low,0,13,2,44,0,43,124.0,71.0,72.42857142857143,77.67857142857143
+INV-0222,2023-02-14,B,Daily Grocery Pack,Grocery,115,0,391,123,14145,FreshMart Distribution,East,2,185,268,Sufficient,Low,1,14,2,45,0,44,52.0,52.0,69.71428571428571,78.60714285714286
+INV-0227,2023-02-15,B,Daily Grocery Pack,Grocery,38,0,198,65,2470,FreshMart Distribution,West,2,98,133,Sufficient,Low,2,15,2,46,0,45,123.0,61.0,79.85714285714286,79.32142857142857
+INV-0232,2023-02-16,B,Daily Grocery Pack,Grocery,34,0,88,94,3196,FreshMart Distribution,Central,2,141,0,Stockout Risk,High,3,16,2,47,0,46,65.0,41.0,80.42857142857143,80.35714285714286
+INV-0237,2023-02-17,B,Daily Grocery Pack,Grocery,34,1,138,197,6698,FreshMart Distribution,North,2,296,0,Stockout Risk,High,4,17,2,48,0,47,94.0,70.0,88.0,81.64285714285714
+INV-0242,2023-02-18,B,Daily Grocery Pack,Grocery,140,0,342,93,13020,FreshMart Distribution,South,2,140,249,Sufficient,Low,5,18,2,49,1,48,197.0,88.0,106.14285714285714,84.82142857142857
+INV-0247,2023-02-19,B,Daily Grocery Pack,Grocery,199,0,367,103,20497,FreshMart Distribution,East,2,155,264,Sufficient,Low,6,19,2,50,1,49,93.0,124.0,106.85714285714286,85.39285714285714
+INV-0252,2023-02-20,B,Daily Grocery Pack,Grocery,58,0,426,119,6902,FreshMart Distribution,West,2,179,307,Sufficient,Low,0,20,2,51,0,50,103.0,52.0,103.85714285714286,85.35714285714286
+INV-0257,2023-02-21,B,Daily Grocery Pack,Grocery,12,0,425,70,840,FreshMart Distribution,Central,2,105,355,Sufficient,Low,1,21,2,52,0,51,119.0,123.0,113.42857142857143,86.96428571428571
+INV-0262,2023-02-22,B,Daily Grocery Pack,Grocery,162,1,275,81,13122,FreshMart Distribution,North,2,122,194,Sufficient,Low,2,22,2,53,0,52,70.0,65.0,105.85714285714286,86.82142857142857
+INV-0267,2023-02-23,B,Daily Grocery Pack,Grocery,49,0,403,107,5243,FreshMart Distribution,South,2,161,296,Sufficient,Low,3,23,2,54,0,53,81.0,94.0,108.14285714285714,84.5
+INV-0272,2023-02-24,B,Daily Grocery Pack,Grocery,116,0,486,76,8816,FreshMart Distribution,East,2,114,410,Sufficient,Low,4,24,2,55,0,54,107.0,197.0,110.0,85.21428571428571
+INV-0277,2023-02-25,B,Daily Grocery Pack,Grocery,88,0,271,111,9768,FreshMart Distribution,West,2,167,160,Sufficient,Low,5,25,2,56,1,55,76.0,93.0,92.71428571428571,85.10714285714286
+INV-0282,2023-02-26,B,Daily Grocery Pack,Grocery,88,0,465,64,5632,FreshMart Distribution,Central,2,96,401,Sufficient,Low,6,26,2,57,1,56,111.0,103.0,95.28571428571429,84.96428571428571
+INV-0287,2023-02-27,B,Daily Grocery Pack,Grocery,30,0,352,113,3390,FreshMart Distribution,North,2,170,239,Sufficient,Low,0,27,2,58,0,57,64.0,119.0,89.71428571428571,84.25
+INV-0292,2023-02-28,B,Daily Grocery Pack,Grocery,140,0,398,90,12600,FreshMart Distribution,South,2,135,308,Sufficient,Low,1,28,2,59,0,58,113.0,70.0,88.85714285714286,84.53571428571429
+INV-0297,2023-03-01,B,Daily Grocery Pack,Grocery,54,0,266,76,4104,FreshMart Distribution,East,2,114,190,Sufficient,Low,2,1,3,60,0,59,90.0,81.0,91.71428571428571,85.07142857142857
+INV-0302,2023-03-02,B,Daily Grocery Pack,Grocery,99,1,223,174,17226,FreshMart Distribution,West,2,261,49,Reorder,Medium,3,2,3,61,0,60,76.0,107.0,91.0,84.92857142857143
+INV-0307,2023-03-03,B,Daily Grocery Pack,Grocery,141,0,439,31,4371,FreshMart Distribution,Central,2,47,408,Sufficient,Low,4,3,3,62,0,61,174.0,76.0,100.57142857142857,88.32142857142857
+INV-0312,2023-03-04,B,Daily Grocery Pack,Grocery,44,0,494,80,3520,FreshMart Distribution,North,2,120,414,Sufficient,Low,5,4,3,63,1,62,31.0,111.0,94.14285714285714,88.25
+INV-0317,2023-03-05,B,Daily Grocery Pack,Grocery,173,0,311,100,17300,FreshMart Distribution,South,2,150,211,Sufficient,Low,6,5,3,64,1,63,80.0,64.0,89.71428571428571,89.89285714285714
+INV-0322,2023-03-06,B,Daily Grocery Pack,Grocery,93,0,179,34,3162,FreshMart Distribution,East,2,51,145,Sufficient,Low,0,6,3,65,0,64,100.0,113.0,94.85714285714286,90.21428571428571
+INV-0327,2023-03-07,B,Daily Grocery Pack,Grocery,17,0,220,12,204,FreshMart Distribution,West,2,20,208,Sufficient,Low,1,7,3,66,0,65,34.0,90.0,83.57142857142857,88.89285714285714
+INV-0332,2023-03-08,B,Daily Grocery Pack,Grocery,188,0,255,95,17860,FreshMart Distribution,Central,2,143,160,Sufficient,Low,2,8,3,67,0,66,12.0,76.0,72.42857142857143,87.46428571428571
+INV-0337,2023-03-09,B,Daily Grocery Pack,Grocery,184,1,339,45,8280,FreshMart Distribution,North,2,68,294,Sufficient,Low,3,9,3,68,0,67,95.0,174.0,75.14285714285714,88.67857142857143
+INV-0342,2023-03-10,B,Daily Grocery Pack,Grocery,178,1,138,149,26522,FreshMart Distribution,South,2,224,0,Stockout Risk,High,4,10,3,69,0,68,45.0,31.0,56.714285714285715,88.82142857142857
+INV-0347,2023-03-11,B,Daily Grocery Pack,Grocery,170,0,354,28,4760,FreshMart Distribution,East,2,42,326,Sufficient,Low,5,11,3,70,1,69,149.0,80.0,73.57142857142857,91.64285714285714
+INV-0352,2023-03-12,B,Daily Grocery Pack,Grocery,79,0,351,64,5056,FreshMart Distribution,West,2,96,287,Sufficient,Low,6,12,3,71,1,70,28.0,100.0,66.14285714285714,89.5
+INV-0357,2023-03-13,B,Daily Grocery Pack,Grocery,153,0,155,76,11628,FreshMart Distribution,Central,2,114,79,Sufficient,Low,0,13,3,72,0,71,64.0,34.0,61.0,87.35714285714286
+INV-0362,2023-03-14,B,Daily Grocery Pack,Grocery,132,0,190,97,12804,FreshMart Distribution,North,2,146,93,Sufficient,Low,1,14,3,73,0,72,76.0,12.0,67.0,88.21428571428571
+INV-0367,2023-03-15,B,Daily Grocery Pack,Grocery,117,0,275,140,16380,FreshMart Distribution,South,2,210,135,Sufficient,Low,2,15,3,74,0,73,97.0,95.0,79.14285714285714,87.28571428571429
+INV-0372,2023-03-16,B,Daily Grocery Pack,Grocery,28,0,117,67,1876,FreshMart Distribution,East,2,101,50,Sufficient,Low,3,16,3,75,0,74,140.0,45.0,85.57142857142857,89.96428571428571
+INV-0377,2023-03-17,B,Daily Grocery Pack,Grocery,79,0,179,118,9322,FreshMart Distribution,West,2,177,61,Sufficient,Low,4,17,3,76,0,75,67.0,149.0,88.71428571428571,89.0
+INV-0382,2023-03-18,B,Daily Grocery Pack,Grocery,117,0,370,17,1989,FreshMart Distribution,Central,2,26,353,Sufficient,Low,5,18,3,77,1,76,118.0,28.0,84.28571428571429,86.17857142857143
+INV-0387,2023-03-19,B,Daily Grocery Pack,Grocery,159,0,476,114,18126,FreshMart Distribution,North,2,171,362,Sufficient,Low,6,19,3,78,1,77,17.0,64.0,82.71428571428571,83.46428571428571
+INV-0392,2023-03-20,B,Daily Grocery Pack,Grocery,63,0,338,59,3717,FreshMart Distribution,South,2,89,279,Sufficient,Low,0,20,3,79,0,78,114.0,76.0,89.85714285714286,83.85714285714286
+INV-0397,2023-03-21,B,Daily Grocery Pack,Grocery,155,0,365,66,10230,FreshMart Distribution,East,2,99,299,Sufficient,Low,1,21,3,80,0,79,59.0,97.0,87.42857142857143,81.71428571428571
+INV-0402,2023-03-22,B,Daily Grocery Pack,Grocery,49,0,322,21,1029,FreshMart Distribution,West,2,32,301,Sufficient,Low,2,22,3,81,0,80,66.0,140.0,83.0,81.57142857142857
+INV-0407,2023-03-23,B,Daily Grocery Pack,Grocery,129,0,472,23,2967,FreshMart Distribution,Central,2,35,449,Sufficient,Low,3,23,3,82,0,81,21.0,67.0,66.0,79.42857142857143
+INV-0412,2023-03-24,B,Daily Grocery Pack,Grocery,69,0,97,72,4968,FreshMart Distribution,North,2,108,25,Reorder,Medium,4,24,3,83,0,82,23.0,118.0,59.714285714285715,76.42857142857143
+INV-0417,2023-03-25,B,Daily Grocery Pack,Grocery,52,0,434,112,5824,FreshMart Distribution,South,2,168,322,Sufficient,Low,5,25,3,84,1,83,72.0,17.0,53.142857142857146,76.28571428571429
+INV-0422,2023-03-26,B,Daily Grocery Pack,Grocery,77,0,127,85,6545,FreshMart Distribution,East,2,128,42,Reorder,Medium,6,26,3,85,1,84,112.0,114.0,66.71428571428571,76.32142857142857
+INV-0427,2023-03-27,B,Daily Grocery Pack,Grocery,162,0,364,27,4374,FreshMart Distribution,West,2,41,337,Sufficient,Low,0,27,3,86,0,85,85.0,59.0,62.57142857142857,77.07142857142857
+INV-0432,2023-03-28,B,Daily Grocery Pack,Grocery,95,0,199,41,3895,FreshMart Distribution,Central,2,62,158,Sufficient,Low,1,28,3,87,0,86,27.0,66.0,58.0,74.0
+INV-0437,2023-03-29,B,Daily Grocery Pack,Grocery,120,1,330,91,10920,FreshMart Distribution,North,2,137,239,Sufficient,Low,2,29,3,88,0,87,41.0,21.0,54.42857142857143,72.25
+INV-0442,2023-03-30,B,Daily Grocery Pack,Grocery,23,0,170,128,2944,FreshMart Distribution,South,2,192,42,Reorder,Medium,3,30,3,89,0,88,91.0,23.0,64.42857142857143,72.78571428571429
+INV-0447,2023-03-31,B,Daily Grocery Pack,Grocery,183,0,309,49,8967,FreshMart Distribution,East,2,74,260,Sufficient,Low,4,31,3,90,0,89,128.0,72.0,79.42857142857143,71.14285714285714
+INV-0452,2023-04-01,B,Daily Grocery Pack,Grocery,39,0,363,61,2379,FreshMart Distribution,West,2,92,302,Sufficient,Low,5,1,4,91,1,90,49.0,112.0,76.14285714285714,71.78571428571429
+INV-0457,2023-04-02,B,Daily Grocery Pack,Grocery,84,1,408,150,12600,FreshMart Distribution,Central,2,225,258,Sufficient,Low,6,2,4,92,1,91,61.0,85.0,68.85714285714286,71.10714285714286
+INV-0462,2023-04-03,B,Daily Grocery Pack,Grocery,138,0,329,78,10764,FreshMart Distribution,North,2,117,251,Sufficient,Low,0,3,4,93,0,92,150.0,27.0,78.14285714285714,72.89285714285714
+INV-0467,2023-04-04,B,Daily Grocery Pack,Grocery,82,0,350,138,11316,FreshMart Distribution,South,2,207,212,Sufficient,Low,1,4,4,94,0,93,78.0,41.0,85.42857142857143,74.46428571428571
+INV-0472,2023-04-05,B,Daily Grocery Pack,Grocery,156,0,420,62,9672,FreshMart Distribution,East,2,93,358,Sufficient,Low,2,5,4,95,0,94,138.0,91.0,99.28571428571429,78.96428571428571
+INV-0477,2023-04-06,B,Daily Grocery Pack,Grocery,11,0,71,128,1408,FreshMart Distribution,West,2,192,0,Stockout Risk,High,3,6,4,96,0,95,62.0,128.0,95.14285714285714,77.78571428571429
+INV-0482,2023-04-07,B,Daily Grocery Pack,Grocery,88,0,263,37,3256,FreshMart Distribution,Central,2,56,226,Sufficient,Low,4,7,4,97,0,96,128.0,49.0,95.14285714285714,80.75
+INV-0487,2023-04-08,B,Daily Grocery Pack,Grocery,161,0,346,60,9660,FreshMart Distribution,North,2,90,286,Sufficient,Low,5,8,4,98,1,97,37.0,61.0,93.42857142857143,76.75
+INV-0492,2023-04-09,B,Daily Grocery Pack,Grocery,119,0,295,36,4284,FreshMart Distribution,South,2,54,259,Sufficient,Low,6,9,4,99,1,98,60.0,150.0,93.28571428571429,77.89285714285714
+INV-0497,2023-04-10,B,Daily Grocery Pack,Grocery,142,0,276,73,10366,FreshMart Distribution,East,2,110,203,Sufficient,Low,0,10,4,100,0,99,36.0,78.0,77.0,76.89285714285714
+INV-0502,2023-04-11,B,Daily Grocery Pack,Grocery,91,0,363,75,6825,FreshMart Distribution,West,2,113,288,Sufficient,Low,1,11,4,101,0,100,73.0,138.0,76.28571428571429,76.78571428571429
+INV-0507,2023-04-12,B,Daily Grocery Pack,Grocery,96,1,177,53,5088,FreshMart Distribution,Central,2,80,124,Sufficient,Low,2,12,4,102,0,101,75.0,62.0,67.28571428571429,76.0
+INV-0512,2023-04-13,B,Daily Grocery Pack,Grocery,109,0,377,75,8175,FreshMart Distribution,North,2,113,302,Sufficient,Low,3,13,4,103,0,102,53.0,128.0,66.0,72.89285714285714
+INV-0517,2023-04-14,B,Daily Grocery Pack,Grocery,133,0,424,150,19950,FreshMart Distribution,South,2,225,274,Sufficient,Low,4,14,4,104,0,103,75.0,37.0,58.42857142857143,73.17857142857143
+INV-0522,2023-04-15,B,Daily Grocery Pack,Grocery,192,1,65,127,24384,FreshMart Distribution,East,2,191,0,Stockout Risk,High,5,15,4,105,1,104,150.0,60.0,74.57142857142857,74.32142857142857
+INV-0527,2023-04-16,B,Daily Grocery Pack,Grocery,85,0,223,83,7055,FreshMart Distribution,West,2,125,140,Sufficient,Low,6,16,4,106,1,105,127.0,36.0,84.14285714285714,78.25
+INV-0532,2023-04-17,B,Daily Grocery Pack,Grocery,162,0,259,92,14904,FreshMart Distribution,Central,2,138,167,Sufficient,Low,0,17,4,107,0,106,83.0,73.0,90.85714285714286,77.14285714285714
+INV-0537,2023-04-18,B,Daily Grocery Pack,Grocery,157,1,429,157,24649,FreshMart Distribution,North,2,236,272,Sufficient,Low,1,18,4,108,0,107,92.0,75.0,93.57142857142857,78.32142857142857
+INV-0542,2023-04-19,B,Daily Grocery Pack,Grocery,117,0,68,83,9711,FreshMart Distribution,South,2,125,0,Stockout Risk,High,2,19,4,109,0,108,157.0,53.0,105.28571428571429,81.57142857142857
+INV-0547,2023-04-20,B,Daily Grocery Pack,Grocery,122,0,274,45,5490,FreshMart Distribution,East,2,68,229,Sufficient,Low,3,20,4,110,0,109,83.0,75.0,109.57142857142857,83.78571428571429
+INV-0552,2023-04-21,B,Daily Grocery Pack,Grocery,178,1,317,109,19402,FreshMart Distribution,West,2,164,208,Sufficient,Low,4,21,4,111,0,110,45.0,150.0,105.28571428571429,84.57142857142857
+INV-0557,2023-04-22,B,Daily Grocery Pack,Grocery,107,0,337,67,7169,FreshMart Distribution,Central,2,101,270,Sufficient,Low,5,22,4,112,1,111,109.0,127.0,99.42857142857143,85.89285714285714
+INV-0562,2023-04-23,B,Daily Grocery Pack,Grocery,155,0,468,58,8990,FreshMart Distribution,North,2,87,410,Sufficient,Low,6,23,4,113,1,112,67.0,83.0,90.85714285714286,84.28571428571429
+INV-0567,2023-04-24,B,Daily Grocery Pack,Grocery,13,1,203,158,2054,FreshMart Distribution,South,2,237,45,Reorder,Medium,0,24,4,114,0,113,58.0,92.0,87.28571428571429,83.32142857142857
+INV-0572,2023-04-25,B,Daily Grocery Pack,Grocery,174,0,354,39,6786,FreshMart Distribution,East,2,59,315,Sufficient,Low,1,25,4,115,0,114,158.0,157.0,96.71428571428571,88.0
+INV-0577,2023-04-26,B,Daily Grocery Pack,Grocery,148,0,484,49,7252,FreshMart Distribution,West,2,74,435,Sufficient,Low,2,26,4,116,0,115,39.0,83.0,79.85714285714286,87.92857142857143
+INV-0582,2023-04-27,B,Daily Grocery Pack,Grocery,29,0,474,27,783,FreshMart Distribution,Central,2,41,447,Sufficient,Low,3,27,4,117,0,116,49.0,45.0,75.0,86.42857142857143
+INV-0587,2023-04-28,B,Daily Grocery Pack,Grocery,13,0,440,103,1339,FreshMart Distribution,North,2,155,337,Sufficient,Low,4,28,4,118,0,117,27.0,109.0,72.42857142857143,82.82142857142857
+INV-0592,2023-04-29,B,Daily Grocery Pack,Grocery,123,1,313,146,17958,FreshMart Distribution,South,2,219,167,Sufficient,Low,5,29,4,119,1,118,103.0,67.0,71.57142857142857,84.75
+INV-0597,2023-04-30,B,Daily Grocery Pack,Grocery,111,0,124,22,2442,FreshMart Distribution,East,2,33,102,Sufficient,Low,6,30,4,120,1,119,146.0,58.0,82.85714285714286,87.78571428571429
+INV-0602,2023-05-01,B,Daily Grocery Pack,Grocery,129,0,431,67,8643,FreshMart Distribution,West,2,101,364,Sufficient,Low,0,1,5,121,0,120,22.0,158.0,77.71428571428571,83.21428571428571
+INV-0607,2023-05-02,B,Daily Grocery Pack,Grocery,23,0,227,59,1357,FreshMart Distribution,Central,2,89,168,Sufficient,Low,1,2,5,122,0,121,67.0,39.0,64.71428571428571,82.82142857142857
+INV-0612,2023-05-03,B,Daily Grocery Pack,Grocery,143,0,374,105,15015,FreshMart Distribution,North,2,158,269,Sufficient,Low,2,3,5,123,0,122,59.0,49.0,67.57142857142857,80.0
+INV-0617,2023-05-04,B,Daily Grocery Pack,Grocery,166,0,466,91,15106,FreshMart Distribution,South,2,137,375,Sufficient,Low,3,4,5,124,0,123,105.0,27.0,75.57142857142857,81.53571428571429
+INV-0622,2023-05-05,B,Daily Grocery Pack,Grocery,150,0,149,108,16200,FreshMart Distribution,East,2,162,41,Reorder,Medium,4,5,5,125,0,124,91.0,103.0,84.71428571428571,80.21428571428571
+INV-0627,2023-05-06,B,Daily Grocery Pack,Grocery,22,1,362,167,3674,FreshMart Distribution,West,2,251,195,Sufficient,Low,5,6,5,126,1,125,108.0,146.0,85.42857142857143,82.75
+INV-0632,2023-05-07,B,Daily Grocery Pack,Grocery,74,0,389,105,7770,FreshMart Distribution,Central,2,158,284,Sufficient,Low,6,7,5,127,1,126,167.0,22.0,88.42857142857143,86.57142857142857
+INV-0637,2023-05-08,B,Daily Grocery Pack,Grocery,17,0,274,102,1734,FreshMart Distribution,North,2,153,172,Sufficient,Low,0,8,5,128,0,127,105.0,67.0,100.28571428571429,89.03571428571429
+INV-0642,2023-05-09,B,Daily Grocery Pack,Grocery,26,0,108,78,2028,FreshMart Distribution,South,2,117,30,Reorder,Medium,1,9,5,129,0,128,102.0,59.0,105.28571428571429,90.07142857142857
+INV-0647,2023-05-10,B,Daily Grocery Pack,Grocery,123,0,54,67,8241,FreshMart Distribution,East,2,101,0,Stockout Risk,High,2,10,5,130,0,129,78.0,105.0,108.0,90.17857142857143
+INV-0652,2023-05-11,B,Daily Grocery Pack,Grocery,84,0,382,63,5292,FreshMart Distribution,West,2,95,319,Sufficient,Low,3,11,5,131,0,130,67.0,91.0,102.57142857142857,90.67857142857143
+INV-0657,2023-05-12,B,Daily Grocery Pack,Grocery,38,1,108,57,2166,FreshMart Distribution,Central,2,86,51,Sufficient,Low,4,12,5,132,0,131,63.0,108.0,98.57142857142857,90.25
+INV-0662,2023-05-13,B,Daily Grocery Pack,Grocery,179,1,301,114,20406,FreshMart Distribution,North,2,171,187,Sufficient,Low,5,13,5,133,1,132,57.0,167.0,91.28571428571429,86.92857142857143
+INV-0667,2023-05-14,B,Daily Grocery Pack,Grocery,182,0,165,135,24570,FreshMart Distribution,South,2,203,30,Reorder,Medium,6,14,5,134,1,133,114.0,105.0,83.71428571428571,86.46428571428571
+INV-0672,2023-05-15,B,Daily Grocery Pack,Grocery,118,1,237,111,13098,FreshMart Distribution,East,2,167,126,Sufficient,Low,0,15,5,135,0,134,135.0,102.0,88.0,88.32142857142857
+INV-0677,2023-05-16,B,Daily Grocery Pack,Grocery,36,0,89,101,3636,FreshMart Distribution,West,2,152,0,Stockout Risk,High,1,16,5,136,0,135,111.0,78.0,89.28571428571429,89.0
+INV-0682,2023-05-17,B,Daily Grocery Pack,Grocery,67,0,355,118,7906,FreshMart Distribution,Central,2,177,237,Sufficient,Low,2,17,5,137,0,136,101.0,67.0,92.57142857142857,87.0
+INV-0687,2023-05-18,B,Daily Grocery Pack,Grocery,19,0,263,41,779,FreshMart Distribution,North,2,62,222,Sufficient,Low,3,18,5,138,0,137,118.0,63.0,99.85714285714286,88.25
+INV-0692,2023-05-19,B,Daily Grocery Pack,Grocery,82,1,190,103,8446,FreshMart Distribution,South,2,155,87,Sufficient,Low,4,19,5,139,0,138,41.0,57.0,96.71428571428571,88.10714285714286
+INV-0697,2023-05-20,B,Daily Grocery Pack,Grocery,67,0,338,66,4422,FreshMart Distribution,East,2,99,272,Sufficient,Low,5,20,5,140,1,139,103.0,114.0,103.28571428571429,87.89285714285714
+INV-0702,2023-05-21,B,Daily Grocery Pack,Grocery,181,0,200,45,8145,FreshMart Distribution,West,2,68,155,Sufficient,Low,6,21,5,141,1,140,66.0,135.0,96.42857142857143,87.85714285714286
+INV-0707,2023-05-22,B,Daily Grocery Pack,Grocery,78,1,167,133,10374,FreshMart Distribution,Central,2,200,34,Reorder,Medium,0,22,5,142,0,141,45.0,111.0,83.57142857142857,87.39285714285714
+INV-0712,2023-05-23,B,Daily Grocery Pack,Grocery,71,0,206,92,6532,FreshMart Distribution,North,2,138,114,Sufficient,Low,1,23,5,143,0,142,133.0,101.0,86.71428571428571,86.5
+INV-0717,2023-05-24,B,Daily Grocery Pack,Grocery,192,0,344,49,9408,FreshMart Distribution,South,2,74,295,Sufficient,Low,2,24,5,144,0,143,92.0,118.0,85.42857142857143,88.39285714285714
+INV-0722,2023-05-25,B,Daily Grocery Pack,Grocery,159,1,484,122,19398,FreshMart Distribution,East,2,183,362,Sufficient,Low,3,25,5,145,0,144,49.0,41.0,75.57142857142857,88.39285714285714
+INV-0727,2023-05-26,B,Daily Grocery Pack,Grocery,83,0,419,73,6059,FreshMart Distribution,West,2,110,346,Sufficient,Low,4,26,5,146,0,145,122.0,103.0,87.14285714285714,91.78571428571429
+INV-0732,2023-05-27,B,Daily Grocery Pack,Grocery,43,0,345,104,4472,FreshMart Distribution,Central,2,156,241,Sufficient,Low,5,27,5,147,1,146,73.0,66.0,82.85714285714286,90.71428571428571
+INV-0737,2023-05-28,B,Daily Grocery Pack,Grocery,82,0,439,26,2132,FreshMart Distribution,North,2,39,413,Sufficient,Low,6,28,5,148,1,147,104.0,45.0,88.28571428571429,89.21428571428571
+INV-0742,2023-05-29,B,Daily Grocery Pack,Grocery,13,0,263,93,1209,FreshMart Distribution,South,2,140,170,Sufficient,Low,0,29,5,149,0,148,26.0,133.0,85.57142857142857,89.35714285714286
+INV-0747,2023-05-30,B,Daily Grocery Pack,Grocery,197,0,332,53,10441,FreshMart Distribution,East,2,80,279,Sufficient,Low,1,30,5,150,0,149,93.0,92.0,79.85714285714286,90.28571428571429
+INV-0752,2023-05-31,B,Daily Grocery Pack,Grocery,85,0,463,7,595,FreshMart Distribution,West,2,20,456,Sufficient,Low,2,31,5,151,0,150,53.0,49.0,74.28571428571429,90.07142857142857
+INV-0757,2023-06-01,B,Daily Grocery Pack,Grocery,131,1,187,102,13362,FreshMart Distribution,Central,2,153,85,Sufficient,Low,3,1,6,152,0,151,7.0,122.0,68.28571428571429,86.57142857142857
+INV-0762,2023-06-02,B,Daily Grocery Pack,Grocery,107,0,190,110,11770,FreshMart Distribution,North,2,165,80,Sufficient,Low,4,2,6,153,0,152,102.0,73.0,65.42857142857143,86.96428571428571
+INV-0767,2023-06-03,B,Daily Grocery Pack,Grocery,34,0,300,122,4148,FreshMart Distribution,South,2,183,178,Sufficient,Low,5,3,6,154,1,153,110.0,104.0,70.71428571428571,87.03571428571429
+INV-0772,2023-06-04,B,Daily Grocery Pack,Grocery,155,0,484,57,8835,FreshMart Distribution,East,2,86,427,Sufficient,Low,6,4,6,155,1,154,122.0,26.0,73.28571428571429,85.42857142857143
+INV-0777,2023-06-05,B,Daily Grocery Pack,Grocery,73,0,89,24,1752,FreshMart Distribution,West,2,36,65,Sufficient,Low,0,5,6,156,0,155,57.0,93.0,77.71428571428571,83.71428571428571
+INV-0782,2023-06-06,B,Daily Grocery Pack,Grocery,108,0,260,93,10044,FreshMart Distribution,Central,2,140,167,Sufficient,Low,1,6,6,157,0,156,24.0,53.0,67.85714285714286,80.92857142857143
+INV-0787,2023-06-07,B,Daily Grocery Pack,Grocery,25,0,57,24,600,FreshMart Distribution,North,2,36,33,Sufficient,Low,2,7,6,158,0,157,93.0,7.0,73.57142857142857,81.46428571428571
+INV-0792,2023-06-08,B,Daily Grocery Pack,Grocery,119,0,318,39,4641,FreshMart Distribution,South,2,59,279,Sufficient,Low,3,8,6,159,0,158,24.0,102.0,76.0,79.92857142857143
+INV-0797,2023-06-09,B,Daily Grocery Pack,Grocery,187,0,225,98,18326,FreshMart Distribution,East,2,147,127,Sufficient,Low,4,9,6,160,0,159,39.0,110.0,67.0,79.07142857142857
+INV-0802,2023-06-10,B,Daily Grocery Pack,Grocery,191,0,463,106,20246,FreshMart Distribution,West,2,159,357,Sufficient,Low,5,10,6,161,1,160,98.0,122.0,65.28571428571429,80.53571428571429
+INV-0807,2023-06-11,B,Daily Grocery Pack,Grocery,180,0,202,102,18360,FreshMart Distribution,Central,2,153,100,Sufficient,Low,6,11,6,162,1,161,106.0,57.0,63.0,80.25
+INV-0812,2023-06-12,B,Daily Grocery Pack,Grocery,142,0,392,104,14768,FreshMart Distribution,North,2,156,288,Sufficient,Low,0,12,6,163,0,162,102.0,24.0,69.42857142857143,79.07142857142857
+INV-0817,2023-06-13,B,Daily Grocery Pack,Grocery,21,0,345,79,1659,FreshMart Distribution,South,2,119,266,Sufficient,Low,1,13,6,164,0,163,104.0,93.0,80.85714285714286,78.82142857142857
+INV-0822,2023-06-14,B,Daily Grocery Pack,Grocery,196,0,288,18,3528,FreshMart Distribution,East,2,27,270,Sufficient,Low,2,14,6,165,0,164,79.0,24.0,78.85714285714286,78.03571428571429
+INV-0827,2023-06-15,B,Daily Grocery Pack,Grocery,166,1,452,155,25730,FreshMart Distribution,West,2,233,297,Sufficient,Low,3,15,6,166,0,165,18.0,39.0,78.0,74.46428571428571
+INV-0832,2023-06-16,B,Daily Grocery Pack,Grocery,48,0,77,72,3456,FreshMart Distribution,Central,2,108,5,Reorder,Medium,4,16,6,167,0,166,155.0,98.0,94.57142857142857,78.53571428571429
+INV-0837,2023-06-17,B,Daily Grocery Pack,Grocery,121,0,365,39,4719,FreshMart Distribution,North,2,59,326,Sufficient,Low,5,17,6,168,1,167,72.0,106.0,90.85714285714286,77.42857142857143
+INV-0842,2023-06-18,B,Daily Grocery Pack,Grocery,181,0,87,122,22082,FreshMart Distribution,South,2,183,0,Stockout Risk,High,6,18,6,169,1,168,39.0,102.0,81.28571428571429,76.46428571428571
+INV-0847,2023-06-19,B,Daily Grocery Pack,Grocery,175,0,169,80,14000,FreshMart Distribution,East,2,120,89,Sufficient,Low,0,19,6,170,0,169,122.0,104.0,84.14285714285714,79.21428571428571
+INV-0852,2023-06-20,B,Daily Grocery Pack,Grocery,54,0,176,68,3672,FreshMart Distribution,West,2,102,108,Sufficient,Low,1,20,6,171,0,170,80.0,79.0,80.71428571428571,77.32142857142857
+INV-0857,2023-06-21,B,Daily Grocery Pack,Grocery,154,0,335,50,7700,FreshMart Distribution,Central,2,75,285,Sufficient,Low,2,21,6,172,0,171,68.0,18.0,79.14285714285714,76.46428571428571
+INV-0862,2023-06-22,B,Daily Grocery Pack,Grocery,194,0,441,62,12028,FreshMart Distribution,North,2,93,379,Sufficient,Low,3,22,6,173,0,172,50.0,155.0,83.71428571428571,76.5
+INV-0867,2023-06-23,B,Daily Grocery Pack,Grocery,148,0,393,79,11692,FreshMart Distribution,South,2,119,314,Sufficient,Low,4,23,6,174,0,173,62.0,72.0,70.42857142857143,74.35714285714286
+INV-0872,2023-06-24,B,Daily Grocery Pack,Grocery,138,0,475,68,9384,FreshMart Distribution,East,2,102,407,Sufficient,Low,5,24,6,175,1,174,79.0,39.0,71.42857142857143,74.57142857142857
+INV-0877,2023-06-25,B,Daily Grocery Pack,Grocery,195,0,332,99,19305,FreshMart Distribution,West,2,149,233,Sufficient,Low,6,25,6,176,1,175,68.0,122.0,75.57142857142857,73.28571428571429
+INV-0882,2023-06-26,B,Daily Grocery Pack,Grocery,34,0,326,58,1972,FreshMart Distribution,Central,2,87,268,Sufficient,Low,0,26,6,177,0,176,99.0,80.0,72.28571428571429,75.89285714285714
+INV-0887,2023-06-27,B,Daily Grocery Pack,Grocery,11,0,498,103,1133,FreshMart Distribution,North,2,155,395,Sufficient,Low,1,27,6,178,0,177,58.0,68.0,69.14285714285714,74.64285714285714
+INV-0892,2023-06-28,B,Daily Grocery Pack,Grocery,88,1,258,119,10472,FreshMart Distribution,South,2,179,139,Sufficient,Low,2,28,6,179,0,178,103.0,50.0,74.14285714285714,76.42857142857143
+INV-0897,2023-06-29,B,Daily Grocery Pack,Grocery,172,0,109,56,9632,FreshMart Distribution,East,2,84,53,Sufficient,Low,3,29,6,180,0,179,119.0,62.0,84.0,80.42857142857143
+INV-0902,2023-06-30,B,Daily Grocery Pack,Grocery,185,0,93,63,11655,FreshMart Distribution,West,2,95,30,Reorder,Medium,4,30,6,181,0,180,56.0,79.0,83.14285714285714,78.78571428571429
+INV-0907,2023-07-01,B,Daily Grocery Pack,Grocery,145,0,329,98,14210,FreshMart Distribution,Central,2,147,231,Sufficient,Low,5,1,7,182,1,181,63.0,68.0,80.85714285714286,77.10714285714286
+INV-0912,2023-07-02,B,Daily Grocery Pack,Grocery,155,0,320,22,3410,FreshMart Distribution,North,2,33,298,Sufficient,Low,6,2,7,183,1,182,98.0,99.0,85.14285714285714,76.25
+INV-0917,2023-07-03,B,Daily Grocery Pack,Grocery,12,0,442,47,564,FreshMart Distribution,South,2,71,395,Sufficient,Low,0,3,7,184,0,183,22.0,58.0,74.14285714285714,75.0
+INV-0922,2023-07-04,B,Daily Grocery Pack,Grocery,20,0,134,46,920,FreshMart Distribution,East,2,69,88,Sufficient,Low,1,4,7,185,0,184,47.0,103.0,72.57142857142857,75.82142857142857
+INV-0927,2023-07-05,B,Daily Grocery Pack,Grocery,139,0,364,105,14595,FreshMart Distribution,West,2,158,259,Sufficient,Low,2,5,7,186,0,185,46.0,119.0,64.42857142857143,74.14285714285714
+INV-0932,2023-07-06,B,Daily Grocery Pack,Grocery,23,0,120,45,1035,FreshMart Distribution,Central,2,68,75,Sufficient,Low,3,6,7,187,0,186,105.0,56.0,62.42857142857143,77.03571428571429
+INV-0937,2023-07-07,B,Daily Grocery Pack,Grocery,39,1,94,145,5655,FreshMart Distribution,North,2,218,0,Stockout Risk,High,4,7,7,188,0,187,45.0,63.0,60.857142857142854,77.25
+INV-0942,2023-07-08,B,Daily Grocery Pack,Grocery,195,0,373,92,17940,FreshMart Distribution,South,2,138,281,Sufficient,Low,5,8,7,189,1,188,145.0,98.0,72.57142857142857,78.92857142857143
+INV-0947,2023-07-09,B,Daily Grocery Pack,Grocery,116,1,137,90,10440,FreshMart Distribution,East,2,135,47,Sufficient,Low,6,9,7,190,1,189,92.0,22.0,71.71428571428571,78.42857142857143
+INV-0952,2023-07-10,B,Daily Grocery Pack,Grocery,36,0,418,35,1260,FreshMart Distribution,West,2,53,383,Sufficient,Low,0,10,7,191,0,190,90.0,47.0,81.42857142857143,78.0
+INV-0957,2023-07-11,B,Daily Grocery Pack,Grocery,171,0,209,53,9063,FreshMart Distribution,Central,2,80,156,Sufficient,Low,1,11,7,192,0,191,35.0,46.0,79.71428571428571,75.53571428571429
+INV-0962,2023-07-12,B,Daily Grocery Pack,Grocery,119,0,383,62,7378,FreshMart Distribution,North,2,93,321,Sufficient,Low,2,12,7,193,0,192,53.0,105.0,80.71428571428571,74.60714285714286
+INV-0967,2023-07-13,B,Daily Grocery Pack,Grocery,55,0,337,31,1705,FreshMart Distribution,South,2,47,306,Sufficient,Low,3,13,7,194,0,193,62.0,45.0,74.57142857142857,76.17857142857143
+INV-0972,2023-07-14,B,Daily Grocery Pack,Grocery,182,0,374,43,7826,FreshMart Distribution,East,2,65,331,Sufficient,Low,4,14,7,195,0,194,31.0,145.0,72.57142857142857,71.75
+INV-0977,2023-07-15,B,Daily Grocery Pack,Grocery,170,0,180,55,9350,FreshMart Distribution,West,2,83,125,Sufficient,Low,5,15,7,196,1,195,43.0,92.0,58.0,70.71428571428571
+INV-0982,2023-07-16,B,Daily Grocery Pack,Grocery,86,0,461,28,2408,FreshMart Distribution,Central,2,42,433,Sufficient,Low,6,16,7,197,1,196,55.0,90.0,52.714285714285715,71.28571428571429
+INV-0987,2023-07-17,B,Daily Grocery Pack,Grocery,127,0,480,102,12954,FreshMart Distribution,North,2,153,378,Sufficient,Low,0,17,7,198,0,197,28.0,35.0,43.857142857142854,67.92857142857143
+INV-0992,2023-07-18,B,Daily Grocery Pack,Grocery,63,0,78,55,3465,FreshMart Distribution,South,2,83,23,Reorder,Medium,1,18,7,199,0,198,102.0,53.0,53.42857142857143,68.71428571428571
+INV-0997,2023-07-19,B,Daily Grocery Pack,Grocery,194,0,440,47,9118,FreshMart Distribution,East,2,71,393,Sufficient,Low,2,19,7,200,0,199,55.0,62.0,53.714285714285715,68.25
+INV-0003,2023-01-01,C,Everyday Apparel,Clothing,62,0,307,45,2790,UrbanWear Wholesale,South,5,68,262,Sufficient,Low,6,1,1,1,1,0,,,,
+INV-0008,2023-01-02,C,Everyday Apparel,Clothing,82,0,216,74,6068,UrbanWear Wholesale,East,5,111,142,Sufficient,Low,0,2,1,2,0,1,45.0,45.0,45.0,45.0
+INV-0013,2023-01-03,C,Everyday Apparel,Clothing,63,0,240,72,4536,UrbanWear Wholesale,West,5,108,168,Sufficient,Low,1,3,1,3,0,2,74.0,59.5,59.5,59.5
+INV-0018,2023-01-04,C,Everyday Apparel,Clothing,72,0,188,17,1224,UrbanWear Wholesale,Central,5,26,171,Sufficient,Low,2,4,1,4,0,3,72.0,63.666666666666664,63.666666666666664,63.666666666666664
+INV-0023,2023-01-05,C,Everyday Apparel,Clothing,14,1,267,141,1974,UrbanWear Wholesale,North,5,212,126,Sufficient,Low,3,5,1,5,0,4,17.0,52.0,52.0,52.0
+INV-0028,2023-01-06,C,Everyday Apparel,Clothing,54,1,111,68,3672,UrbanWear Wholesale,South,5,102,43,Sufficient,Low,4,6,1,6,0,5,141.0,69.8,69.8,69.8
+INV-0033,2023-01-07,C,Everyday Apparel,Clothing,60,0,283,88,5280,UrbanWear Wholesale,East,5,132,195,Sufficient,Low,5,7,1,7,1,6,68.0,69.5,69.5,69.5
+INV-0038,2023-01-08,C,Everyday Apparel,Clothing,169,0,247,24,4056,UrbanWear Wholesale,West,5,36,223,Sufficient,Low,6,8,1,8,1,7,88.0,45.0,72.14285714285714,72.14285714285714
+INV-0043,2023-01-09,C,Everyday Apparel,Clothing,99,0,196,74,7326,UrbanWear Wholesale,Central,5,111,122,Sufficient,Low,0,9,1,9,0,8,24.0,74.0,69.14285714285714,66.125
+INV-0048,2023-01-10,C,Everyday Apparel,Clothing,161,1,103,145,23345,UrbanWear Wholesale,North,5,218,0,Stockout Risk,High,1,10,1,10,0,9,74.0,72.0,69.14285714285714,67.0
+INV-0053,2023-01-11,C,Everyday Apparel,Clothing,196,0,420,41,8036,UrbanWear Wholesale,South,5,62,379,Sufficient,Low,2,11,1,11,0,10,145.0,17.0,79.57142857142857,74.8
+INV-0058,2023-01-12,C,Everyday Apparel,Clothing,108,1,429,105,11340,UrbanWear Wholesale,East,5,158,324,Sufficient,Low,3,12,1,12,0,11,41.0,141.0,83.0,71.72727272727273
+INV-0063,2023-01-13,C,Everyday Apparel,Clothing,185,0,88,64,11840,UrbanWear Wholesale,West,5,96,24,Reorder,Medium,4,13,1,13,0,12,105.0,68.0,77.85714285714286,74.5
+INV-0068,2023-01-14,C,Everyday Apparel,Clothing,95,0,354,25,2375,UrbanWear Wholesale,Central,5,38,329,Sufficient,Low,5,14,1,14,1,13,64.0,88.0,77.28571428571429,73.6923076923077
+INV-0073,2023-01-15,C,Everyday Apparel,Clothing,129,0,368,68,8772,UrbanWear Wholesale,North,5,102,300,Sufficient,Low,6,15,1,15,1,14,25.0,24.0,68.28571428571429,70.21428571428571
+INV-0078,2023-01-16,C,Everyday Apparel,Clothing,78,0,96,84,6552,UrbanWear Wholesale,South,5,126,12,Reorder,Medium,0,16,1,16,0,15,68.0,74.0,74.57142857142857,70.06666666666666
+INV-0083,2023-01-17,C,Everyday Apparel,Clothing,137,0,209,109,14933,UrbanWear Wholesale,East,5,164,100,Sufficient,Low,1,17,1,17,0,16,84.0,145.0,76.0,70.9375
+INV-0088,2023-01-18,C,Everyday Apparel,Clothing,99,0,467,23,2277,UrbanWear Wholesale,West,5,35,444,Sufficient,Low,2,18,1,18,0,17,109.0,41.0,70.85714285714286,73.17647058823529
+INV-0093,2023-01-19,C,Everyday Apparel,Clothing,108,0,410,87,9396,UrbanWear Wholesale,Central,5,131,323,Sufficient,Low,3,19,1,19,0,18,23.0,105.0,68.28571428571429,70.38888888888889
+INV-0098,2023-01-20,C,Everyday Apparel,Clothing,48,0,158,54,2592,UrbanWear Wholesale,North,5,81,104,Sufficient,Low,4,20,1,20,0,19,87.0,64.0,65.71428571428571,71.26315789473684
+INV-0103,2023-01-21,C,Everyday Apparel,Clothing,174,0,471,106,18444,UrbanWear Wholesale,South,5,159,365,Sufficient,Low,5,21,1,21,1,20,54.0,25.0,64.28571428571429,70.4
+INV-0108,2023-01-22,C,Everyday Apparel,Clothing,101,0,239,72,7272,UrbanWear Wholesale,East,5,108,167,Sufficient,Low,6,22,1,22,1,21,106.0,68.0,75.85714285714286,72.0952380952381
+INV-0113,2023-01-23,C,Everyday Apparel,Clothing,126,0,103,46,5796,UrbanWear Wholesale,West,5,69,57,Sufficient,Low,0,23,1,23,0,22,72.0,84.0,76.42857142857143,72.0909090909091
+INV-0118,2023-01-24,C,Everyday Apparel,Clothing,170,0,261,75,12750,UrbanWear Wholesale,Central,5,113,186,Sufficient,Low,1,24,1,24,0,23,46.0,109.0,71.0,70.95652173913044
+INV-0123,2023-01-25,C,Everyday Apparel,Clothing,64,0,55,26,1664,UrbanWear Wholesale,North,5,39,29,Sufficient,Low,2,25,1,25,0,24,75.0,23.0,66.14285714285714,71.125
+INV-0128,2023-01-26,C,Everyday Apparel,Clothing,191,0,167,48,9168,UrbanWear Wholesale,South,5,72,119,Sufficient,Low,3,26,1,26,0,25,26.0,87.0,66.57142857142857,69.32
+INV-0133,2023-01-27,C,Everyday Apparel,Clothing,61,1,298,134,8174,UrbanWear Wholesale,East,5,201,164,Sufficient,Low,4,27,1,27,0,26,48.0,54.0,61.0,68.5
+INV-0138,2023-01-28,C,Everyday Apparel,Clothing,104,0,423,27,2808,UrbanWear Wholesale,West,5,41,396,Sufficient,Low,5,28,1,28,1,27,134.0,106.0,72.42857142857143,70.92592592592592
+INV-0143,2023-01-29,C,Everyday Apparel,Clothing,99,0,95,28,2772,UrbanWear Wholesale,Central,5,42,67,Sufficient,Low,6,29,1,29,1,28,27.0,72.0,61.142857142857146,69.35714285714286
+INV-0148,2023-01-30,C,Everyday Apparel,Clothing,118,0,203,109,12862,UrbanWear Wholesale,North,5,164,94,Sufficient,Low,0,30,1,30,0,29,28.0,46.0,54.857142857142854,68.75
+INV-0153,2023-01-31,C,Everyday Apparel,Clothing,76,0,282,42,3192,UrbanWear Wholesale,South,5,63,240,Sufficient,Low,1,31,1,31,0,30,109.0,75.0,63.857142857142854,70.0
+INV-0158,2023-02-01,C,Everyday Apparel,Clothing,161,1,360,137,22057,UrbanWear Wholesale,East,5,206,223,Sufficient,Low,2,1,2,32,0,31,42.0,26.0,59.142857142857146,68.92857142857143
+INV-0163,2023-02-02,C,Everyday Apparel,Clothing,29,0,162,120,3480,UrbanWear Wholesale,West,5,180,42,Reorder,Medium,3,2,2,33,0,32,137.0,48.0,75.0,73.21428571428571
+INV-0168,2023-02-03,C,Everyday Apparel,Clothing,152,0,457,31,4712,UrbanWear Wholesale,Central,5,47,426,Sufficient,Low,4,3,2,34,0,33,120.0,134.0,85.28571428571429,72.46428571428571
+INV-0173,2023-02-04,C,Everyday Apparel,Clothing,132,1,127,77,10164,UrbanWear Wholesale,North,5,116,50,Sufficient,Low,5,4,2,35,1,34,31.0,27.0,70.57142857142857,71.14285714285714
+INV-0178,2023-02-05,C,Everyday Apparel,Clothing,188,0,91,32,6016,UrbanWear Wholesale,South,5,48,59,Sufficient,Low,6,5,2,36,1,35,77.0,28.0,77.71428571428571,70.75
+INV-0183,2023-02-06,C,Everyday Apparel,Clothing,166,0,185,80,13280,UrbanWear Wholesale,East,5,120,105,Sufficient,Low,0,6,2,37,0,36,32.0,109.0,78.28571428571429,71.03571428571429
+INV-0188,2023-02-07,C,Everyday Apparel,Clothing,120,0,153,85,10200,UrbanWear Wholesale,West,5,128,68,Sufficient,Low,1,7,2,38,0,37,80.0,42.0,74.14285714285714,71.25
+INV-0193,2023-02-08,C,Everyday Apparel,Clothing,124,0,473,82,10168,UrbanWear Wholesale,Central,5,123,391,Sufficient,Low,2,8,2,39,0,38,85.0,137.0,80.28571428571429,69.10714285714286
+INV-0198,2023-02-09,C,Everyday Apparel,Clothing,97,0,210,56,5432,UrbanWear Wholesale,North,5,84,154,Sufficient,Low,3,9,2,40,0,39,82.0,120.0,72.42857142857143,70.57142857142857
+INV-0203,2023-02-10,C,Everyday Apparel,Clothing,27,0,306,39,1053,UrbanWear Wholesale,South,5,59,267,Sufficient,Low,4,10,2,41,0,40,56.0,31.0,63.285714285714285,68.82142857142857
+INV-0208,2023-02-11,C,Everyday Apparel,Clothing,196,0,304,104,20384,UrbanWear Wholesale,East,5,156,200,Sufficient,Low,5,11,2,42,1,41,39.0,77.0,64.42857142857143,67.92857142857143
+INV-0213,2023-02-12,C,Everyday Apparel,Clothing,94,0,196,45,4230,UrbanWear Wholesale,West,5,68,151,Sufficient,Low,6,12,2,43,1,42,104.0,32.0,68.28571428571429,70.75
+INV-0218,2023-02-13,C,Everyday Apparel,Clothing,34,0,408,43,1462,UrbanWear Wholesale,Central,5,65,365,Sufficient,Low,0,13,2,44,0,43,45.0,80.0,70.14285714285714,69.92857142857143
+INV-0223,2023-02-14,C,Everyday Apparel,Clothing,143,1,268,100,14300,UrbanWear Wholesale,North,5,150,168,Sufficient,Low,1,14,2,45,0,44,43.0,85.0,64.85714285714286,68.46428571428571
+INV-0228,2023-02-15,C,Everyday Apparel,Clothing,48,0,281,79,3792,UrbanWear Wholesale,South,5,119,202,Sufficient,Low,2,15,2,46,0,45,100.0,82.0,67.0,68.14285714285714
+INV-0233,2023-02-16,C,Everyday Apparel,Clothing,117,1,221,96,11232,UrbanWear Wholesale,East,5,144,125,Sufficient,Low,3,16,2,47,0,46,79.0,56.0,66.57142857142857,70.14285714285714
+INV-0238,2023-02-17,C,Everyday Apparel,Clothing,19,0,65,65,1235,UrbanWear Wholesale,West,5,98,0,Reorder,Medium,4,17,2,48,0,47,96.0,39.0,72.28571428571429,70.46428571428571
+INV-0243,2023-02-18,C,Everyday Apparel,Clothing,192,0,413,90,17280,UrbanWear Wholesale,Central,5,135,323,Sufficient,Low,5,18,2,49,1,48,65.0,104.0,76.0,70.85714285714286
+INV-0248,2023-02-19,C,Everyday Apparel,Clothing,130,0,315,89,11570,UrbanWear Wholesale,North,5,134,226,Sufficient,Low,6,19,2,50,1,49,90.0,45.0,74.0,70.28571428571429
+INV-0253,2023-02-20,C,Everyday Apparel,Clothing,46,0,110,114,5244,UrbanWear Wholesale,South,5,171,0,Stockout Risk,High,0,20,2,51,0,50,89.0,43.0,80.28571428571429,70.89285714285714
+INV-0258,2023-02-21,C,Everyday Apparel,Clothing,18,0,148,80,1440,UrbanWear Wholesale,East,5,120,68,Sufficient,Low,1,21,2,52,0,51,114.0,100.0,90.42857142857143,73.32142857142857
+INV-0263,2023-02-22,C,Everyday Apparel,Clothing,49,0,74,110,5390,UrbanWear Wholesale,West,5,165,0,Stockout Risk,High,2,22,2,53,0,52,80.0,79.0,87.57142857142857,73.5
+INV-0268,2023-02-23,C,Everyday Apparel,Clothing,156,1,385,99,15444,UrbanWear Wholesale,Central,5,149,286,Sufficient,Low,3,23,2,54,0,53,110.0,96.0,92.0,76.5
+INV-0273,2023-02-24,C,Everyday Apparel,Clothing,91,1,405,108,9828,UrbanWear Wholesale,North,5,162,297,Sufficient,Low,4,24,2,55,0,54,99.0,65.0,92.42857142857143,78.32142857142857
+INV-0278,2023-02-25,C,Everyday Apparel,Clothing,77,0,268,56,4312,UrbanWear Wholesale,South,5,84,212,Sufficient,Low,5,25,2,56,1,55,108.0,90.0,98.57142857142857,77.39285714285714
+INV-0283,2023-02-26,C,Everyday Apparel,Clothing,35,0,479,95,3325,UrbanWear Wholesale,East,5,143,384,Sufficient,Low,6,26,2,57,1,56,56.0,89.0,93.71428571428571,78.42857142857143
+INV-0288,2023-02-27,C,Everyday Apparel,Clothing,140,0,306,21,2940,UrbanWear Wholesale,West,5,32,285,Sufficient,Low,0,27,2,58,0,57,95.0,114.0,94.57142857142857,80.82142857142857
+INV-0293,2023-02-28,C,Everyday Apparel,Clothing,33,0,365,122,4026,UrbanWear Wholesale,Central,5,183,243,Sufficient,Low,1,28,2,59,0,58,21.0,80.0,81.28571428571429,77.67857142857143
+INV-0298,2023-03-01,C,Everyday Apparel,Clothing,188,0,137,39,7332,UrbanWear Wholesale,North,5,59,98,Sufficient,Low,2,1,3,60,0,59,122.0,110.0,87.28571428571429,80.53571428571429
+INV-0303,2023-03-02,C,Everyday Apparel,Clothing,128,0,477,46,5888,UrbanWear Wholesale,South,5,69,431,Sufficient,Low,3,2,3,61,0,60,39.0,99.0,77.14285714285714,77.03571428571429
+INV-0308,2023-03-03,C,Everyday Apparel,Clothing,197,0,411,41,8077,UrbanWear Wholesale,East,5,62,370,Sufficient,Low,4,3,3,62,0,61,46.0,108.0,69.57142857142857,74.39285714285714
+INV-0313,2023-03-04,C,Everyday Apparel,Clothing,106,0,440,104,11024,UrbanWear Wholesale,West,5,156,336,Sufficient,Low,5,4,3,63,1,62,41.0,56.0,60.0,74.75
+INV-0318,2023-03-05,C,Everyday Apparel,Clothing,49,0,70,14,686,UrbanWear Wholesale,Central,5,21,56,Sufficient,Low,6,5,3,64,1,63,104.0,95.0,66.85714285714286,75.71428571428571
+INV-0323,2023-03-06,C,Everyday Apparel,Clothing,98,0,77,123,12054,UrbanWear Wholesale,North,5,185,0,Stockout Risk,High,0,6,3,65,0,64,14.0,21.0,55.285714285714285,75.07142857142857
+INV-0328,2023-03-07,C,Everyday Apparel,Clothing,174,0,354,57,9918,UrbanWear Wholesale,South,5,86,297,Sufficient,Low,1,7,3,66,0,65,123.0,122.0,69.85714285714286,76.60714285714286
+INV-0333,2023-03-08,C,Everyday Apparel,Clothing,190,0,291,41,7790,UrbanWear Wholesale,East,5,62,250,Sufficient,Low,2,8,3,67,0,66,57.0,39.0,60.57142857142857,75.60714285714286
+INV-0338,2023-03-09,C,Everyday Apparel,Clothing,56,1,281,69,3864,UrbanWear Wholesale,West,5,104,212,Sufficient,Low,3,9,3,68,0,67,41.0,46.0,60.857142857142854,74.14285714285714
+INV-0343,2023-03-10,C,Everyday Apparel,Clothing,86,0,208,92,7912,UrbanWear Wholesale,Central,5,138,116,Sufficient,Low,4,10,3,69,0,68,69.0,41.0,64.14285714285714,74.60714285714286
+INV-0348,2023-03-11,C,Everyday Apparel,Clothing,119,0,379,56,6664,UrbanWear Wholesale,North,5,84,323,Sufficient,Low,5,11,3,70,1,69,92.0,104.0,71.42857142857143,76.5
+INV-0353,2023-03-12,C,Everyday Apparel,Clothing,160,0,156,78,12480,UrbanWear Wholesale,South,5,117,78,Sufficient,Low,6,12,3,71,1,70,56.0,14.0,64.57142857142857,74.78571428571429
+INV-0358,2023-03-13,C,Everyday Apparel,Clothing,99,1,394,141,13959,UrbanWear Wholesale,East,5,212,253,Sufficient,Low,0,13,3,72,0,71,78.0,123.0,73.71428571428571,75.96428571428571
+INV-0363,2023-03-14,C,Everyday Apparel,Clothing,146,1,75,85,12410,UrbanWear Wholesale,West,5,128,0,Stockout Risk,High,1,14,3,73,0,72,141.0,57.0,76.28571428571429,79.46428571428571
+INV-0368,2023-03-15,C,Everyday Apparel,Clothing,152,0,468,34,5168,UrbanWear Wholesale,Central,5,51,434,Sufficient,Low,2,15,3,74,0,73,85.0,41.0,80.28571428571429,78.92857142857143
+INV-0373,2023-03-16,C,Everyday Apparel,Clothing,118,1,85,114,13452,UrbanWear Wholesale,North,5,171,0,Stockout Risk,High,3,16,3,75,0,74,34.0,69.0,79.28571428571429,77.32142857142857
+INV-0378,2023-03-17,C,Everyday Apparel,Clothing,159,0,349,68,10812,UrbanWear Wholesale,South,5,102,281,Sufficient,Low,4,17,3,76,0,75,114.0,92.0,85.71428571428571,77.96428571428571
+INV-0383,2023-03-18,C,Everyday Apparel,Clothing,159,0,280,67,10653,UrbanWear Wholesale,East,5,101,213,Sufficient,Low,5,18,3,77,1,76,68.0,56.0,82.28571428571429,78.07142857142857
+INV-0388,2023-03-19,C,Everyday Apparel,Clothing,51,1,215,80,4080,UrbanWear Wholesale,West,5,120,135,Sufficient,Low,6,19,3,78,1,77,67.0,78.0,83.85714285714286,77.25
+INV-0393,2023-03-20,C,Everyday Apparel,Clothing,74,0,159,75,5550,UrbanWear Wholesale,Central,5,113,84,Sufficient,Low,0,20,3,79,0,78,80.0,141.0,84.14285714285714,76.92857142857143
+INV-0398,2023-03-21,C,Everyday Apparel,Clothing,14,0,467,53,742,UrbanWear Wholesale,North,5,80,414,Sufficient,Low,1,21,3,80,0,79,75.0,85.0,74.71428571428571,75.53571428571429
+INV-0403,2023-03-22,C,Everyday Apparel,Clothing,173,0,173,98,16954,UrbanWear Wholesale,South,5,147,75,Sufficient,Low,2,22,3,81,0,80,53.0,34.0,70.14285714285714,74.57142857142857
+INV-0408,2023-03-23,C,Everyday Apparel,Clothing,182,1,209,153,27846,UrbanWear Wholesale,East,5,230,56,Reorder,Medium,3,23,3,82,0,81,98.0,114.0,79.28571428571429,74.14285714285714
+INV-0413,2023-03-24,C,Everyday Apparel,Clothing,67,0,493,69,4623,UrbanWear Wholesale,West,5,104,424,Sufficient,Low,4,24,3,83,0,82,153.0,68.0,84.85714285714286,76.07142857142857
+INV-0418,2023-03-25,C,Everyday Apparel,Clothing,144,1,77,72,10368,UrbanWear Wholesale,Central,5,108,5,Reorder,Medium,5,25,3,84,1,83,69.0,67.0,85.0,74.67857142857143
+INV-0423,2023-03-26,C,Everyday Apparel,Clothing,128,1,239,116,14848,UrbanWear Wholesale,North,5,174,123,Sufficient,Low,6,26,3,85,1,84,72.0,80.0,85.71428571428571,75.25
+INV-0428,2023-03-27,C,Everyday Apparel,Clothing,181,0,337,64,11584,UrbanWear Wholesale,South,5,96,273,Sufficient,Low,0,27,3,86,0,85,116.0,75.0,90.85714285714286,76.0
+INV-0433,2023-03-28,C,Everyday Apparel,Clothing,22,0,307,58,1276,UrbanWear Wholesale,East,5,87,249,Sufficient,Low,1,28,3,87,0,86,64.0,53.0,89.28571428571429,77.53571428571429
+INV-0438,2023-03-29,C,Everyday Apparel,Clothing,138,0,413,107,14766,UrbanWear Wholesale,West,5,161,306,Sufficient,Low,2,29,3,88,0,87,58.0,98.0,90.0,75.25
+INV-0443,2023-03-30,C,Everyday Apparel,Clothing,29,0,124,76,2204,UrbanWear Wholesale,Central,5,114,48,Sufficient,Low,3,30,3,89,0,88,107.0,153.0,91.28571428571429,77.67857142857143
+INV-0448,2023-03-31,C,Everyday Apparel,Clothing,13,0,270,36,468,UrbanWear Wholesale,North,5,54,234,Sufficient,Low,4,31,3,90,0,89,76.0,69.0,80.28571428571429,78.75
+INV-0453,2023-04-01,C,Everyday Apparel,Clothing,28,1,481,90,2520,UrbanWear Wholesale,South,5,135,391,Sufficient,Low,5,1,4,91,1,90,36.0,72.0,75.57142857142857,78.57142857142857
+INV-0458,2023-04-02,C,Everyday Apparel,Clothing,12,1,156,175,2100,UrbanWear Wholesale,East,5,263,0,Stockout Risk,High,6,2,4,92,1,91,90.0,116.0,78.14285714285714,78.07142857142857
+INV-0463,2023-04-03,C,Everyday Apparel,Clothing,50,0,231,96,4800,UrbanWear Wholesale,West,5,144,135,Sufficient,Low,0,3,4,93,0,92,175.0,64.0,86.57142857142857,83.82142857142857
+INV-0468,2023-04-04,C,Everyday Apparel,Clothing,170,0,56,73,12410,UrbanWear Wholesale,Central,5,110,0,Stockout Risk,High,1,4,4,94,0,93,96.0,58.0,91.14285714285714,82.85714285714286
+INV-0473,2023-04-05,C,Everyday Apparel,Clothing,178,0,210,37,6586,UrbanWear Wholesale,North,5,56,173,Sufficient,Low,2,5,4,95,0,94,73.0,107.0,93.28571428571429,83.42857142857143
+INV-0478,2023-04-06,C,Everyday Apparel,Clothing,134,0,216,55,7370,UrbanWear Wholesale,South,5,83,161,Sufficient,Low,3,6,4,96,0,95,37.0,76.0,83.28571428571429,83.28571428571429
+INV-0483,2023-04-07,C,Everyday Apparel,Clothing,177,0,107,47,8319,UrbanWear Wholesale,East,5,71,60,Sufficient,Low,4,7,4,97,0,96,55.0,36.0,80.28571428571429,82.78571428571429
+INV-0488,2023-04-08,C,Everyday Apparel,Clothing,152,0,481,109,16568,UrbanWear Wholesale,West,5,164,372,Sufficient,Low,5,8,4,98,1,97,47.0,90.0,81.85714285714286,81.17857142857143
+INV-0493,2023-04-09,C,Everyday Apparel,Clothing,21,1,444,81,1701,UrbanWear Wholesale,Central,5,122,363,Sufficient,Low,6,9,4,99,1,98,109.0,175.0,84.57142857142857,83.07142857142857
+INV-0498,2023-04-10,C,Everyday Apparel,Clothing,69,0,477,88,6072,UrbanWear Wholesale,North,5,132,389,Sufficient,Low,0,10,4,100,0,99,81.0,96.0,71.14285714285714,83.17857142857143
+INV-0503,2023-04-11,C,Everyday Apparel,Clothing,185,0,433,135,24975,UrbanWear Wholesale,South,5,203,298,Sufficient,Low,1,11,4,101,0,100,88.0,73.0,70.0,81.28571428571429
+INV-0508,2023-04-12,C,Everyday Apparel,Clothing,152,0,240,68,10336,UrbanWear Wholesale,East,5,102,172,Sufficient,Low,2,12,4,102,0,101,135.0,37.0,78.85714285714286,83.07142857142857
+INV-0513,2023-04-13,C,Everyday Apparel,Clothing,39,0,383,103,4017,UrbanWear Wholesale,West,5,155,280,Sufficient,Low,3,13,4,103,0,102,68.0,55.0,83.28571428571429,84.28571428571429
+INV-0518,2023-04-14,C,Everyday Apparel,Clothing,190,0,366,49,9310,UrbanWear Wholesale,Central,5,74,317,Sufficient,Low,4,14,4,104,0,103,103.0,47.0,90.14285714285714,83.89285714285714
+INV-0523,2023-04-15,C,Everyday Apparel,Clothing,167,0,317,108,18036,UrbanWear Wholesale,North,5,162,209,Sufficient,Low,5,15,4,105,1,104,49.0,109.0,90.42857142857143,83.21428571428571
+INV-0528,2023-04-16,C,Everyday Apparel,Clothing,159,0,281,73,11607,UrbanWear Wholesale,South,5,110,208,Sufficient,Low,6,16,4,106,1,105,108.0,81.0,90.28571428571429,84.67857142857143
+INV-0533,2023-04-17,C,Everyday Apparel,Clothing,15,0,267,45,675,UrbanWear Wholesale,East,5,68,222,Sufficient,Low,0,17,4,107,0,106,73.0,88.0,89.14285714285714,84.42857142857143
+INV-0538,2023-04-18,C,Everyday Apparel,Clothing,115,0,412,72,8280,UrbanWear Wholesale,West,5,108,340,Sufficient,Low,1,18,4,108,0,107,45.0,135.0,83.0,83.35714285714286
+INV-0543,2023-04-19,C,Everyday Apparel,Clothing,198,1,158,172,34056,UrbanWear Wholesale,Central,5,258,0,Stockout Risk,High,2,19,4,109,0,108,72.0,68.0,74.0,84.03571428571429
+INV-0548,2023-04-20,C,Everyday Apparel,Clothing,38,1,154,110,4180,UrbanWear Wholesale,North,5,165,44,Reorder,Medium,3,20,4,110,0,109,172.0,103.0,88.85714285714286,86.67857142857143
+INV-0553,2023-04-21,C,Everyday Apparel,Clothing,64,0,350,79,5056,UrbanWear Wholesale,South,5,119,271,Sufficient,Low,4,21,4,111,0,110,110.0,49.0,89.85714285714286,85.14285714285714
+INV-0558,2023-04-22,C,Everyday Apparel,Clothing,32,0,409,131,4192,UrbanWear Wholesale,East,5,197,278,Sufficient,Low,5,22,4,112,1,111,79.0,108.0,94.14285714285714,85.5
+INV-0563,2023-04-23,C,Everyday Apparel,Clothing,135,0,444,92,12420,UrbanWear Wholesale,West,5,138,352,Sufficient,Low,6,23,4,113,1,112,131.0,73.0,97.42857142857143,87.60714285714286
+INV-0568,2023-04-24,C,Everyday Apparel,Clothing,134,0,448,87,11658,UrbanWear Wholesale,Central,5,131,361,Sufficient,Low,0,24,4,114,0,113,92.0,45.0,100.14285714285714,86.75
+INV-0573,2023-04-25,C,Everyday Apparel,Clothing,95,0,358,39,3705,UrbanWear Wholesale,North,5,59,319,Sufficient,Low,1,25,4,115,0,114,87.0,72.0,106.14285714285714,87.57142857142857
+INV-0578,2023-04-26,C,Everyday Apparel,Clothing,174,0,390,65,11310,UrbanWear Wholesale,South,5,98,325,Sufficient,Low,2,26,4,116,0,115,39.0,172.0,101.42857142857143,86.89285714285714
+INV-0583,2023-04-27,C,Everyday Apparel,Clothing,79,0,66,85,6715,UrbanWear Wholesale,East,5,128,0,Stockout Risk,High,3,27,4,117,0,116,65.0,110.0,86.14285714285714,85.39285714285714
+INV-0588,2023-04-28,C,Everyday Apparel,Clothing,47,0,372,117,5499,UrbanWear Wholesale,West,5,176,255,Sufficient,Low,4,28,4,118,0,117,85.0,79.0,82.57142857142857,85.71428571428571
+INV-0593,2023-04-29,C,Everyday Apparel,Clothing,80,1,79,93,7440,UrbanWear Wholesale,Central,5,140,0,Stockout Risk,High,5,29,4,119,1,118,117.0,131.0,88.0,88.60714285714286
+INV-0598,2023-04-30,C,Everyday Apparel,Clothing,43,0,94,100,4300,UrbanWear Wholesale,North,5,150,0,Stockout Risk,High,6,30,4,120,1,119,93.0,92.0,82.57142857142857,88.71428571428571
+INV-0603,2023-05-01,C,Everyday Apparel,Clothing,62,1,344,150,9300,UrbanWear Wholesale,South,5,225,194,Sufficient,Low,0,1,5,121,0,120,100.0,87.0,83.71428571428571,86.03571428571429
+INV-0608,2023-05-02,C,Everyday Apparel,Clothing,39,0,240,61,2379,UrbanWear Wholesale,East,5,92,179,Sufficient,Low,1,2,5,122,0,121,150.0,39.0,92.71428571428571,87.96428571428571
+INV-0613,2023-05-03,C,Everyday Apparel,Clothing,166,0,205,79,13114,UrbanWear Wholesale,West,5,119,126,Sufficient,Low,2,3,5,123,0,122,61.0,65.0,95.85714285714286,87.53571428571429
+INV-0618,2023-05-04,C,Everyday Apparel,Clothing,110,1,466,81,8910,UrbanWear Wholesale,Central,5,122,385,Sufficient,Low,3,4,5,124,0,123,79.0,85.0,97.85714285714286,89.03571428571429
+INV-0623,2023-05-05,C,Everyday Apparel,Clothing,146,0,378,68,9928,UrbanWear Wholesale,North,5,102,310,Sufficient,Low,4,5,5,125,0,124,81.0,117.0,97.28571428571429,89.96428571428571
+INV-0628,2023-05-06,C,Everyday Apparel,Clothing,62,0,123,98,6076,UrbanWear Wholesale,South,5,147,25,Reorder,Medium,5,6,5,126,1,125,68.0,93.0,90.28571428571429,90.71428571428571
+INV-0633,2023-05-07,C,Everyday Apparel,Clothing,113,0,141,58,6554,UrbanWear Wholesale,East,5,87,83,Sufficient,Low,6,7,5,127,1,126,98.0,100.0,91.0,90.32142857142857
+INV-0638,2023-05-08,C,Everyday Apparel,Clothing,141,0,153,90,12690,UrbanWear Wholesale,West,5,135,63,Sufficient,Low,0,8,5,128,0,127,58.0,150.0,85.0,89.5
+INV-0643,2023-05-09,C,Everyday Apparel,Clothing,35,0,74,119,4165,UrbanWear Wholesale,Central,5,179,0,Stockout Risk,High,1,9,5,129,0,128,90.0,61.0,76.42857142857143,89.57142857142857
+INV-0648,2023-05-10,C,Everyday Apparel,Clothing,175,0,460,93,16275,UrbanWear Wholesale,North,5,140,367,Sufficient,Low,2,10,5,130,0,129,119.0,79.0,84.71428571428571,89.0
+INV-0653,2023-05-11,C,Everyday Apparel,Clothing,165,1,119,134,22110,UrbanWear Wholesale,South,5,201,0,Stockout Risk,High,3,11,5,131,0,130,93.0,81.0,86.71428571428571,89.89285714285714
+INV-0658,2023-05-12,C,Everyday Apparel,Clothing,171,0,296,68,11628,UrbanWear Wholesale,East,5,102,228,Sufficient,Low,4,12,5,132,0,131,134.0,68.0,94.28571428571429,91.0
+INV-0663,2023-05-13,C,Everyday Apparel,Clothing,185,0,140,99,18315,UrbanWear Wholesale,West,5,149,41,Reorder,Medium,5,13,5,133,1,132,68.0,98.0,94.28571428571429,91.67857142857143
+INV-0668,2023-05-14,C,Everyday Apparel,Clothing,10,1,107,146,1460,UrbanWear Wholesale,Central,5,219,0,Stockout Risk,High,6,14,5,134,1,133,99.0,58.0,94.42857142857143,91.35714285714286
+INV-0673,2023-05-15,C,Everyday Apparel,Clothing,80,1,203,168,13440,UrbanWear Wholesale,North,5,252,35,Reorder,Medium,0,15,5,135,0,134,146.0,90.0,107.0,93.96428571428571
+INV-0678,2023-05-16,C,Everyday Apparel,Clothing,194,0,482,41,7954,UrbanWear Wholesale,South,5,62,441,Sufficient,Low,1,16,5,136,0,135,168.0,119.0,118.14285714285714,98.35714285714286
+INV-0683,2023-05-17,C,Everyday Apparel,Clothing,34,0,161,56,1904,UrbanWear Wholesale,East,5,84,105,Sufficient,Low,2,17,5,137,0,136,41.0,93.0,107.0,97.25
+INV-0688,2023-05-18,C,Everyday Apparel,Clothing,132,0,454,73,9636,UrbanWear Wholesale,West,5,110,381,Sufficient,Low,3,18,5,138,0,137,56.0,134.0,101.71428571428571,93.10714285714286
+INV-0693,2023-05-19,C,Everyday Apparel,Clothing,61,0,294,115,7015,UrbanWear Wholesale,Central,5,173,179,Sufficient,Low,4,19,5,139,0,138,73.0,68.0,93.0,91.78571428571429
+INV-0698,2023-05-20,C,Everyday Apparel,Clothing,166,0,388,33,5478,UrbanWear Wholesale,North,5,50,355,Sufficient,Low,5,20,5,140,1,139,115.0,99.0,99.71428571428571,93.07142857142857
+INV-0703,2023-05-21,C,Everyday Apparel,Clothing,124,1,362,32,3968,UrbanWear Wholesale,South,5,48,330,Sufficient,Low,6,21,5,141,1,140,33.0,146.0,90.28571428571429,89.57142857142857
+INV-0708,2023-05-22,C,Everyday Apparel,Clothing,28,0,263,72,2016,UrbanWear Wholesale,East,5,108,191,Sufficient,Low,0,22,5,142,0,141,32.0,168.0,74.0,87.42857142857143
+INV-0713,2023-05-23,C,Everyday Apparel,Clothing,15,0,107,112,1680,UrbanWear Wholesale,West,5,168,0,Stockout Risk,High,1,23,5,143,0,142,72.0,41.0,60.285714285714285,86.89285714285714
+INV-0718,2023-05-24,C,Everyday Apparel,Clothing,93,0,416,40,3720,UrbanWear Wholesale,Central,5,60,376,Sufficient,Low,2,24,5,144,0,143,112.0,56.0,70.42857142857143,89.5
+INV-0723,2023-05-25,C,Everyday Apparel,Clothing,31,0,405,92,2852,UrbanWear Wholesale,North,5,138,313,Sufficient,Low,3,25,5,145,0,144,40.0,73.0,68.14285714285714,88.60714285714286
+INV-0728,2023-05-26,C,Everyday Apparel,Clothing,24,0,181,65,1560,UrbanWear Wholesale,South,5,98,116,Sufficient,Low,4,26,5,146,0,145,92.0,115.0,70.85714285714286,88.85714285714286
+INV-0733,2023-05-27,C,Everyday Apparel,Clothing,71,0,363,130,9230,UrbanWear Wholesale,East,5,195,233,Sufficient,Low,5,27,5,147,1,146,65.0,33.0,63.714285714285715,87.0
+INV-0738,2023-05-28,C,Everyday Apparel,Clothing,191,0,86,106,20246,UrbanWear Wholesale,West,5,159,0,Stockout Risk,High,6,28,5,148,1,147,130.0,32.0,77.57142857142857,88.32142857142857
+INV-0743,2023-05-29,C,Everyday Apparel,Clothing,63,0,137,26,1638,UrbanWear Wholesale,Central,5,39,111,Sufficient,Low,0,29,5,149,0,148,106.0,72.0,88.14285714285714,88.53571428571429
+INV-0748,2023-05-30,C,Everyday Apparel,Clothing,131,0,101,60,7860,UrbanWear Wholesale,North,5,90,41,Sufficient,Low,1,30,5,150,0,149,26.0,112.0,81.57142857142857,84.10714285714286
+INV-0753,2023-05-31,C,Everyday Apparel,Clothing,38,0,288,81,3078,UrbanWear Wholesale,South,5,122,207,Sufficient,Low,2,31,5,151,0,150,60.0,40.0,74.14285714285714,84.07142857142857
+INV-0758,2023-06-01,C,Everyday Apparel,Clothing,37,0,60,81,2997,UrbanWear Wholesale,East,5,122,0,Stockout Risk,High,3,1,6,152,0,151,81.0,92.0,80.0,84.14285714285714
+INV-0763,2023-06-02,C,Everyday Apparel,Clothing,185,0,288,26,4810,UrbanWear Wholesale,West,5,39,262,Sufficient,Low,4,2,6,153,0,152,81.0,65.0,78.42857142857143,84.14285714285714
+INV-0768,2023-06-03,C,Everyday Apparel,Clothing,153,0,74,49,7497,UrbanWear Wholesale,Central,5,74,25,Reorder,Medium,5,3,6,154,1,153,26.0,130.0,72.85714285714286,82.64285714285714
+INV-0773,2023-06-04,C,Everyday Apparel,Clothing,145,0,71,65,9425,UrbanWear Wholesale,North,5,98,6,Reorder,Medium,6,4,6,155,1,154,49.0,106.0,61.285714285714285,80.89285714285714
+INV-0778,2023-06-05,C,Everyday Apparel,Clothing,131,0,156,87,11397,UrbanWear Wholesale,South,5,131,69,Sufficient,Low,0,5,6,156,0,155,65.0,26.0,55.42857142857143,81.14285714285714
+INV-0783,2023-06-06,C,Everyday Apparel,Clothing,68,0,120,85,5780,UrbanWear Wholesale,East,5,128,35,Reorder,Medium,1,6,6,157,0,156,87.0,60.0,64.14285714285714,81.03571428571429
+INV-0788,2023-06-07,C,Everyday Apparel,Clothing,147,1,349,140,20580,UrbanWear Wholesale,West,5,210,209,Sufficient,Low,2,7,6,158,0,157,85.0,81.0,67.71428571428571,79.82142857142857
+INV-0793,2023-06-08,C,Everyday Apparel,Clothing,31,0,123,64,1984,UrbanWear Wholesale,Central,5,96,59,Sufficient,Low,3,8,6,159,0,158,140.0,81.0,76.14285714285714,81.5
+INV-0798,2023-06-09,C,Everyday Apparel,Clothing,166,0,153,87,14442,UrbanWear Wholesale,North,5,131,66,Sufficient,Low,4,9,6,160,0,159,64.0,26.0,73.71428571428571,79.0
+INV-0803,2023-06-10,C,Everyday Apparel,Clothing,95,0,215,67,6365,UrbanWear Wholesale,South,5,101,148,Sufficient,Low,5,10,6,161,1,160,87.0,49.0,82.42857142857143,79.67857142857143
+INV-0808,2023-06-11,C,Everyday Apparel,Clothing,192,0,77,35,6720,UrbanWear Wholesale,East,5,53,42,Sufficient,Low,6,11,6,162,1,161,67.0,65.0,85.0,78.53571428571429
+INV-0813,2023-06-12,C,Everyday Apparel,Clothing,98,0,231,61,5978,UrbanWear Wholesale,West,5,92,170,Sufficient,Low,0,12,6,163,0,162,35.0,87.0,80.71428571428571,74.57142857142857
+INV-0818,2023-06-13,C,Everyday Apparel,Clothing,46,0,482,67,3082,UrbanWear Wholesale,Central,5,101,415,Sufficient,Low,1,13,6,164,0,163,61.0,85.0,77.0,70.75
+INV-0823,2023-06-14,C,Everyday Apparel,Clothing,190,0,264,94,17860,UrbanWear Wholesale,North,5,141,170,Sufficient,Low,2,14,6,165,0,164,67.0,140.0,74.42857142857143,71.67857142857143
+INV-0828,2023-06-15,C,Everyday Apparel,Clothing,43,0,300,104,4472,UrbanWear Wholesale,South,5,156,196,Sufficient,Low,3,15,6,166,0,165,94.0,64.0,67.85714285714286,73.03571428571429
+INV-0833,2023-06-16,C,Everyday Apparel,Clothing,22,0,85,82,1804,UrbanWear Wholesale,East,5,123,3,Reorder,Medium,4,16,6,167,0,166,104.0,87.0,73.57142857142857,74.14285714285714
+INV-0838,2023-06-17,C,Everyday Apparel,Clothing,190,0,233,85,16150,UrbanWear Wholesale,West,5,128,148,Sufficient,Low,5,17,6,168,1,167,82.0,67.0,72.85714285714286,72.96428571428571
+INV-0843,2023-06-18,C,Everyday Apparel,Clothing,57,0,67,92,5244,UrbanWear Wholesale,Central,5,138,0,Stockout Risk,High,6,18,6,169,1,168,85.0,35.0,75.42857142857143,74.82142857142857
+INV-0848,2023-06-19,C,Everyday Apparel,Clothing,159,0,145,43,6837,UrbanWear Wholesale,North,5,65,102,Sufficient,Low,0,19,6,170,0,169,92.0,61.0,83.57142857142857,76.96428571428571
+INV-0853,2023-06-20,C,Everyday Apparel,Clothing,29,0,254,59,1711,UrbanWear Wholesale,South,5,89,195,Sufficient,Low,1,20,6,171,0,170,43.0,67.0,81.0,75.92857142857143
+INV-0858,2023-06-21,C,Everyday Apparel,Clothing,103,0,198,31,3193,UrbanWear Wholesale,East,5,47,167,Sufficient,Low,2,21,6,172,0,171,59.0,94.0,79.85714285714286,74.03571428571429
+INV-0863,2023-06-22,C,Everyday Apparel,Clothing,21,1,370,137,2877,UrbanWear Wholesale,West,5,206,233,Sufficient,Low,3,22,6,173,0,172,31.0,104.0,70.85714285714286,73.71428571428571
+INV-0868,2023-06-23,C,Everyday Apparel,Clothing,15,0,196,53,795,UrbanWear Wholesale,Central,5,80,143,Sufficient,Low,4,23,6,174,0,173,137.0,82.0,75.57142857142857,75.32142857142857
+INV-0873,2023-06-24,C,Everyday Apparel,Clothing,123,1,437,104,12792,UrbanWear Wholesale,North,5,156,333,Sufficient,Low,5,24,6,175,1,174,53.0,85.0,71.42857142857143,74.89285714285714
+INV-0878,2023-06-25,C,Everyday Apparel,Clothing,104,0,483,37,3848,UrbanWear Wholesale,South,5,56,446,Sufficient,Low,6,25,6,176,1,175,104.0,92.0,74.14285714285714,73.96428571428571
+INV-0883,2023-06-26,C,Everyday Apparel,Clothing,116,0,161,16,1856,UrbanWear Wholesale,East,5,24,145,Sufficient,Low,0,26,6,177,0,176,37.0,43.0,66.28571428571429,71.5
+INV-0888,2023-06-27,C,Everyday Apparel,Clothing,85,0,472,47,3995,UrbanWear Wholesale,West,5,71,425,Sufficient,Low,1,27,6,178,0,177,16.0,59.0,62.42857142857143,71.14285714285714
+INV-0893,2023-06-28,C,Everyday Apparel,Clothing,17,0,239,37,629,UrbanWear Wholesale,Central,5,56,202,Sufficient,Low,2,28,6,179,0,178,47.0,31.0,60.714285714285715,70.67857142857143
+INV-0898,2023-06-29,C,Everyday Apparel,Clothing,29,1,439,91,2639,UrbanWear Wholesale,North,5,137,348,Sufficient,Low,3,29,6,180,0,179,37.0,137.0,61.57142857142857,69.10714285714286
+INV-0903,2023-06-30,C,Everyday Apparel,Clothing,154,0,376,40,6160,UrbanWear Wholesale,South,5,60,336,Sufficient,Low,4,30,6,181,0,180,91.0,53.0,55.0,69.46428571428571
+INV-0908,2023-07-01,C,Everyday Apparel,Clothing,124,1,152,137,16988,UrbanWear Wholesale,East,5,206,15,Reorder,Medium,5,1,7,182,1,181,40.0,104.0,53.142857142857146,69.96428571428571
+INV-0913,2023-07-02,C,Everyday Apparel,Clothing,15,0,161,63,945,UrbanWear Wholesale,West,5,95,98,Sufficient,Low,6,2,7,183,1,182,137.0,37.0,57.857142857142854,73.10714285714286
+INV-0918,2023-07-03,C,Everyday Apparel,Clothing,82,0,328,49,4018,UrbanWear Wholesale,Central,5,74,279,Sufficient,Low,0,3,7,184,0,183,63.0,16.0,61.57142857142857,73.03571428571429
+INV-0923,2023-07-04,C,Everyday Apparel,Clothing,144,1,258,67,9648,UrbanWear Wholesale,North,5,101,191,Sufficient,Low,1,4,7,185,0,184,49.0,47.0,66.28571428571429,71.67857142857143
+INV-0928,2023-07-05,C,Everyday Apparel,Clothing,120,1,424,153,18360,UrbanWear Wholesale,South,5,230,271,Sufficient,Low,2,5,7,186,0,185,67.0,37.0,69.14285714285714,71.03571428571429
+INV-0933,2023-07-06,C,Everyday Apparel,Clothing,46,0,334,62,2852,UrbanWear Wholesale,East,5,93,272,Sufficient,Low,3,6,7,187,0,186,153.0,91.0,85.71428571428571,71.5
+INV-0938,2023-07-07,C,Everyday Apparel,Clothing,109,0,71,57,6213,UrbanWear Wholesale,West,5,86,14,Reorder,Medium,4,7,7,188,0,187,62.0,40.0,81.57142857142857,71.42857142857143
+INV-0943,2023-07-08,C,Everyday Apparel,Clothing,51,0,186,72,3672,UrbanWear Wholesale,Central,5,108,114,Sufficient,Low,5,8,7,189,1,188,57.0,137.0,84.0,70.35714285714286
+INV-0948,2023-07-09,C,Everyday Apparel,Clothing,120,0,355,36,4320,UrbanWear Wholesale,North,5,54,319,Sufficient,Low,6,9,7,190,1,189,72.0,63.0,74.71428571428571,70.53571428571429
+INV-0953,2023-07-10,C,Everyday Apparel,Clothing,153,0,435,56,8568,UrbanWear Wholesale,South,5,84,379,Sufficient,Low,0,10,7,191,0,190,36.0,49.0,70.85714285714286,70.57142857142857
+INV-0958,2023-07-11,C,Everyday Apparel,Clothing,99,0,250,58,5742,UrbanWear Wholesale,East,5,87,192,Sufficient,Low,1,11,7,192,0,191,56.0,67.0,71.85714285714286,70.39285714285714
+INV-0963,2023-07-12,C,Everyday Apparel,Clothing,171,0,177,45,7695,UrbanWear Wholesale,West,5,68,132,Sufficient,Low,2,12,7,193,0,192,58.0,153.0,70.57142857142857,70.07142857142857
+INV-0968,2023-07-13,C,Everyday Apparel,Clothing,125,0,392,1,125,UrbanWear Wholesale,Central,5,20,391,Sufficient,Low,3,13,7,194,0,193,45.0,62.0,55.142857142857146,68.32142857142857
+INV-0973,2023-07-14,C,Everyday Apparel,Clothing,181,0,392,89,16109,UrbanWear Wholesale,North,5,134,303,Sufficient,Low,4,14,7,195,0,194,1.0,57.0,46.42857142857143,64.64285714285714
+INV-0978,2023-07-15,C,Everyday Apparel,Clothing,29,0,122,105,3045,UrbanWear Wholesale,South,5,158,17,Reorder,Medium,5,15,7,196,1,195,89.0,72.0,51.0,64.89285714285714
+INV-0983,2023-07-16,C,Everyday Apparel,Clothing,48,0,484,39,1872,UrbanWear Wholesale,East,5,59,445,Sufficient,Low,6,16,7,197,1,196,105.0,36.0,55.714285714285715,65.60714285714286
+INV-0988,2023-07-17,C,Everyday Apparel,Clothing,149,1,203,103,15347,UrbanWear Wholesale,West,5,155,100,Sufficient,Low,0,17,7,198,0,197,39.0,56.0,56.142857142857146,63.714285714285715
+INV-0993,2023-07-18,C,Everyday Apparel,Clothing,44,0,335,43,1892,UrbanWear Wholesale,Central,5,65,292,Sufficient,Low,1,18,7,199,0,198,103.0,58.0,62.857142857142854,65.85714285714286
+INV-0998,2023-07-19,C,Everyday Apparel,Clothing,190,0,237,68,12920,UrbanWear Wholesale,North,5,102,169,Sufficient,Low,2,19,7,200,0,199,43.0,45.0,60.714285714285715,65.28571428571429
+INV-0004,2023-01-01,D,Home Essentials,Home,30,0,210,22,660,HomePro Distributors,Central,6,33,188,Sufficient,Low,6,1,1,1,1,0,,,,
+INV-0009,2023-01-02,D,Home Essentials,Home,69,1,63,50,3450,HomePro Distributors,North,6,75,13,Reorder,Medium,0,2,1,2,0,1,22.0,22.0,22.0,22.0
+INV-0014,2023-01-03,D,Home Essentials,Home,23,1,400,153,3519,HomePro Distributors,South,6,230,247,Sufficient,Low,1,3,1,3,0,2,50.0,36.0,36.0,36.0
+INV-0019,2023-01-04,D,Home Essentials,Home,42,0,428,25,1050,HomePro Distributors,East,6,38,403,Sufficient,Low,2,4,1,4,0,3,153.0,75.0,75.0,75.0
+INV-0024,2023-01-05,D,Home Essentials,Home,24,0,395,38,912,HomePro Distributors,West,6,57,357,Sufficient,Low,3,5,1,5,0,4,25.0,62.5,62.5,62.5
+INV-0029,2023-01-06,D,Home Essentials,Home,37,0,77,74,2738,HomePro Distributors,Central,6,111,3,Reorder,Medium,4,6,1,6,0,5,38.0,57.6,57.6,57.6
+INV-0034,2023-01-07,D,Home Essentials,Home,189,0,162,51,9639,HomePro Distributors,North,6,77,111,Sufficient,Low,5,7,1,7,1,6,74.0,60.333333333333336,60.333333333333336,60.333333333333336
+INV-0039,2023-01-08,D,Home Essentials,Home,192,0,252,39,7488,HomePro Distributors,South,6,59,213,Sufficient,Low,6,8,1,8,1,7,51.0,22.0,59.0,59.0
+INV-0044,2023-01-09,D,Home Essentials,Home,48,0,387,51,2448,HomePro Distributors,East,6,77,336,Sufficient,Low,0,9,1,9,0,8,39.0,50.0,61.42857142857143,56.5
+INV-0049,2023-01-10,D,Home Essentials,Home,84,0,162,57,4788,HomePro Distributors,West,6,86,105,Sufficient,Low,1,10,1,10,0,9,51.0,153.0,61.57142857142857,55.888888888888886
+INV-0054,2023-01-11,D,Home Essentials,Home,118,1,100,85,10030,HomePro Distributors,Central,6,128,15,Reorder,Medium,2,11,1,11,0,10,57.0,25.0,47.857142857142854,56.0
+INV-0059,2023-01-12,D,Home Essentials,Home,55,1,230,92,5060,HomePro Distributors,North,6,138,138,Sufficient,Low,3,12,1,12,0,11,85.0,38.0,56.42857142857143,58.63636363636363
+INV-0064,2023-01-13,D,Home Essentials,Home,22,1,365,104,2288,HomePro Distributors,South,6,156,261,Sufficient,Low,4,13,1,13,0,12,92.0,74.0,64.14285714285714,61.416666666666664
+INV-0069,2023-01-14,D,Home Essentials,Home,24,0,103,56,1344,HomePro Distributors,East,6,84,47,Sufficient,Low,5,14,1,14,1,13,104.0,51.0,68.42857142857143,64.6923076923077
+INV-0074,2023-01-15,D,Home Essentials,Home,146,1,445,126,18396,HomePro Distributors,West,6,189,319,Sufficient,Low,6,15,1,15,1,14,56.0,39.0,69.14285714285714,64.07142857142857
+INV-0079,2023-01-16,D,Home Essentials,Home,153,0,267,94,14382,HomePro Distributors,Central,6,141,173,Sufficient,Low,0,16,1,16,0,15,126.0,51.0,81.57142857142857,68.2
+INV-0084,2023-01-17,D,Home Essentials,Home,42,0,466,81,3402,HomePro Distributors,North,6,122,385,Sufficient,Low,1,17,1,17,0,16,94.0,57.0,87.71428571428571,69.8125
+INV-0089,2023-01-18,D,Home Essentials,Home,123,0,124,32,3936,HomePro Distributors,South,6,48,92,Sufficient,Low,2,18,1,18,0,17,81.0,85.0,91.14285714285714,70.47058823529412
+INV-0094,2023-01-19,D,Home Essentials,Home,186,1,149,30,5580,HomePro Distributors,East,6,45,119,Sufficient,Low,3,19,1,19,0,18,32.0,92.0,83.57142857142857,68.33333333333333
+INV-0099,2023-01-20,D,Home Essentials,Home,176,0,447,58,10208,HomePro Distributors,West,6,87,389,Sufficient,Low,4,20,1,20,0,19,30.0,104.0,74.71428571428571,66.3157894736842
+INV-0104,2023-01-21,D,Home Essentials,Home,141,1,341,145,20445,HomePro Distributors,Central,6,218,196,Sufficient,Low,5,21,1,21,1,20,58.0,56.0,68.14285714285714,65.9
+INV-0109,2023-01-22,D,Home Essentials,Home,162,0,361,65,10530,HomePro Distributors,North,6,98,296,Sufficient,Low,6,22,1,22,1,21,145.0,126.0,80.85714285714286,69.66666666666667
+INV-0114,2023-01-23,D,Home Essentials,Home,83,1,273,129,10707,HomePro Distributors,South,6,194,144,Sufficient,Low,0,23,1,23,0,22,65.0,94.0,72.14285714285714,69.45454545454545
+INV-0119,2023-01-24,D,Home Essentials,Home,166,0,446,95,15770,HomePro Distributors,East,6,143,351,Sufficient,Low,1,24,1,24,0,23,129.0,81.0,77.14285714285714,72.04347826086956
+INV-0124,2023-01-25,D,Home Essentials,Home,190,1,72,59,11210,HomePro Distributors,West,6,89,13,Reorder,Medium,2,25,1,25,0,24,95.0,32.0,79.14285714285714,73.0
+INV-0129,2023-01-26,D,Home Essentials,Home,21,0,498,45,945,HomePro Distributors,Central,6,68,453,Sufficient,Low,3,26,1,26,0,25,59.0,30.0,83.0,72.44
+INV-0134,2023-01-27,D,Home Essentials,Home,60,0,130,56,3360,HomePro Distributors,North,6,84,74,Sufficient,Low,4,27,1,27,0,26,45.0,58.0,85.14285714285714,71.38461538461539
+INV-0139,2023-01-28,D,Home Essentials,Home,113,0,437,47,5311,HomePro Distributors,South,6,71,390,Sufficient,Low,5,28,1,28,1,27,56.0,145.0,84.85714285714286,70.81481481481481
+INV-0144,2023-01-29,D,Home Essentials,Home,35,0,298,50,1750,HomePro Distributors,East,6,75,248,Sufficient,Low,6,29,1,29,1,28,47.0,65.0,70.85714285714286,69.96428571428571
+INV-0149,2023-01-30,D,Home Essentials,Home,124,0,56,46,5704,HomePro Distributors,West,6,69,10,Reorder,Medium,0,30,1,30,0,29,50.0,129.0,68.71428571428571,70.96428571428571
+INV-0154,2023-01-31,D,Home Essentials,Home,177,0,418,61,10797,HomePro Distributors,Central,6,92,357,Sufficient,Low,1,31,1,31,0,30,46.0,95.0,56.857142857142854,70.82142857142857
+INV-0159,2023-02-01,D,Home Essentials,Home,40,0,89,34,1360,HomePro Distributors,North,6,51,55,Sufficient,Low,2,1,2,32,0,31,61.0,59.0,52.0,67.53571428571429
+INV-0164,2023-02-02,D,Home Essentials,Home,46,0,431,41,1886,HomePro Distributors,South,6,62,390,Sufficient,Low,3,2,2,33,0,32,34.0,45.0,48.42857142857143,67.85714285714286
+INV-0169,2023-02-03,D,Home Essentials,Home,103,0,144,68,7004,HomePro Distributors,East,6,102,76,Sufficient,Low,4,3,2,34,0,33,41.0,56.0,47.857142857142854,67.96428571428571
+INV-0174,2023-02-04,D,Home Essentials,Home,49,0,377,75,3675,HomePro Distributors,West,6,113,302,Sufficient,Low,5,4,2,35,1,34,68.0,47.0,49.57142857142857,67.75
+INV-0179,2023-02-05,D,Home Essentials,Home,120,0,206,115,13800,HomePro Distributors,Central,6,173,91,Sufficient,Low,6,5,2,36,1,35,75.0,50.0,53.57142857142857,68.60714285714286
+INV-0184,2023-02-06,D,Home Essentials,Home,164,0,144,107,17548,HomePro Distributors,North,6,161,37,Reorder,Medium,0,6,2,37,0,36,115.0,46.0,62.857142857142854,71.32142857142857
+INV-0189,2023-02-07,D,Home Essentials,Home,109,0,373,106,11554,HomePro Distributors,South,6,159,267,Sufficient,Low,1,7,2,38,0,37,107.0,61.0,71.57142857142857,73.32142857142857
+INV-0194,2023-02-08,D,Home Essentials,Home,189,0,362,100,18900,HomePro Distributors,East,6,150,262,Sufficient,Low,2,8,2,39,0,38,106.0,34.0,78.0,75.07142857142857
+INV-0199,2023-02-09,D,Home Essentials,Home,159,0,203,79,12561,HomePro Distributors,West,6,119,124,Sufficient,Low,3,9,2,40,0,39,100.0,41.0,87.42857142857143,75.60714285714286
+INV-0204,2023-02-10,D,Home Essentials,Home,122,0,163,117,14274,HomePro Distributors,Central,6,176,46,Reorder,Medium,4,10,2,41,0,40,79.0,68.0,92.85714285714286,75.14285714285714
+INV-0209,2023-02-11,D,Home Essentials,Home,76,0,100,98,7448,HomePro Distributors,North,6,147,2,Reorder,Medium,5,11,2,42,1,41,117.0,75.0,99.85714285714286,75.60714285714286
+INV-0214,2023-02-12,D,Home Essentials,Home,157,1,60,46,7222,HomePro Distributors,South,6,69,14,Reorder,Medium,6,12,2,43,1,42,98.0,115.0,103.14285714285714,77.10714285714286
+INV-0219,2023-02-13,D,Home Essentials,Home,13,0,203,99,1287,HomePro Distributors,East,6,149,104,Sufficient,Low,0,13,2,44,0,43,46.0,107.0,93.28571428571429,74.25
+INV-0224,2023-02-14,D,Home Essentials,Home,182,0,450,103,18746,HomePro Distributors,West,6,155,347,Sufficient,Low,1,14,2,45,0,44,99.0,106.0,92.14285714285714,74.42857142857143
+INV-0229,2023-02-15,D,Home Essentials,Home,120,0,201,90,10800,HomePro Distributors,Central,6,135,111,Sufficient,Low,2,15,2,46,0,45,103.0,100.0,91.71428571428571,75.21428571428571
+INV-0234,2023-02-16,D,Home Essentials,Home,198,1,66,137,27126,HomePro Distributors,North,6,206,0,Stockout Risk,High,3,16,2,47,0,46,90.0,79.0,90.28571428571429,77.28571428571429
+INV-0239,2023-02-17,D,Home Essentials,Home,35,1,135,156,5460,HomePro Distributors,South,6,234,0,Stockout Risk,High,4,17,2,48,0,47,137.0,117.0,98.57142857142857,81.10714285714286
+INV-0244,2023-02-18,D,Home Essentials,Home,162,0,446,31,5022,HomePro Distributors,East,6,47,415,Sufficient,Low,5,18,2,49,1,48,156.0,98.0,104.14285714285714,84.60714285714286
+INV-0249,2023-02-19,D,Home Essentials,Home,112,0,389,52,5824,HomePro Distributors,West,6,78,337,Sufficient,Low,6,19,2,50,1,49,31.0,46.0,94.57142857142857,80.53571428571429
+INV-0254,2023-02-20,D,Home Essentials,Home,55,1,393,93,5115,HomePro Distributors,Central,6,140,300,Sufficient,Low,0,20,2,51,0,50,52.0,99.0,95.42857142857143,80.07142857142857
+INV-0259,2023-02-21,D,Home Essentials,Home,70,1,428,87,6090,HomePro Distributors,North,6,131,341,Sufficient,Low,1,21,2,52,0,51,93.0,103.0,94.57142857142857,78.78571428571429
+INV-0264,2023-02-22,D,Home Essentials,Home,142,0,225,124,17608,HomePro Distributors,South,6,186,101,Sufficient,Low,2,22,2,53,0,52,87.0,90.0,92.28571428571429,78.5
+INV-0269,2023-02-23,D,Home Essentials,Home,68,0,108,69,4692,HomePro Distributors,East,6,104,39,Sufficient,Low,3,23,2,54,0,53,124.0,137.0,97.14285714285714,80.82142857142857
+INV-0274,2023-02-24,D,Home Essentials,Home,22,0,95,42,924,HomePro Distributors,West,6,63,53,Sufficient,Low,4,24,2,55,0,54,69.0,156.0,87.42857142857143,81.67857142857143
+INV-0279,2023-02-25,D,Home Essentials,Home,159,0,450,86,13674,HomePro Distributors,Central,6,129,364,Sufficient,Low,5,25,2,56,1,55,42.0,31.0,71.14285714285714,81.17857142857143
+INV-0284,2023-02-26,D,Home Essentials,Home,24,1,424,60,1440,HomePro Distributors,North,6,90,364,Sufficient,Low,6,26,2,57,1,56,86.0,52.0,79.0,82.57142857142857
+INV-0289,2023-02-27,D,Home Essentials,Home,24,1,211,134,3216,HomePro Distributors,South,6,201,77,Sufficient,Low,0,27,2,58,0,57,60.0,93.0,80.14285714285714,82.92857142857143
+INV-0294,2023-02-28,D,Home Essentials,Home,197,0,368,50,9850,HomePro Distributors,East,6,75,318,Sufficient,Low,1,28,2,59,0,58,134.0,87.0,86.0,86.07142857142857
+INV-0299,2023-03-01,D,Home Essentials,Home,130,0,95,76,9880,HomePro Distributors,West,6,114,19,Reorder,Medium,2,1,3,60,0,59,50.0,124.0,80.71428571428571,85.67857142857143
+INV-0304,2023-03-02,D,Home Essentials,Home,18,1,311,157,2826,HomePro Distributors,Central,6,236,154,Sufficient,Low,3,2,3,61,0,60,76.0,69.0,73.85714285714286,87.17857142857143
+INV-0309,2023-03-03,D,Home Essentials,Home,21,0,136,39,819,HomePro Distributors,North,6,59,97,Sufficient,Low,4,3,3,62,0,61,157.0,42.0,86.42857142857143,91.32142857142857
+INV-0314,2023-03-04,D,Home Essentials,Home,33,0,453,63,2079,HomePro Distributors,South,6,95,390,Sufficient,Low,5,4,3,63,1,62,39.0,86.0,86.0,90.28571428571429
+INV-0319,2023-03-05,D,Home Essentials,Home,35,0,57,60,2100,HomePro Distributors,East,6,90,0,Stockout Risk,High,6,5,3,64,1,63,63.0,60.0,82.71428571428571,89.85714285714286
+INV-0324,2023-03-06,D,Home Essentials,Home,193,0,213,96,18528,HomePro Distributors,West,6,144,117,Sufficient,Low,0,6,3,65,0,64,60.0,134.0,82.71428571428571,87.89285714285714
+INV-0329,2023-03-07,D,Home Essentials,Home,120,0,256,97,11640,HomePro Distributors,Central,6,146,159,Sufficient,Low,1,7,3,66,0,65,96.0,50.0,77.28571428571429,87.5
+INV-0334,2023-03-08,D,Home Essentials,Home,193,0,476,103,19879,HomePro Distributors,North,6,155,373,Sufficient,Low,2,8,3,67,0,66,97.0,76.0,84.0,87.17857142857143
+INV-0339,2023-03-09,D,Home Essentials,Home,98,0,351,125,12250,HomePro Distributors,South,6,188,226,Sufficient,Low,3,9,3,68,0,67,103.0,157.0,87.85714285714286,87.28571428571429
+INV-0344,2023-03-10,D,Home Essentials,Home,91,0,446,33,3003,HomePro Distributors,East,6,50,413,Sufficient,Low,4,10,3,69,0,68,125.0,39.0,83.28571428571429,88.92857142857143
+INV-0349,2023-03-11,D,Home Essentials,Home,12,0,134,111,1332,HomePro Distributors,West,6,167,23,Reorder,Medium,5,11,3,70,1,69,33.0,63.0,82.42857142857143,85.92857142857143
+INV-0354,2023-03-12,D,Home Essentials,Home,77,0,326,126,9702,HomePro Distributors,Central,6,189,200,Sufficient,Low,6,12,3,71,1,70,111.0,60.0,89.28571428571429,86.39285714285714
+INV-0359,2023-03-13,D,Home Essentials,Home,117,0,123,117,13689,HomePro Distributors,North,6,176,6,Reorder,Medium,0,13,3,72,0,71,126.0,96.0,98.71428571428571,89.25
+INV-0364,2023-03-14,D,Home Essentials,Home,58,1,203,106,6148,HomePro Distributors,South,6,159,97,Sufficient,Low,1,14,3,73,0,72,117.0,97.0,101.71428571428571,89.89285714285714
+INV-0369,2023-03-15,D,Home Essentials,Home,147,0,127,112,16464,HomePro Distributors,East,6,168,15,Reorder,Medium,2,15,3,74,0,73,106.0,103.0,103.0,90.0
+INV-0374,2023-03-16,D,Home Essentials,Home,22,0,98,106,2332,HomePro Distributors,West,6,159,0,Stockout Risk,High,3,16,3,75,0,74,112.0,125.0,104.28571428571429,90.78571428571429
+INV-0379,2023-03-17,D,Home Essentials,Home,86,1,336,145,12470,HomePro Distributors,Central,6,218,191,Sufficient,Low,4,17,3,76,0,75,106.0,33.0,101.57142857142857,89.67857142857143
+INV-0384,2023-03-18,D,Home Essentials,Home,151,0,341,135,20385,HomePro Distributors,North,6,203,206,Sufficient,Low,5,18,3,77,1,76,145.0,111.0,117.57142857142857,89.28571428571429
+INV-0389,2023-03-19,D,Home Essentials,Home,167,0,183,80,13360,HomePro Distributors,South,6,120,103,Sufficient,Low,6,19,3,78,1,77,135.0,126.0,121.0,93.0
+INV-0394,2023-03-20,D,Home Essentials,Home,126,0,441,31,3906,HomePro Distributors,East,6,47,410,Sufficient,Low,0,20,3,79,0,78,80.0,117.0,114.42857142857143,94.0
+INV-0399,2023-03-21,D,Home Essentials,Home,135,0,316,44,5940,HomePro Distributors,West,6,66,272,Sufficient,Low,1,21,3,80,0,79,31.0,106.0,102.14285714285714,91.78571428571429
+INV-0404,2023-03-22,D,Home Essentials,Home,16,0,204,115,1840,HomePro Distributors,Central,6,173,89,Sufficient,Low,2,22,3,81,0,80,44.0,112.0,93.28571428571429,90.25
+INV-0409,2023-03-23,D,Home Essentials,Home,197,0,444,84,16548,HomePro Distributors,North,6,126,360,Sufficient,Low,3,23,3,82,0,81,115.0,106.0,93.71428571428571,89.92857142857143
+INV-0414,2023-03-24,D,Home Essentials,Home,186,0,128,75,13950,HomePro Distributors,South,6,113,53,Sufficient,Low,4,24,3,83,0,82,84.0,145.0,90.57142857142857,90.46428571428571
+INV-0419,2023-03-25,D,Home Essentials,Home,14,0,310,104,1456,HomePro Distributors,East,6,156,206,Sufficient,Low,5,25,3,84,1,83,75.0,135.0,80.57142857142857,91.64285714285714
+INV-0424,2023-03-26,D,Home Essentials,Home,11,0,423,79,869,HomePro Distributors,West,6,119,344,Sufficient,Low,6,26,3,85,1,84,104.0,80.0,76.14285714285714,92.28571428571429
+INV-0429,2023-03-27,D,Home Essentials,Home,129,1,454,148,19092,HomePro Distributors,Central,6,222,306,Sufficient,Low,0,27,3,86,0,85,79.0,31.0,76.0,92.96428571428571
+INV-0434,2023-03-28,D,Home Essentials,Home,160,1,137,85,13600,HomePro Distributors,North,6,128,52,Sufficient,Low,1,28,3,87,0,86,148.0,44.0,92.71428571428571,93.46428571428571
+INV-0439,2023-03-29,D,Home Essentials,Home,141,1,153,50,7050,HomePro Distributors,South,6,75,103,Sufficient,Low,2,29,3,88,0,87,85.0,115.0,98.57142857142857,94.71428571428571
+INV-0444,2023-03-30,D,Home Essentials,Home,110,1,235,182,20020,HomePro Distributors,East,6,273,53,Reorder,Medium,3,30,3,89,0,88,50.0,84.0,89.28571428571429,93.78571428571429
+INV-0449,2023-03-31,D,Home Essentials,Home,89,0,235,62,5518,HomePro Distributors,West,6,93,173,Sufficient,Low,4,31,3,90,0,89,182.0,75.0,103.28571428571429,94.67857142857143
+INV-0454,2023-04-01,D,Home Essentials,Home,72,0,165,95,6840,HomePro Distributors,Central,6,143,70,Sufficient,Low,5,1,4,91,1,90,62.0,104.0,101.42857142857143,95.5
+INV-0459,2023-04-02,D,Home Essentials,Home,118,0,100,128,15104,HomePro Distributors,North,6,192,0,Stockout Risk,High,6,2,4,92,1,91,95.0,79.0,100.14285714285714,96.64285714285714
+INV-0464,2023-04-03,D,Home Essentials,Home,161,0,85,97,15617,HomePro Distributors,South,6,146,0,Stockout Risk,High,0,3,4,93,0,92,128.0,148.0,107.14285714285714,99.07142857142857
+INV-0469,2023-04-04,D,Home Essentials,Home,169,1,297,167,28223,HomePro Distributors,East,6,251,130,Sufficient,Low,1,4,4,94,0,93,97.0,85.0,99.85714285714286,99.10714285714286
+INV-0474,2023-04-05,D,Home Essentials,Home,42,0,130,114,4788,HomePro Distributors,West,6,171,16,Reorder,Medium,2,5,4,95,0,94,167.0,50.0,111.57142857142857,101.60714285714286
+INV-0479,2023-04-06,D,Home Essentials,Home,177,0,343,124,21948,HomePro Distributors,Central,6,186,219,Sufficient,Low,3,6,4,96,0,95,114.0,182.0,120.71428571428571,102.0
+INV-0484,2023-04-07,D,Home Essentials,Home,140,0,93,129,18060,HomePro Distributors,North,6,194,0,Stockout Risk,High,4,7,4,97,0,96,124.0,62.0,112.42857142857143,101.96428571428571
+INV-0489,2023-04-08,D,Home Essentials,Home,21,0,435,89,1869,HomePro Distributors,South,6,134,346,Sufficient,Low,5,8,4,98,1,97,129.0,95.0,122.0,105.39285714285714
+INV-0494,2023-04-09,D,Home Essentials,Home,30,0,207,109,3270,HomePro Distributors,East,6,164,98,Sufficient,Low,6,9,4,99,1,98,89.0,128.0,121.14285714285714,104.60714285714286
+INV-0499,2023-04-10,D,Home Essentials,Home,117,1,413,48,5616,HomePro Distributors,West,6,72,365,Sufficient,Low,0,10,4,100,0,99,109.0,97.0,118.42857142857143,104.0
+INV-0504,2023-04-11,D,Home Essentials,Home,100,1,468,55,5500,HomePro Distributors,Central,6,83,413,Sufficient,Low,1,11,4,101,0,100,48.0,167.0,111.42857142857143,101.53571428571429
+INV-0509,2023-04-12,D,Home Essentials,Home,126,0,486,58,7308,HomePro Distributors,North,6,87,428,Sufficient,Low,2,12,4,102,0,101,55.0,114.0,95.42857142857143,99.71428571428571
+INV-0514,2023-04-13,D,Home Essentials,Home,163,0,151,78,12714,HomePro Distributors,South,6,117,73,Sufficient,Low,3,13,4,103,0,102,58.0,124.0,87.42857142857143,97.78571428571429
+INV-0519,2023-04-14,D,Home Essentials,Home,39,0,314,72,2808,HomePro Distributors,East,6,108,242,Sufficient,Low,4,14,4,104,0,103,78.0,129.0,80.85714285714286,96.78571428571429
+INV-0524,2023-04-15,D,Home Essentials,Home,110,0,221,128,14080,HomePro Distributors,West,6,192,93,Sufficient,Low,5,15,4,105,1,104,72.0,89.0,72.71428571428571,94.17857142857143
+INV-0529,2023-04-16,D,Home Essentials,Home,29,0,206,67,1943,HomePro Distributors,Central,6,101,139,Sufficient,Low,6,16,4,106,1,105,128.0,109.0,78.28571428571429,93.92857142857143
+INV-0534,2023-04-17,D,Home Essentials,Home,118,0,290,114,13452,HomePro Distributors,North,6,171,176,Sufficient,Low,0,17,4,107,0,106,67.0,48.0,72.28571428571429,93.46428571428571
+INV-0539,2023-04-18,D,Home Essentials,Home,18,1,393,147,2646,HomePro Distributors,South,6,221,246,Sufficient,Low,1,18,4,108,0,107,114.0,55.0,81.71428571428571,96.42857142857143
+INV-0544,2023-04-19,D,Home Essentials,Home,17,0,202,93,1581,HomePro Distributors,East,6,140,109,Sufficient,Low,2,19,4,109,0,108,147.0,58.0,94.85714285714286,100.10714285714286
+INV-0549,2023-04-20,D,Home Essentials,Home,84,0,315,111,9324,HomePro Distributors,West,6,167,204,Sufficient,Low,3,20,4,110,0,109,93.0,78.0,99.85714285714286,99.32142857142857
+INV-0554,2023-04-21,D,Home Essentials,Home,162,0,328,105,17010,HomePro Distributors,Central,6,158,223,Sufficient,Low,4,21,4,111,0,110,111.0,72.0,104.57142857142857,100.28571428571429
+INV-0559,2023-04-22,D,Home Essentials,Home,66,0,167,134,8844,HomePro Distributors,North,6,201,33,Reorder,Medium,5,22,4,112,1,111,105.0,128.0,109.28571428571429,101.35714285714286
+INV-0564,2023-04-23,D,Home Essentials,Home,185,0,165,104,19240,HomePro Distributors,South,6,156,61,Sufficient,Low,6,23,4,113,1,112,134.0,67.0,110.14285714285714,102.42857142857143
+INV-0569,2023-04-24,D,Home Essentials,Home,131,0,174,50,6550,HomePro Distributors,East,6,75,124,Sufficient,Low,0,24,4,114,0,113,104.0,114.0,115.42857142857143,103.32142857142857
+INV-0574,2023-04-25,D,Home Essentials,Home,118,1,100,132,15576,HomePro Distributors,West,6,198,0,Stockout Risk,High,1,25,4,115,0,114,50.0,147.0,106.28571428571429,99.82142857142857
+INV-0579,2023-04-26,D,Home Essentials,Home,154,0,150,20,3080,HomePro Distributors,Central,6,30,130,Sufficient,Low,2,26,4,116,0,115,132.0,93.0,104.14285714285714,101.5
+INV-0584,2023-04-27,D,Home Essentials,Home,192,1,299,146,28032,HomePro Distributors,North,6,219,153,Sufficient,Low,3,27,4,117,0,116,20.0,111.0,93.71428571428571,100.42857142857143
+INV-0589,2023-04-28,D,Home Essentials,Home,184,0,238,121,22264,HomePro Distributors,South,6,182,117,Sufficient,Low,4,28,4,118,0,117,146.0,105.0,98.71428571428571,99.14285714285714
+INV-0594,2023-04-29,D,Home Essentials,Home,145,0,438,80,11600,HomePro Distributors,East,6,120,358,Sufficient,Low,5,29,4,119,1,118,121.0,134.0,101.0,101.25
+INV-0599,2023-04-30,D,Home Essentials,Home,111,0,65,97,10767,HomePro Distributors,West,6,146,0,Stockout Risk,High,6,30,4,120,1,119,80.0,104.0,93.28571428571429,100.71428571428571
+INV-0604,2023-05-01,D,Home Essentials,Home,156,0,102,81,12636,HomePro Distributors,Central,6,122,21,Reorder,Medium,0,1,5,121,0,120,97.0,50.0,92.28571428571429,99.60714285714286
+INV-0609,2023-05-02,D,Home Essentials,Home,17,0,61,11,187,HomePro Distributors,North,6,20,50,Sufficient,Low,1,2,5,122,0,121,81.0,132.0,96.71428571428571,99.03571428571429
+INV-0614,2023-05-03,D,Home Essentials,Home,171,0,477,41,7011,HomePro Distributors,South,6,62,436,Sufficient,Low,2,3,5,123,0,122,11.0,20.0,79.42857142857143,93.46428571428571
+INV-0619,2023-05-04,D,Home Essentials,Home,26,0,480,78,2028,HomePro Distributors,East,6,117,402,Sufficient,Low,3,4,5,124,0,123,41.0,146.0,82.42857142857143,90.85714285714286
+INV-0624,2023-05-05,D,Home Essentials,Home,146,0,265,89,12994,HomePro Distributors,West,6,134,176,Sufficient,Low,4,5,5,125,0,124,78.0,121.0,72.71428571428571,89.21428571428571
+INV-0629,2023-05-06,D,Home Essentials,Home,111,0,329,88,9768,HomePro Distributors,Central,6,132,241,Sufficient,Low,5,6,5,126,1,125,89.0,80.0,68.14285714285714,87.78571428571429
+INV-0634,2023-05-07,D,Home Essentials,Home,162,0,82,34,5508,HomePro Distributors,North,6,51,48,Sufficient,Low,6,7,5,127,1,126,88.0,97.0,69.28571428571429,87.75
+INV-0639,2023-05-08,D,Home Essentials,Home,166,0,147,104,17264,HomePro Distributors,South,6,156,43,Reorder,Medium,0,8,5,128,0,127,34.0,81.0,60.285714285714285,85.07142857142857
+INV-0644,2023-05-09,D,Home Essentials,Home,113,1,117,71,8023,HomePro Distributors,East,6,107,46,Sufficient,Low,1,9,5,129,0,128,104.0,11.0,63.57142857142857,87.07142857142857
+INV-0649,2023-05-10,D,Home Essentials,Home,131,0,326,44,5764,HomePro Distributors,West,6,66,282,Sufficient,Low,2,10,5,130,0,129,71.0,41.0,72.14285714285714,87.64285714285714
+INV-0654,2023-05-11,D,Home Essentials,Home,196,0,139,77,15092,HomePro Distributors,Central,6,116,62,Sufficient,Low,3,11,5,131,0,130,44.0,78.0,72.57142857142857,87.14285714285714
+INV-0659,2023-05-12,D,Home Essentials,Home,17,0,401,23,391,HomePro Distributors,North,6,35,378,Sufficient,Low,4,12,5,132,0,131,77.0,89.0,72.42857142857143,87.10714285714286
+INV-0664,2023-05-13,D,Home Essentials,Home,182,1,59,155,28210,HomePro Distributors,South,6,233,0,Stockout Risk,High,5,13,5,133,1,132,23.0,88.0,63.0,85.35714285714286
+INV-0669,2023-05-14,D,Home Essentials,Home,125,1,392,70,8750,HomePro Distributors,East,6,105,322,Sufficient,Low,6,14,5,134,1,133,155.0,34.0,72.57142857142857,86.32142857142857
+INV-0674,2023-05-15,D,Home Essentials,Home,93,1,448,52,4836,HomePro Distributors,West,6,78,396,Sufficient,Low,0,15,5,135,0,134,70.0,104.0,77.71428571428571,86.42857142857143
+INV-0679,2023-05-16,D,Home Essentials,Home,32,0,414,97,3104,HomePro Distributors,Central,6,146,317,Sufficient,Low,1,16,5,136,0,135,52.0,71.0,70.28571428571429,84.21428571428571
+INV-0684,2023-05-17,D,Home Essentials,Home,48,1,65,129,6192,HomePro Distributors,North,6,194,0,Stockout Risk,High,2,17,5,137,0,136,97.0,44.0,74.0,82.42857142857143
+INV-0689,2023-05-18,D,Home Essentials,Home,60,0,341,104,6240,HomePro Distributors,South,6,156,237,Sufficient,Low,3,18,5,138,0,137,129.0,77.0,86.14285714285714,83.71428571428571
+INV-0694,2023-05-19,D,Home Essentials,Home,118,0,232,126,14868,HomePro Distributors,East,6,189,106,Sufficient,Low,4,19,5,139,0,138,104.0,23.0,90.0,83.46428571428571
+INV-0699,2023-05-20,D,Home Essentials,Home,186,0,217,31,5766,HomePro Distributors,West,6,47,186,Sufficient,Low,5,20,5,140,1,139,126.0,155.0,104.71428571428571,84.21428571428571
+INV-0704,2023-05-21,D,Home Essentials,Home,123,1,321,147,18081,HomePro Distributors,Central,6,221,174,Sufficient,Low,6,21,5,141,1,140,31.0,70.0,87.0,80.53571428571429
+INV-0709,2023-05-22,D,Home Essentials,Home,56,0,216,110,6160,HomePro Distributors,North,6,165,106,Sufficient,Low,0,22,5,142,0,141,147.0,52.0,98.0,82.07142857142857
+INV-0714,2023-05-23,D,Home Essentials,Home,178,0,482,99,17622,HomePro Distributors,South,6,149,383,Sufficient,Low,1,23,5,143,0,142,110.0,97.0,106.28571428571429,84.21428571428571
+INV-0719,2023-05-24,D,Home Essentials,Home,43,0,455,116,4988,HomePro Distributors,East,6,174,339,Sufficient,Low,2,24,5,144,0,143,99.0,129.0,106.57142857142857,83.03571428571429
+INV-0724,2023-05-25,D,Home Essentials,Home,54,0,117,69,3726,HomePro Distributors,West,6,104,48,Sufficient,Low,3,25,5,145,0,144,116.0,104.0,104.71428571428571,86.46428571428571
+INV-0729,2023-05-26,D,Home Essentials,Home,156,0,297,115,17940,HomePro Distributors,Central,6,173,182,Sufficient,Low,4,26,5,146,0,145,69.0,126.0,99.71428571428571,83.71428571428571
+INV-0734,2023-05-27,D,Home Essentials,Home,91,0,87,98,8918,HomePro Distributors,North,6,147,0,Stockout Risk,High,5,27,5,147,1,146,115.0,31.0,98.14285714285714,83.5
+INV-0739,2023-05-28,D,Home Essentials,Home,196,0,390,44,8624,HomePro Distributors,South,6,66,346,Sufficient,Low,6,28,5,148,1,147,98.0,147.0,107.71428571428571,84.14285714285714
+INV-0744,2023-05-29,D,Home Essentials,Home,94,1,462,50,4700,HomePro Distributors,East,6,75,412,Sufficient,Low,0,29,5,149,0,148,44.0,110.0,93.0,82.25
+INV-0749,2023-05-30,D,Home Essentials,Home,55,1,81,85,4675,HomePro Distributors,West,6,128,0,Stockout Risk,High,1,30,5,150,0,149,50.0,99.0,84.42857142857143,81.14285714285714
+INV-0754,2023-05-31,D,Home Essentials,Home,121,0,456,83,10043,HomePro Distributors,Central,6,125,373,Sufficient,Low,2,31,5,151,0,150,85.0,116.0,82.42857142857143,83.78571428571429
+INV-0759,2023-06-01,D,Home Essentials,Home,56,0,295,107,5992,HomePro Distributors,North,6,161,188,Sufficient,Low,3,1,6,152,0,151,83.0,69.0,77.71428571428571,85.28571428571429
+INV-0764,2023-06-02,D,Home Essentials,Home,48,1,177,139,6672,HomePro Distributors,South,6,209,38,Reorder,Medium,4,2,6,153,0,152,107.0,115.0,83.14285714285714,86.32142857142857
+INV-0769,2023-06-03,D,Home Essentials,Home,129,0,361,90,11610,HomePro Distributors,East,6,135,271,Sufficient,Low,5,3,6,154,1,153,139.0,98.0,86.57142857142857,88.10714285714286
+INV-0774,2023-06-04,D,Home Essentials,Home,125,1,362,96,12000,HomePro Distributors,West,6,144,266,Sufficient,Low,6,4,6,155,1,154,90.0,44.0,85.42857142857143,88.17857142857143
+INV-0779,2023-06-05,D,Home Essentials,Home,71,0,305,55,3905,HomePro Distributors,Central,6,83,250,Sufficient,Low,0,5,6,156,0,155,96.0,50.0,92.85714285714286,90.39285714285714
+INV-0784,2023-06-06,D,Home Essentials,Home,154,0,449,42,6468,HomePro Distributors,North,6,63,407,Sufficient,Low,1,6,6,157,0,156,55.0,85.0,93.57142857142857,88.64285714285714
+INV-0789,2023-06-07,D,Home Essentials,Home,90,0,267,26,2340,HomePro Distributors,South,6,39,241,Sufficient,Low,2,7,6,158,0,157,42.0,83.0,87.42857142857143,87.60714285714286
+INV-0794,2023-06-08,D,Home Essentials,Home,128,0,375,32,4096,HomePro Distributors,East,6,48,343,Sufficient,Low,3,8,6,159,0,158,26.0,107.0,79.28571428571429,86.96428571428571
+INV-0799,2023-06-09,D,Home Essentials,Home,11,1,313,171,1881,HomePro Distributors,West,6,257,142,Sufficient,Low,4,9,6,160,0,159,32.0,139.0,68.57142857142857,85.35714285714286
+INV-0804,2023-06-10,D,Home Essentials,Home,195,1,404,139,27105,HomePro Distributors,Central,6,209,265,Sufficient,Low,5,10,6,161,1,160,171.0,90.0,73.14285714285714,90.64285714285714
+INV-0809,2023-06-11,D,Home Essentials,Home,142,0,100,98,13916,HomePro Distributors,North,6,147,2,Reorder,Medium,6,11,6,162,1,161,139.0,96.0,80.14285714285714,90.07142857142857
+INV-0814,2023-06-12,D,Home Essentials,Home,152,1,153,138,20976,HomePro Distributors,South,6,207,15,Reorder,Medium,0,12,6,163,0,162,98.0,55.0,80.42857142857143,91.07142857142857
+INV-0819,2023-06-13,D,Home Essentials,Home,35,1,124,128,4480,HomePro Distributors,East,6,192,0,Stockout Risk,High,1,13,6,164,0,163,138.0,42.0,92.28571428571429,94.14285714285714
+INV-0824,2023-06-14,D,Home Essentials,Home,46,0,283,55,2530,HomePro Distributors,West,6,83,228,Sufficient,Low,2,14,6,165,0,164,128.0,26.0,104.57142857142857,95.25
+INV-0829,2023-06-15,D,Home Essentials,Home,147,0,465,41,6027,HomePro Distributors,Central,6,62,424,Sufficient,Low,3,15,6,166,0,165,55.0,32.0,108.71428571428571,92.60714285714286
+INV-0834,2023-06-16,D,Home Essentials,Home,97,0,432,88,8536,HomePro Distributors,North,6,132,344,Sufficient,Low,4,16,6,167,0,166,41.0,171.0,110.0,90.35714285714286
+INV-0839,2023-06-17,D,Home Essentials,Home,98,0,225,33,3234,HomePro Distributors,South,6,50,192,Sufficient,Low,5,17,6,168,1,167,88.0,139.0,98.14285714285714,89.0
+INV-0844,2023-06-18,D,Home Essentials,Home,71,0,446,80,5680,HomePro Distributors,East,6,120,366,Sufficient,Low,6,18,6,169,1,168,33.0,98.0,83.0,89.07142857142857
+INV-0849,2023-06-19,D,Home Essentials,Home,81,1,367,91,7371,HomePro Distributors,West,6,137,276,Sufficient,Low,0,19,6,170,0,169,80.0,138.0,80.42857142857143,86.67857142857143
+INV-0854,2023-06-20,D,Home Essentials,Home,26,0,457,13,338,HomePro Distributors,Central,6,20,444,Sufficient,Low,1,20,6,171,0,170,91.0,128.0,73.71428571428571,86.0
+INV-0859,2023-06-21,D,Home Essentials,Home,125,0,192,81,10125,HomePro Distributors,North,6,122,111,Sufficient,Low,2,21,6,172,0,171,13.0,55.0,57.285714285714285,82.92857142857143
+INV-0864,2023-06-22,D,Home Essentials,Home,104,0,322,37,3848,HomePro Distributors,South,6,56,285,Sufficient,Low,3,22,6,173,0,172,81.0,41.0,61.0,81.67857142857143
+INV-0869,2023-06-23,D,Home Essentials,Home,47,0,168,83,3901,HomePro Distributors,East,6,125,85,Sufficient,Low,4,23,6,174,0,173,37.0,88.0,60.42857142857143,80.53571428571429
+INV-0874,2023-06-24,D,Home Essentials,Home,40,0,424,33,1320,HomePro Distributors,West,6,50,391,Sufficient,Low,5,24,6,175,1,174,83.0,33.0,59.714285714285715,79.39285714285714
+INV-0879,2023-06-25,D,Home Essentials,Home,96,1,225,39,3744,HomePro Distributors,Central,6,59,186,Sufficient,Low,6,25,6,176,1,175,33.0,80.0,59.714285714285715,77.07142857142857
+INV-0884,2023-06-26,D,Home Essentials,Home,49,0,291,47,2303,HomePro Distributors,North,6,71,244,Sufficient,Low,0,26,6,177,0,176,39.0,91.0,53.857142857142854,76.89285714285714
+INV-0889,2023-06-27,D,Home Essentials,Home,198,0,430,83,16434,HomePro Distributors,South,6,125,347,Sufficient,Low,1,27,6,178,0,177,47.0,13.0,47.57142857142857,76.78571428571429
+INV-0894,2023-06-28,D,Home Essentials,Home,90,0,127,44,3960,HomePro Distributors,East,6,66,83,Sufficient,Low,2,28,6,179,0,178,83.0,81.0,57.57142857142857,76.71428571428571
+INV-0899,2023-06-29,D,Home Essentials,Home,155,0,437,111,17205,HomePro Distributors,West,6,167,326,Sufficient,Low,3,29,6,180,0,179,44.0,37.0,52.285714285714285,75.32142857142857
+INV-0904,2023-06-30,D,Home Essentials,Home,67,0,177,51,3417,HomePro Distributors,Central,6,77,126,Sufficient,Low,4,30,6,181,0,180,111.0,83.0,62.857142857142854,75.46428571428571
+INV-0909,2023-07-01,D,Home Essentials,Home,39,0,279,99,3861,HomePro Distributors,North,6,149,180,Sufficient,Low,5,1,7,182,1,181,51.0,33.0,58.285714285714285,72.32142857142857
+INV-0914,2023-07-02,D,Home Essentials,Home,105,0,437,41,4305,HomePro Distributors,South,6,62,396,Sufficient,Low,6,2,7,183,1,182,99.0,39.0,67.71428571428571,72.64285714285714
+INV-0919,2023-07-03,D,Home Essentials,Home,184,0,118,101,18584,HomePro Distributors,East,6,152,17,Reorder,Medium,0,3,7,184,0,183,41.0,47.0,68.0,70.67857142857143
+INV-0924,2023-07-04,D,Home Essentials,Home,63,0,380,94,5922,HomePro Distributors,West,6,141,286,Sufficient,Low,1,4,7,185,0,184,101.0,83.0,75.71428571428571,72.32142857142857
+INV-0929,2023-07-05,D,Home Essentials,Home,133,0,61,55,7315,HomePro Distributors,Central,6,83,6,Reorder,Medium,2,5,7,186,0,185,94.0,44.0,77.28571428571429,74.17857142857143
+INV-0934,2023-07-06,D,Home Essentials,Home,115,0,70,50,5750,HomePro Distributors,North,6,75,20,Reorder,Medium,3,6,7,187,0,186,55.0,111.0,78.85714285714286,75.21428571428571
+INV-0939,2023-07-07,D,Home Essentials,Home,173,1,378,104,17992,HomePro Distributors,South,6,156,274,Sufficient,Low,4,7,7,188,0,187,50.0,51.0,70.14285714285714,75.85714285714286
+INV-0944,2023-07-08,D,Home Essentials,Home,104,0,230,99,10296,HomePro Distributors,East,6,149,131,Sufficient,Low,5,8,7,189,1,188,104.0,99.0,77.71428571428571,73.46428571428571
+INV-0949,2023-07-09,D,Home Essentials,Home,101,0,370,43,4343,HomePro Distributors,West,6,65,327,Sufficient,Low,6,9,7,190,1,189,99.0,41.0,77.71428571428571,72.03571428571429
+INV-0954,2023-07-10,D,Home Essentials,Home,105,0,430,75,7875,HomePro Distributors,Central,6,113,355,Sufficient,Low,0,10,7,191,0,190,43.0,101.0,78.0,70.07142857142857
+INV-0959,2023-07-11,D,Home Essentials,Home,185,0,325,44,8140,HomePro Distributors,North,6,66,281,Sufficient,Low,1,11,7,192,0,191,75.0,94.0,74.28571428571429,67.82142857142857
+INV-0964,2023-07-12,D,Home Essentials,Home,105,1,466,126,13230,HomePro Distributors,South,6,189,340,Sufficient,Low,2,12,7,193,0,192,44.0,55.0,67.14285714285714,64.82142857142857
+INV-0969,2023-07-13,D,Home Essentials,Home,106,0,294,86,9116,HomePro Distributors,East,6,129,208,Sufficient,Low,3,13,7,194,0,193,126.0,50.0,77.28571428571429,67.35714285714286
+INV-0974,2023-07-14,D,Home Essentials,Home,108,1,69,111,11988,HomePro Distributors,West,6,167,0,Stockout Risk,High,4,14,7,195,0,194,86.0,104.0,82.42857142857143,68.96428571428571
+INV-0979,2023-07-15,D,Home Essentials,Home,28,1,151,86,2408,HomePro Distributors,Central,6,129,65,Sufficient,Low,5,15,7,196,1,195,111.0,99.0,83.42857142857143,69.78571428571429
+INV-0984,2023-07-16,D,Home Essentials,Home,51,0,460,117,5967,HomePro Distributors,North,6,176,343,Sufficient,Low,6,16,7,197,1,196,86.0,43.0,81.57142857142857,71.67857142857143
+INV-0989,2023-07-17,D,Home Essentials,Home,126,0,470,19,2394,HomePro Distributors,South,6,29,451,Sufficient,Low,0,17,7,198,0,197,117.0,75.0,92.14285714285714,73.0
+INV-0994,2023-07-18,D,Home Essentials,Home,182,1,128,70,12740,HomePro Distributors,East,6,105,58,Sufficient,Low,1,18,7,199,0,198,19.0,44.0,84.14285714285714,70.42857142857143
+INV-0999,2023-07-19,D,Home Essentials,Home,141,0,476,40,5640,HomePro Distributors,West,6,60,436,Sufficient,Low,2,19,7,200,0,199,70.0,126.0,87.85714285714286,72.46428571428571
+INV-0005,2023-01-01,E,Sports & Fitness Gear,Sports,98,0,98,71,6958,ActiveLife Wholesale,East,4,107,27,Reorder,Medium,6,1,1,1,1,0,,,,
+INV-0010,2023-01-02,E,Sports & Fitness Gear,Sports,101,0,416,82,8282,ActiveLife Wholesale,West,4,123,334,Sufficient,Low,0,2,1,2,0,1,71.0,71.0,71.0,71.0
+INV-0015,2023-01-03,E,Sports & Fitness Gear,Sports,199,0,345,72,14328,ActiveLife Wholesale,Central,4,108,273,Sufficient,Low,1,3,1,3,0,2,82.0,76.5,76.5,76.5
+INV-0020,2023-01-04,E,Sports & Fitness Gear,Sports,81,1,317,85,6885,ActiveLife Wholesale,North,4,128,232,Sufficient,Low,2,4,1,4,0,3,72.0,75.0,75.0,75.0
+INV-0025,2023-01-05,E,Sports & Fitness Gear,Sports,188,0,112,62,11656,ActiveLife Wholesale,South,4,93,50,Sufficient,Low,3,5,1,5,0,4,85.0,77.5,77.5,77.5
+INV-0030,2023-01-06,E,Sports & Fitness Gear,Sports,101,0,280,69,6969,ActiveLife Wholesale,East,4,104,211,Sufficient,Low,4,6,1,6,0,5,62.0,74.4,74.4,74.4
+INV-0035,2023-01-07,E,Sports & Fitness Gear,Sports,61,1,317,125,7625,ActiveLife Wholesale,West,4,188,192,Sufficient,Low,5,7,1,7,1,6,69.0,73.5,73.5,73.5
+INV-0040,2023-01-08,E,Sports & Fitness Gear,Sports,125,0,147,52,6500,ActiveLife Wholesale,Central,4,78,95,Sufficient,Low,6,8,1,8,1,7,125.0,71.0,80.85714285714286,80.85714285714286
+INV-0045,2023-01-09,E,Sports & Fitness Gear,Sports,194,0,483,29,5626,ActiveLife Wholesale,North,4,44,454,Sufficient,Low,0,9,1,9,0,8,52.0,82.0,78.14285714285714,77.25
+INV-0050,2023-01-10,E,Sports & Fitness Gear,Sports,91,0,243,31,2821,ActiveLife Wholesale,South,4,47,212,Sufficient,Low,1,10,1,10,0,9,29.0,72.0,70.57142857142857,71.88888888888889
+INV-0055,2023-01-11,E,Sports & Fitness Gear,Sports,36,1,275,129,4644,ActiveLife Wholesale,East,4,194,146,Sufficient,Low,2,11,1,11,0,10,31.0,85.0,64.71428571428571,67.8
+INV-0060,2023-01-12,E,Sports & Fitness Gear,Sports,169,0,210,87,14703,ActiveLife Wholesale,West,4,131,123,Sufficient,Low,3,12,1,12,0,11,129.0,62.0,71.0,73.36363636363636
+INV-0065,2023-01-13,E,Sports & Fitness Gear,Sports,182,0,69,41,7462,ActiveLife Wholesale,Central,4,62,28,Sufficient,Low,4,13,1,13,0,12,87.0,69.0,74.57142857142857,74.5
+INV-0070,2023-01-14,E,Sports & Fitness Gear,Sports,117,0,54,33,3861,ActiveLife Wholesale,North,4,50,21,Sufficient,Low,5,14,1,14,1,13,41.0,125.0,70.57142857142857,71.92307692307692
+INV-0075,2023-01-15,E,Sports & Fitness Gear,Sports,10,0,288,24,240,ActiveLife Wholesale,South,4,36,264,Sufficient,Low,6,15,1,15,1,14,33.0,52.0,57.42857142857143,69.14285714285714
+INV-0080,2023-01-16,E,Sports & Fitness Gear,Sports,110,0,72,62,6820,ActiveLife Wholesale,East,4,93,10,Reorder,Medium,0,16,1,16,0,15,24.0,29.0,53.42857142857143,66.13333333333334
+INV-0085,2023-01-17,E,Sports & Fitness Gear,Sports,110,0,317,91,10010,ActiveLife Wholesale,West,4,137,226,Sufficient,Low,1,17,1,17,0,16,62.0,31.0,58.142857142857146,65.875
+INV-0090,2023-01-18,E,Sports & Fitness Gear,Sports,173,1,443,71,12283,ActiveLife Wholesale,Central,4,107,372,Sufficient,Low,2,18,1,18,0,17,91.0,129.0,66.71428571428571,67.3529411764706
+INV-0095,2023-01-19,E,Sports & Fitness Gear,Sports,156,1,125,55,8580,ActiveLife Wholesale,North,4,83,70,Sufficient,Low,3,19,1,19,0,18,71.0,87.0,58.42857142857143,67.55555555555556
+INV-0100,2023-01-20,E,Sports & Fitness Gear,Sports,85,0,58,121,10285,ActiveLife Wholesale,South,4,182,0,Stockout Risk,High,4,20,1,20,0,19,55.0,41.0,53.857142857142854,66.89473684210526
+INV-0105,2023-01-21,E,Sports & Fitness Gear,Sports,28,0,494,113,3164,ActiveLife Wholesale,East,4,170,381,Sufficient,Low,5,21,1,21,1,20,121.0,33.0,65.28571428571429,69.6
+INV-0110,2023-01-22,E,Sports & Fitness Gear,Sports,169,0,222,97,16393,ActiveLife Wholesale,West,4,146,125,Sufficient,Low,6,22,1,22,1,21,113.0,24.0,76.71428571428571,71.66666666666667
+INV-0115,2023-01-23,E,Sports & Fitness Gear,Sports,161,1,205,49,7889,ActiveLife Wholesale,Central,4,74,156,Sufficient,Low,0,23,1,23,0,22,97.0,62.0,87.14285714285714,72.81818181818181
+INV-0120,2023-01-24,E,Sports & Fitness Gear,Sports,118,1,54,145,17110,ActiveLife Wholesale,North,4,218,0,Stockout Risk,High,1,24,1,24,0,23,49.0,91.0,85.28571428571429,71.78260869565217
+INV-0125,2023-01-25,E,Sports & Fitness Gear,Sports,92,1,194,114,10488,ActiveLife Wholesale,South,4,171,80,Sufficient,Low,2,25,1,25,0,24,145.0,71.0,93.0,74.83333333333333
+INV-0130,2023-01-26,E,Sports & Fitness Gear,Sports,56,0,456,104,5824,ActiveLife Wholesale,East,4,156,352,Sufficient,Low,3,26,1,26,0,25,114.0,55.0,99.14285714285714,76.4
+INV-0135,2023-01-27,E,Sports & Fitness Gear,Sports,147,0,233,32,4704,ActiveLife Wholesale,West,4,48,201,Sufficient,Low,4,27,1,27,0,26,104.0,121.0,106.14285714285714,77.46153846153847
+INV-0140,2023-01-28,E,Sports & Fitness Gear,Sports,169,0,483,95,16055,ActiveLife Wholesale,Central,4,143,388,Sufficient,Low,5,28,1,28,1,27,32.0,113.0,93.42857142857143,75.77777777777777
+INV-0145,2023-01-29,E,Sports & Fitness Gear,Sports,65,0,399,72,4680,ActiveLife Wholesale,North,4,108,327,Sufficient,Low,6,29,1,29,1,28,95.0,97.0,90.85714285714286,76.46428571428571
+INV-0150,2023-01-30,E,Sports & Fitness Gear,Sports,124,0,64,47,5828,ActiveLife Wholesale,South,4,71,17,Reorder,Medium,0,30,1,30,0,29,72.0,49.0,87.28571428571429,76.5
+INV-0155,2023-01-31,E,Sports & Fitness Gear,Sports,15,0,229,80,1200,ActiveLife Wholesale,East,4,120,149,Sufficient,Low,1,31,1,31,0,30,47.0,145.0,87.0,75.25
+INV-0160,2023-02-01,E,Sports & Fitness Gear,Sports,143,1,167,173,24739,ActiveLife Wholesale,West,4,260,0,Stockout Risk,High,2,1,2,32,0,31,80.0,114.0,77.71428571428571,75.53571428571429
+INV-0165,2023-02-02,E,Sports & Fitness Gear,Sports,86,1,308,51,4386,ActiveLife Wholesale,Central,4,77,257,Sufficient,Low,3,2,2,33,0,32,173.0,104.0,86.14285714285714,78.67857142857143
+INV-0170,2023-02-03,E,Sports & Fitness Gear,Sports,10,0,345,112,1120,ActiveLife Wholesale,North,4,168,233,Sufficient,Low,4,3,2,34,0,33,51.0,32.0,78.57142857142857,78.28571428571429
+INV-0175,2023-02-04,E,Sports & Fitness Gear,Sports,41,0,228,75,3075,ActiveLife Wholesale,South,4,113,153,Sufficient,Low,5,4,2,35,1,34,112.0,95.0,90.0,79.82142857142857
+INV-0180,2023-02-05,E,Sports & Fitness Gear,Sports,47,0,490,54,2538,ActiveLife Wholesale,East,4,81,436,Sufficient,Low,6,5,2,36,1,35,75.0,72.0,87.14285714285714,78.03571428571429
+INV-0185,2023-02-06,E,Sports & Fitness Gear,Sports,52,0,332,54,2808,ActiveLife Wholesale,West,4,81,278,Sufficient,Low,0,6,2,37,0,36,54.0,47.0,84.57142857142857,78.10714285714286
+INV-0190,2023-02-07,E,Sports & Fitness Gear,Sports,60,0,78,66,3960,ActiveLife Wholesale,Central,4,99,12,Reorder,Medium,1,7,2,38,0,37,54.0,80.0,85.57142857142857,79.0
+INV-0195,2023-02-08,E,Sports & Fitness Gear,Sports,72,0,293,62,4464,ActiveLife Wholesale,North,4,93,231,Sufficient,Low,2,8,2,39,0,38,66.0,173.0,83.57142857142857,80.25
+INV-0200,2023-02-09,E,Sports & Fitness Gear,Sports,58,1,376,136,7888,ActiveLife Wholesale,South,4,204,240,Sufficient,Low,3,9,2,40,0,39,62.0,51.0,67.71428571428571,77.85714285714286
+INV-0205,2023-02-10,E,Sports & Fitness Gear,Sports,141,0,434,63,8883,ActiveLife Wholesale,East,4,95,371,Sufficient,Low,4,10,2,41,0,40,136.0,112.0,79.85714285714286,79.60714285714286
+INV-0210,2023-02-11,E,Sports & Fitness Gear,Sports,97,1,127,103,9991,ActiveLife Wholesale,West,4,155,24,Reorder,Medium,5,11,2,42,1,41,63.0,75.0,72.85714285714286,80.39285714285714
+INV-0215,2023-02-12,E,Sports & Fitness Gear,Sports,128,0,445,20,2560,ActiveLife Wholesale,Central,4,30,425,Sufficient,Low,6,12,2,43,1,42,103.0,54.0,76.85714285714286,82.89285714285714
+INV-0220,2023-02-13,E,Sports & Fitness Gear,Sports,155,0,177,69,10695,ActiveLife Wholesale,North,4,104,108,Sufficient,Low,0,13,2,44,0,43,20.0,54.0,72.0,82.75
+INV-0225,2023-02-14,E,Sports & Fitness Gear,Sports,199,0,171,36,7164,ActiveLife Wholesale,South,4,54,135,Sufficient,Low,1,14,2,45,0,44,69.0,66.0,74.14285714285714,83.0
+INV-0230,2023-02-15,E,Sports & Fitness Gear,Sports,157,0,276,65,10205,ActiveLife Wholesale,East,4,98,211,Sufficient,Low,2,15,2,46,0,45,36.0,62.0,69.85714285714286,81.03571428571429
+INV-0235,2023-02-16,E,Sports & Fitness Gear,Sports,56,0,61,125,7000,ActiveLife Wholesale,West,4,188,0,Stockout Risk,High,3,16,2,47,0,46,65.0,136.0,70.28571428571429,80.82142857142857
+INV-0240,2023-02-17,E,Sports & Fitness Gear,Sports,68,0,264,93,6324,ActiveLife Wholesale,Central,4,140,171,Sufficient,Low,4,17,2,48,0,47,125.0,63.0,68.71428571428571,83.32142857142857
+INV-0245,2023-02-18,E,Sports & Fitness Gear,Sports,179,1,157,97,17363,ActiveLife Wholesale,North,4,146,60,Sufficient,Low,5,18,2,49,1,48,93.0,103.0,73.0,82.32142857142857
+INV-0250,2023-02-19,E,Sports & Fitness Gear,Sports,129,0,207,35,4515,ActiveLife Wholesale,South,4,53,172,Sufficient,Low,6,19,2,50,1,49,97.0,20.0,72.14285714285714,81.75
+INV-0255,2023-02-20,E,Sports & Fitness Gear,Sports,162,1,248,57,9234,ActiveLife Wholesale,East,4,86,191,Sufficient,Low,0,20,2,51,0,50,35.0,69.0,74.28571428571429,79.53571428571429
+INV-0260,2023-02-21,E,Sports & Fitness Gear,Sports,12,1,209,146,1752,ActiveLife Wholesale,West,4,219,63,Reorder,Medium,1,21,2,52,0,51,57.0,36.0,72.57142857142857,79.82142857142857
+INV-0265,2023-02-22,E,Sports & Fitness Gear,Sports,69,0,225,41,2829,ActiveLife Wholesale,Central,4,62,184,Sufficient,Low,2,22,2,53,0,52,146.0,65.0,88.28571428571429,79.85714285714286
+INV-0270,2023-02-23,E,Sports & Fitness Gear,Sports,179,0,405,71,12709,ActiveLife Wholesale,North,4,107,334,Sufficient,Low,3,23,2,54,0,53,41.0,125.0,84.85714285714286,77.25
+INV-0275,2023-02-24,E,Sports & Fitness Gear,Sports,26,1,409,94,2444,ActiveLife Wholesale,South,4,141,315,Sufficient,Low,4,24,2,55,0,54,71.0,93.0,77.14285714285714,76.07142857142857
+INV-0280,2023-02-25,E,Sports & Fitness Gear,Sports,184,1,334,140,25760,ActiveLife Wholesale,East,4,210,194,Sufficient,Low,5,25,2,56,1,55,94.0,97.0,77.28571428571429,78.28571428571429
+INV-0285,2023-02-26,E,Sports & Fitness Gear,Sports,125,0,337,63,7875,ActiveLife Wholesale,West,4,95,274,Sufficient,Low,6,26,2,57,1,56,140.0,35.0,83.42857142857143,79.89285714285714
+INV-0290,2023-02-27,E,Sports & Fitness Gear,Sports,36,0,121,57,2052,ActiveLife Wholesale,Central,4,86,64,Sufficient,Low,0,27,2,58,0,57,63.0,57.0,87.42857142857143,79.57142857142857
+INV-0295,2023-02-28,E,Sports & Fitness Gear,Sports,148,0,113,24,3552,ActiveLife Wholesale,North,4,36,89,Sufficient,Low,1,28,2,59,0,58,57.0,146.0,87.42857142857143,79.92857142857143
+INV-0300,2023-03-01,E,Sports & Fitness Gear,Sports,177,0,465,38,6726,ActiveLife Wholesale,South,4,57,427,Sufficient,Low,2,1,3,60,0,59,24.0,41.0,70.0,77.92857142857143
+INV-0305,2023-03-02,E,Sports & Fitness Gear,Sports,169,0,90,124,20956,ActiveLife Wholesale,East,4,186,0,Stockout Risk,High,3,2,3,61,0,60,38.0,71.0,69.57142857142857,73.10714285714286
+INV-0310,2023-03-03,E,Sports & Fitness Gear,Sports,109,1,222,94,10246,ActiveLife Wholesale,West,4,141,128,Sufficient,Low,4,3,3,62,0,61,124.0,94.0,77.14285714285714,75.71428571428571
+INV-0315,2023-03-04,E,Sports & Fitness Gear,Sports,117,0,431,74,8658,ActiveLife Wholesale,Central,4,111,357,Sufficient,Low,5,4,3,63,1,62,94.0,140.0,77.14285714285714,75.07142857142857
+INV-0320,2023-03-05,E,Sports & Fitness Gear,Sports,87,0,51,63,5481,ActiveLife Wholesale,North,4,95,0,Stockout Risk,High,6,5,3,64,1,63,74.0,63.0,67.71428571428571,75.03571428571429
+INV-0325,2023-03-06,E,Sports & Fitness Gear,Sports,40,0,444,81,3240,ActiveLife Wholesale,South,4,122,363,Sufficient,Low,0,6,3,65,0,64,63.0,57.0,67.71428571428571,75.35714285714286
+INV-0330,2023-03-07,E,Sports & Fitness Gear,Sports,139,0,342,73,10147,ActiveLife Wholesale,East,4,110,269,Sufficient,Low,1,7,3,66,0,65,81.0,24.0,71.14285714285714,76.32142857142857
+INV-0335,2023-03-08,E,Sports & Fitness Gear,Sports,47,0,389,82,3854,ActiveLife Wholesale,West,4,123,307,Sufficient,Low,2,8,3,67,0,66,73.0,38.0,78.14285714285714,76.57142857142857
+INV-0340,2023-03-09,E,Sports & Fitness Gear,Sports,62,0,353,72,4464,ActiveLife Wholesale,Central,4,108,281,Sufficient,Low,3,9,3,68,0,67,82.0,124.0,84.42857142857143,77.28571428571429
+INV-0345,2023-03-10,E,Sports & Fitness Gear,Sports,84,0,178,55,4620,ActiveLife Wholesale,North,4,83,123,Sufficient,Low,4,10,3,69,0,68,72.0,94.0,77.0,75.0
+INV-0350,2023-03-11,E,Sports & Fitness Gear,Sports,163,1,202,185,30155,ActiveLife Wholesale,South,4,278,17,Reorder,Medium,5,11,3,70,1,69,55.0,74.0,71.42857142857143,74.71428571428571
+INV-0355,2023-03-12,E,Sports & Fitness Gear,Sports,43,0,383,24,1032,ActiveLife Wholesale,East,4,36,359,Sufficient,Low,6,12,3,71,1,70,185.0,63.0,87.28571428571429,77.64285714285714
+INV-0360,2023-03-13,E,Sports & Fitness Gear,Sports,179,0,494,112,20048,ActiveLife Wholesale,West,4,168,382,Sufficient,Low,0,13,3,72,0,71,24.0,81.0,81.71428571428571,77.78571428571429
+INV-0365,2023-03-14,E,Sports & Fitness Gear,Sports,161,0,68,77,12397,ActiveLife Wholesale,Central,4,116,0,Stockout Risk,High,1,14,3,73,0,72,112.0,73.0,86.14285714285714,79.32142857142857
+INV-0370,2023-03-15,E,Sports & Fitness Gear,Sports,44,1,312,88,3872,ActiveLife Wholesale,North,4,132,224,Sufficient,Low,2,15,3,74,0,73,77.0,82.0,86.71428571428571,80.78571428571429
+INV-0375,2023-03-16,E,Sports & Fitness Gear,Sports,14,0,477,106,1484,ActiveLife Wholesale,South,4,159,371,Sufficient,Low,3,16,3,75,0,74,88.0,72.0,87.57142857142857,81.60714285714286
+INV-0380,2023-03-17,E,Sports & Fitness Gear,Sports,64,0,449,111,7104,ActiveLife Wholesale,East,4,167,338,Sufficient,Low,4,17,3,76,0,75,106.0,55.0,92.42857142857143,80.92857142857143
+INV-0385,2023-03-18,E,Sports & Fitness Gear,Sports,75,0,410,36,2700,ActiveLife Wholesale,West,4,54,374,Sufficient,Low,5,18,3,77,1,76,111.0,185.0,100.42857142857143,81.57142857142857
+INV-0390,2023-03-19,E,Sports & Fitness Gear,Sports,158,0,212,39,6162,ActiveLife Wholesale,Central,4,59,173,Sufficient,Low,6,19,3,78,1,77,36.0,24.0,79.14285714285714,79.39285714285714
+INV-0395,2023-03-20,E,Sports & Fitness Gear,Sports,34,0,128,53,1802,ActiveLife Wholesale,North,4,80,75,Sufficient,Low,0,20,3,79,0,78,39.0,112.0,81.28571428571429,79.53571428571429
+INV-0400,2023-03-21,E,Sports & Fitness Gear,Sports,92,1,442,208,19136,ActiveLife Wholesale,South,4,312,234,Sufficient,Low,1,21,3,80,0,79,53.0,77.0,72.85714285714286,79.39285714285714
+INV-0405,2023-03-22,E,Sports & Fitness Gear,Sports,95,0,182,43,4085,ActiveLife Wholesale,East,4,65,139,Sufficient,Low,2,22,3,81,0,80,208.0,88.0,91.57142857142857,81.60714285714286
+INV-0410,2023-03-23,E,Sports & Fitness Gear,Sports,43,0,101,96,4128,ActiveLife Wholesale,West,4,144,5,Reorder,Medium,3,23,3,82,0,81,43.0,106.0,85.14285714285714,81.67857142857143
+INV-0415,2023-03-24,E,Sports & Fitness Gear,Sports,97,0,222,52,5044,ActiveLife Wholesale,Central,4,78,170,Sufficient,Low,4,24,3,83,0,82,96.0,111.0,83.71428571428571,82.57142857142857
+INV-0420,2023-03-25,E,Sports & Fitness Gear,Sports,120,0,417,117,14040,ActiveLife Wholesale,North,4,176,300,Sufficient,Low,5,25,3,84,1,83,52.0,36.0,75.28571428571429,81.07142857142857
+INV-0425,2023-03-26,E,Sports & Fitness Gear,Sports,104,0,449,47,4888,ActiveLife Wholesale,South,4,71,402,Sufficient,Low,6,26,3,85,1,84,117.0,39.0,86.85714285714286,80.25
+INV-0430,2023-03-27,E,Sports & Fitness Gear,Sports,184,1,67,109,20056,ActiveLife Wholesale,East,4,164,0,Stockout Risk,High,0,27,3,86,0,85,47.0,53.0,88.0,79.67857142857143
+INV-0435,2023-03-28,E,Sports & Fitness Gear,Sports,180,0,470,86,15480,ActiveLife Wholesale,West,4,129,384,Sufficient,Low,1,28,3,87,0,86,109.0,208.0,96.0,81.53571428571429
+INV-0440,2023-03-29,E,Sports & Fitness Gear,Sports,55,0,280,36,1980,ActiveLife Wholesale,Central,4,54,244,Sufficient,Low,2,29,3,88,0,87,86.0,43.0,78.57142857142857,83.75
+INV-0445,2023-03-30,E,Sports & Fitness Gear,Sports,141,0,69,23,3243,ActiveLife Wholesale,North,4,35,46,Sufficient,Low,3,30,3,89,0,88,36.0,96.0,77.57142857142857,83.67857142857143
+INV-0450,2023-03-31,E,Sports & Fitness Gear,Sports,91,0,452,76,6916,ActiveLife Wholesale,South,4,114,376,Sufficient,Low,4,31,3,90,0,89,23.0,52.0,67.14285714285714,80.07142857142857
+INV-0455,2023-04-01,E,Sports & Fitness Gear,Sports,127,1,350,136,17272,ActiveLife Wholesale,East,4,204,214,Sufficient,Low,5,1,4,91,1,90,76.0,117.0,70.57142857142857,79.42857142857143
+INV-0460,2023-04-02,E,Sports & Fitness Gear,Sports,58,0,454,108,6264,ActiveLife Wholesale,West,4,162,346,Sufficient,Low,6,2,4,92,1,91,136.0,47.0,73.28571428571429,81.64285714285714
+INV-0465,2023-04-03,E,Sports & Fitness Gear,Sports,115,0,463,74,8510,ActiveLife Wholesale,Central,4,111,389,Sufficient,Low,0,3,4,93,0,92,108.0,109.0,82.0,83.25
+INV-0470,2023-04-04,E,Sports & Fitness Gear,Sports,179,1,203,135,24165,ActiveLife Wholesale,North,4,203,68,Reorder,Medium,1,4,4,94,0,93,74.0,86.0,77.0,83.0
+INV-0475,2023-04-05,E,Sports & Fitness Gear,Sports,107,0,77,54,5778,ActiveLife Wholesale,South,4,81,23,Reorder,Medium,2,5,4,95,0,94,135.0,36.0,84.0,85.21428571428571
+INV-0480,2023-04-06,E,Sports & Fitness Gear,Sports,58,0,497,124,7192,ActiveLife Wholesale,East,4,186,373,Sufficient,Low,3,6,4,96,0,95,54.0,23.0,86.57142857142857,84.21428571428571
+INV-0485,2023-04-07,E,Sports & Fitness Gear,Sports,15,0,216,91,1365,ActiveLife Wholesale,West,4,137,125,Sufficient,Low,4,7,4,97,0,96,124.0,76.0,101.0,86.07142857142857
+INV-0490,2023-04-08,E,Sports & Fitness Gear,Sports,116,1,89,39,4524,ActiveLife Wholesale,Central,4,59,50,Sufficient,Low,5,8,4,98,1,97,91.0,136.0,103.14285714285714,87.35714285714286
+INV-0495,2023-04-09,E,Sports & Fitness Gear,Sports,165,0,151,46,7590,ActiveLife Wholesale,North,4,69,105,Sufficient,Low,6,9,4,99,1,98,39.0,108.0,89.28571428571429,82.14285714285714
+INV-0500,2023-04-10,E,Sports & Fitness Gear,Sports,39,1,326,35,1365,ActiveLife Wholesale,South,4,53,291,Sufficient,Low,0,10,4,100,0,99,46.0,74.0,80.42857142857143,82.92857142857143
+INV-0505,2023-04-11,E,Sports & Fitness Gear,Sports,25,0,467,81,2025,ActiveLife Wholesale,East,4,122,386,Sufficient,Low,1,11,4,101,0,100,35.0,135.0,74.85714285714286,80.17857142857143
+INV-0510,2023-04-12,E,Sports & Fitness Gear,Sports,146,0,404,128,18688,ActiveLife Wholesale,West,4,192,276,Sufficient,Low,2,12,4,102,0,101,81.0,54.0,67.14285714285714,80.32142857142857
+INV-0515,2023-04-13,E,Sports & Fitness Gear,Sports,92,1,159,83,7636,ActiveLife Wholesale,Central,4,125,76,Sufficient,Low,3,13,4,103,0,102,128.0,124.0,77.71428571428571,81.75
+INV-0520,2023-04-14,E,Sports & Fitness Gear,Sports,196,0,383,40,7840,ActiveLife Wholesale,North,4,60,343,Sufficient,Low,4,14,4,104,0,103,83.0,91.0,71.85714285714286,80.92857142857143
+INV-0525,2023-04-15,E,Sports & Fitness Gear,Sports,198,0,442,78,15444,ActiveLife Wholesale,South,4,117,364,Sufficient,Low,5,15,4,105,1,104,40.0,39.0,64.57142857142857,78.39285714285714
+INV-0530,2023-04-16,E,Sports & Fitness Gear,Sports,85,0,478,73,6205,ActiveLife Wholesale,East,4,110,405,Sufficient,Low,6,16,4,106,1,105,78.0,46.0,70.14285714285714,79.89285714285714
+INV-0535,2023-04-17,E,Sports & Fitness Gear,Sports,185,0,286,103,19055,ActiveLife Wholesale,West,4,155,183,Sufficient,Low,0,17,4,107,0,106,73.0,35.0,74.0,81.10714285714286
+INV-0540,2023-04-18,E,Sports & Fitness Gear,Sports,176,0,232,45,7920,ActiveLife Wholesale,Central,4,68,187,Sufficient,Low,1,18,4,108,0,107,103.0,81.0,83.71428571428571,82.89285714285714
+INV-0545,2023-04-19,E,Sports & Fitness Gear,Sports,184,0,264,94,17296,ActiveLife Wholesale,North,4,141,170,Sufficient,Low,2,19,4,109,0,108,45.0,128.0,78.57142857142857,77.07142857142857
+INV-0550,2023-04-20,E,Sports & Fitness Gear,Sports,37,0,308,121,4477,ActiveLife Wholesale,South,4,182,187,Sufficient,Low,3,20,4,110,0,109,94.0,83.0,73.71428571428571,78.89285714285714
+INV-0555,2023-04-21,E,Sports & Fitness Gear,Sports,37,0,326,50,1850,ActiveLife Wholesale,East,4,75,276,Sufficient,Low,4,21,4,111,0,110,121.0,40.0,79.14285714285714,79.78571428571429
+INV-0560,2023-04-22,E,Sports & Fitness Gear,Sports,165,0,470,87,14355,ActiveLife Wholesale,West,4,131,383,Sufficient,Low,5,22,4,112,1,111,50.0,78.0,80.57142857142857,79.71428571428571
+INV-0565,2023-04-23,E,Sports & Fitness Gear,Sports,74,1,80,140,10360,ActiveLife Wholesale,Central,4,210,0,Stockout Risk,High,6,23,4,113,1,112,87.0,73.0,81.85714285714286,78.64285714285714
+INV-0570,2023-04-24,E,Sports & Fitness Gear,Sports,27,1,250,92,2484,ActiveLife Wholesale,North,4,138,158,Sufficient,Low,0,24,4,114,0,113,140.0,103.0,91.42857142857143,81.96428571428571
+INV-0575,2023-04-25,E,Sports & Fitness Gear,Sports,30,0,349,87,2610,ActiveLife Wholesale,South,4,131,262,Sufficient,Low,1,25,4,115,0,114,92.0,45.0,89.85714285714286,81.35714285714286
+INV-0580,2023-04-26,E,Sports & Fitness Gear,Sports,107,0,316,111,11877,ActiveLife Wholesale,East,4,167,205,Sufficient,Low,2,26,4,116,0,115,87.0,94.0,95.85714285714286,81.39285714285714
+INV-0585,2023-04-27,E,Sports & Fitness Gear,Sports,160,0,448,130,20800,ActiveLife Wholesale,West,4,195,318,Sufficient,Low,3,27,4,117,0,116,111.0,121.0,98.28571428571429,84.07142857142857
+INV-0590,2023-04-28,E,Sports & Fitness Gear,Sports,147,1,347,119,17493,ActiveLife Wholesale,Central,4,179,228,Sufficient,Low,4,28,4,118,0,117,130.0,50.0,99.57142857142857,87.89285714285714
+INV-0595,2023-04-29,E,Sports & Fitness Gear,Sports,136,0,306,106,14416,ActiveLife Wholesale,North,4,159,200,Sufficient,Low,5,29,4,119,1,118,119.0,87.0,109.42857142857143,89.42857142857143
+INV-0600,2023-04-30,E,Sports & Fitness Gear,Sports,153,0,407,72,11016,ActiveLife Wholesale,South,4,108,335,Sufficient,Low,6,30,4,120,1,119,106.0,140.0,112.14285714285714,88.35714285714286
+INV-0605,2023-05-01,E,Sports & Fitness Gear,Sports,40,0,386,56,2240,ActiveLife Wholesale,East,4,84,330,Sufficient,Low,0,1,5,121,0,120,72.0,92.0,102.42857142857143,87.07142857142857
+INV-0610,2023-05-02,E,Sports & Fitness Gear,Sports,58,0,128,121,7018,ActiveLife Wholesale,West,4,182,7,Reorder,Medium,1,2,5,122,0,121,56.0,87.0,97.28571428571429,86.42857142857143
+INV-0615,2023-05-03,E,Sports & Fitness Gear,Sports,152,0,356,121,18392,ActiveLife Wholesale,Central,4,182,235,Sufficient,Low,2,3,5,123,0,122,121.0,111.0,102.14285714285714,85.92857142857143
+INV-0620,2023-05-04,E,Sports & Fitness Gear,Sports,110,0,353,68,7480,ActiveLife Wholesale,North,4,102,285,Sufficient,Low,3,4,5,124,0,123,121.0,130.0,103.57142857142857,88.32142857142857
+INV-0625,2023-05-05,E,Sports & Fitness Gear,Sports,27,0,52,45,1215,ActiveLife Wholesale,South,4,68,7,Reorder,Medium,4,5,5,125,0,124,68.0,119.0,94.71428571428571,86.32142857142857
+INV-0630,2023-05-06,E,Sports & Fitness Gear,Sports,162,0,436,50,8100,ActiveLife Wholesale,East,4,75,386,Sufficient,Low,5,6,5,126,1,125,45.0,106.0,84.14285714285714,84.67857142857143
+INV-0635,2023-05-07,E,Sports & Fitness Gear,Sports,66,0,175,113,7458,ActiveLife Wholesale,West,4,170,62,Sufficient,Low,6,7,5,127,1,126,50.0,72.0,76.14285714285714,85.07142857142857
+INV-0640,2023-05-08,E,Sports & Fitness Gear,Sports,99,0,153,105,10395,ActiveLife Wholesale,Central,4,158,48,Reorder,Medium,0,8,5,128,0,127,113.0,56.0,82.0,87.46428571428571
+INV-0645,2023-05-09,E,Sports & Fitness Gear,Sports,74,0,98,58,4292,ActiveLife Wholesale,North,4,87,40,Sufficient,Low,1,9,5,129,0,128,105.0,121.0,89.0,89.96428571428571
+INV-0650,2023-05-10,E,Sports & Fitness Gear,Sports,87,1,251,159,13833,ActiveLife Wholesale,South,4,239,92,Sufficient,Low,2,10,5,130,0,129,58.0,121.0,80.0,89.14285714285714
+INV-0655,2023-05-11,E,Sports & Fitness Gear,Sports,148,0,406,123,18204,ActiveLife Wholesale,East,4,185,283,Sufficient,Low,3,11,5,131,0,130,159.0,68.0,85.42857142857143,90.25
+INV-0660,2023-05-12,E,Sports & Fitness Gear,Sports,196,0,133,71,13916,ActiveLife Wholesale,West,4,107,62,Sufficient,Low,4,12,5,132,0,131,123.0,45.0,93.28571428571429,91.67857142857143
+INV-0665,2023-05-13,E,Sports & Fitness Gear,Sports,164,0,83,29,4756,ActiveLife Wholesale,Central,4,44,54,Sufficient,Low,5,13,5,133,1,132,71.0,50.0,97.0,92.78571428571429
+INV-0670,2023-05-14,E,Sports & Fitness Gear,Sports,154,0,327,30,4620,ActiveLife Wholesale,North,4,45,297,Sufficient,Low,6,14,5,134,1,133,29.0,113.0,94.0,91.03571428571429
+INV-0675,2023-05-15,E,Sports & Fitness Gear,Sports,156,0,161,30,4680,ActiveLife Wholesale,South,4,45,131,Sufficient,Low,0,15,5,135,0,134,30.0,105.0,82.14285714285714,89.5
+INV-0680,2023-05-16,E,Sports & Fitness Gear,Sports,144,1,152,118,16992,ActiveLife Wholesale,East,4,177,34,Reorder,Medium,1,16,5,136,0,135,30.0,58.0,71.42857142857143,86.89285714285714
+INV-0685,2023-05-17,E,Sports & Fitness Gear,Sports,158,0,290,38,6004,ActiveLife Wholesale,West,4,57,252,Sufficient,Low,2,17,5,137,0,136,118.0,159.0,80.0,89.5
+INV-0690,2023-05-18,E,Sports & Fitness Gear,Sports,105,0,472,111,11655,ActiveLife Wholesale,Central,4,167,361,Sufficient,Low,3,18,5,138,0,137,38.0,123.0,62.714285714285715,87.5
+INV-0695,2023-05-19,E,Sports & Fitness Gear,Sports,24,0,149,110,2640,ActiveLife Wholesale,North,4,165,39,Reorder,Medium,4,19,5,139,0,138,111.0,71.0,61.0,87.14285714285714
+INV-0700,2023-05-20,E,Sports & Fitness Gear,Sports,22,0,289,50,1100,ActiveLife Wholesale,South,4,75,239,Sufficient,Low,5,20,5,140,1,139,110.0,29.0,66.57142857142857,89.28571428571429
+INV-0705,2023-05-21,E,Sports & Fitness Gear,Sports,81,0,173,74,5994,ActiveLife Wholesale,East,4,111,99,Sufficient,Low,6,21,5,141,1,140,50.0,30.0,69.57142857142857,87.96428571428571
+INV-0710,2023-05-22,E,Sports & Fitness Gear,Sports,23,0,264,95,2185,ActiveLife Wholesale,West,4,143,169,Sufficient,Low,0,22,5,142,0,141,74.0,30.0,75.85714285714286,85.60714285714286
+INV-0715,2023-05-23,E,Sports & Fitness Gear,Sports,140,0,315,101,14140,ActiveLife Wholesale,Central,4,152,214,Sufficient,Low,1,23,5,143,0,142,95.0,118.0,85.14285714285714,85.71428571428571
+INV-0720,2023-05-24,E,Sports & Fitness Gear,Sports,196,0,149,92,18032,ActiveLife Wholesale,North,4,138,57,Sufficient,Low,2,24,5,144,0,143,101.0,38.0,82.71428571428571,86.21428571428571
+INV-0725,2023-05-25,E,Sports & Fitness Gear,Sports,173,0,132,30,5190,ActiveLife Wholesale,South,4,45,102,Sufficient,Low,3,25,5,145,0,144,92.0,111.0,90.42857142857143,85.53571428571429
+INV-0730,2023-05-26,E,Sports & Fitness Gear,Sports,177,0,88,58,10266,ActiveLife Wholesale,East,4,87,30,Sufficient,Low,4,26,5,146,0,145,30.0,110.0,78.85714285714286,81.96428571428571
+INV-0735,2023-05-27,E,Sports & Fitness Gear,Sports,72,0,126,41,2952,ActiveLife Wholesale,West,4,62,85,Sufficient,Low,5,27,5,147,1,146,58.0,50.0,71.42857142857143,79.78571428571429
+INV-0740,2023-05-28,E,Sports & Fitness Gear,Sports,177,1,469,141,24957,ActiveLife Wholesale,Central,4,212,328,Sufficient,Low,6,28,5,148,1,147,41.0,74.0,70.14285714285714,77.46428571428571
+INV-0745,2023-05-29,E,Sports & Fitness Gear,Sports,101,0,70,37,3737,ActiveLife Wholesale,North,4,56,33,Sufficient,Low,0,29,5,149,0,148,141.0,95.0,79.71428571428571,79.92857142857143
+INV-0750,2023-05-30,E,Sports & Fitness Gear,Sports,48,0,385,88,4224,ActiveLife Wholesale,South,4,132,297,Sufficient,Low,1,30,5,150,0,149,37.0,101.0,71.42857142857143,79.25
+INV-0755,2023-05-31,E,Sports & Fitness Gear,Sports,113,0,134,86,9718,ActiveLife Wholesale,East,4,129,48,Sufficient,Low,2,31,5,151,0,150,88.0,92.0,69.57142857142857,78.07142857142857
+INV-0760,2023-06-01,E,Sports & Fitness Gear,Sports,116,0,186,44,5104,ActiveLife Wholesale,West,4,66,142,Sufficient,Low,3,1,6,152,0,151,86.0,30.0,68.71428571428571,76.82142857142857
+INV-0765,2023-06-02,E,Sports & Fitness Gear,Sports,22,0,374,61,1342,ActiveLife Wholesale,Central,4,92,313,Sufficient,Low,4,2,6,153,0,152,44.0,58.0,70.71428571428571,75.96428571428571
+INV-0770,2023-06-03,E,Sports & Fitness Gear,Sports,117,0,484,121,14157,ActiveLife Wholesale,North,4,182,363,Sufficient,Low,5,3,6,154,1,153,61.0,41.0,71.14285714285714,76.53571428571429
+INV-0775,2023-06-04,E,Sports & Fitness Gear,Sports,75,0,382,77,5775,ActiveLife Wholesale,South,4,116,305,Sufficient,Low,6,4,6,155,1,154,121.0,141.0,82.57142857142857,79.07142857142857
+INV-0780,2023-06-05,E,Sports & Fitness Gear,Sports,57,0,458,94,5358,ActiveLife Wholesale,East,4,141,364,Sufficient,Low,0,5,6,156,0,155,77.0,37.0,73.42857142857143,77.78571428571429
+INV-0785,2023-06-06,E,Sports & Fitness Gear,Sports,99,0,341,27,2673,ActiveLife Wholesale,West,4,41,314,Sufficient,Low,1,6,6,157,0,156,94.0,88.0,81.57142857142857,77.39285714285714
+INV-0790,2023-06-07,E,Sports & Fitness Gear,Sports,122,0,433,64,7808,ActiveLife Wholesale,Central,4,96,369,Sufficient,Low,2,7,6,158,0,157,27.0,86.0,72.85714285714286,76.28571428571429
+INV-0795,2023-06-08,E,Sports & Fitness Gear,Sports,145,0,306,93,13485,ActiveLife Wholesale,North,4,140,213,Sufficient,Low,3,8,6,159,0,158,64.0,44.0,69.71428571428571,72.89285714285714
+INV-0800,2023-06-09,E,Sports & Fitness Gear,Sports,29,0,189,50,1450,ActiveLife Wholesale,South,4,75,139,Sufficient,Low,4,9,6,160,0,159,93.0,61.0,76.71428571428571,71.82142857142857
+INV-0805,2023-06-10,E,Sports & Fitness Gear,Sports,94,0,174,41,3854,ActiveLife Wholesale,East,4,62,133,Sufficient,Low,5,10,6,161,1,160,50.0,121.0,75.14285714285714,71.07142857142857
+INV-0810,2023-06-11,E,Sports & Fitness Gear,Sports,162,0,63,41,6642,ActiveLife Wholesale,West,4,62,22,Sufficient,Low,6,11,6,162,1,161,41.0,77.0,63.714285714285715,71.5
+INV-0815,2023-06-12,E,Sports & Fitness Gear,Sports,184,0,258,105,19320,ActiveLife Wholesale,Central,4,158,153,Sufficient,Low,0,12,6,163,0,162,41.0,94.0,58.57142857142857,71.89285714285714
+INV-0820,2023-06-13,E,Sports & Fitness Gear,Sports,38,0,345,57,2166,ActiveLife Wholesale,North,4,86,288,Sufficient,Low,1,13,6,164,0,163,105.0,27.0,60.142857142857146,74.57142857142857
+INV-0825,2023-06-14,E,Sports & Fitness Gear,Sports,104,0,422,84,8736,ActiveLife Wholesale,South,4,126,338,Sufficient,Low,2,14,6,165,0,164,57.0,64.0,64.42857142857143,72.39285714285714
+INV-0830,2023-06-15,E,Sports & Fitness Gear,Sports,49,1,121,34,1666,ActiveLife Wholesale,East,4,51,87,Sufficient,Low,3,15,6,166,0,165,84.0,93.0,67.28571428571429,74.03571428571429
+INV-0835,2023-06-16,E,Sports & Fitness Gear,Sports,128,0,60,59,7552,ActiveLife Wholesale,West,4,89,1,Reorder,Medium,4,16,6,167,0,166,34.0,50.0,58.857142857142854,71.28571428571429
+INV-0840,2023-06-17,E,Sports & Fitness Gear,Sports,24,1,368,60,1440,ActiveLife Wholesale,Central,4,90,308,Sufficient,Low,5,17,6,168,1,167,59.0,41.0,60.142857142857146,69.46428571428571
+INV-0845,2023-06-18,E,Sports & Fitness Gear,Sports,197,0,395,25,4925,ActiveLife Wholesale,North,4,38,370,Sufficient,Low,6,18,6,169,1,168,60.0,41.0,62.857142857142854,69.82142857142857
+INV-0850,2023-06-19,E,Sports & Fitness Gear,Sports,196,0,125,22,4312,ActiveLife Wholesale,South,4,33,103,Sufficient,Low,0,19,6,170,0,169,25.0,105.0,60.57142857142857,68.07142857142857
+INV-0855,2023-06-20,E,Sports & Fitness Gear,Sports,118,0,328,75,8850,ActiveLife Wholesale,East,4,113,253,Sufficient,Low,1,20,6,171,0,170,22.0,57.0,48.714285714285715,65.46428571428571
+INV-0860,2023-06-21,E,Sports & Fitness Gear,Sports,189,0,463,88,16632,ActiveLife Wholesale,West,4,132,375,Sufficient,Low,2,21,6,172,0,171,75.0,84.0,51.285714285714285,64.53571428571429
+INV-0865,2023-06-22,E,Sports & Fitness Gear,Sports,94,0,473,54,5076,ActiveLife Wholesale,Central,4,81,419,Sufficient,Low,3,22,6,173,0,172,88.0,34.0,51.857142857142854,64.39285714285714
+INV-0870,2023-06-23,E,Sports & Fitness Gear,Sports,67,0,318,99,6633,ActiveLife Wholesale,North,4,149,219,Sufficient,Low,4,23,6,174,0,173,54.0,59.0,54.714285714285715,65.25
+INV-0875,2023-06-24,E,Sports & Fitness Gear,Sports,43,0,116,34,1462,ActiveLife Wholesale,South,4,51,82,Sufficient,Low,5,24,6,175,1,174,99.0,60.0,60.42857142857143,66.71428571428571
+INV-0880,2023-06-25,E,Sports & Fitness Gear,Sports,131,0,198,101,13231,ActiveLife Wholesale,East,4,152,97,Sufficient,Low,6,25,6,176,1,175,34.0,25.0,56.714285714285715,66.46428571428571
+INV-0885,2023-06-26,E,Sports & Fitness Gear,Sports,70,0,241,33,2310,ActiveLife Wholesale,West,4,50,208,Sufficient,Low,0,26,6,177,0,176,101.0,22.0,67.57142857142857,65.03571428571429
+INV-0890,2023-06-27,E,Sports & Fitness Gear,Sports,85,0,434,45,3825,ActiveLife Wholesale,Central,4,68,389,Sufficient,Low,1,27,6,178,0,177,33.0,75.0,69.14285714285714,64.89285714285714
+INV-0895,2023-06-28,E,Sports & Fitness Gear,Sports,119,1,63,114,13566,ActiveLife Wholesale,North,4,171,0,Stockout Risk,High,2,28,6,179,0,178,45.0,88.0,64.85714285714286,63.357142857142854
+INV-0900,2023-06-29,E,Sports & Fitness Gear,Sports,53,0,424,38,2014,ActiveLife Wholesale,South,4,57,386,Sufficient,Low,3,29,6,180,0,179,114.0,54.0,68.57142857142857,64.35714285714286
+INV-0905,2023-06-30,E,Sports & Fitness Gear,Sports,77,0,345,38,2926,ActiveLife Wholesale,East,4,57,307,Sufficient,Low,4,30,6,181,0,180,38.0,99.0,66.28571428571429,64.14285714285714
+INV-0910,2023-07-01,E,Sports & Fitness Gear,Sports,180,0,431,64,11520,ActiveLife Wholesale,West,4,96,367,Sufficient,Low,5,1,7,182,1,181,38.0,34.0,57.57142857142857,63.32142857142857
+INV-0915,2023-07-02,E,Sports & Fitness Gear,Sports,50,0,438,88,4400,ActiveLife Wholesale,Central,4,132,350,Sufficient,Low,6,2,7,183,1,182,64.0,101.0,61.857142857142854,61.285714285714285
+INV-0920,2023-07-03,E,Sports & Fitness Gear,Sports,121,0,74,32,3872,ActiveLife Wholesale,North,4,48,42,Sufficient,Low,0,3,7,184,0,183,88.0,33.0,60.0,61.67857142857143
+INV-0925,2023-07-04,E,Sports & Fitness Gear,Sports,27,0,236,34,918,ActiveLife Wholesale,South,4,51,202,Sufficient,Low,1,4,7,185,0,184,32.0,45.0,59.857142857142854,59.464285714285715
+INV-0930,2023-07-05,E,Sports & Fitness Gear,Sports,129,0,341,81,10449,ActiveLife Wholesale,East,4,122,260,Sufficient,Low,2,5,7,186,0,185,34.0,114.0,58.285714285714285,59.714285714285715
+INV-0935,2023-07-06,E,Sports & Fitness Gear,Sports,64,0,334,80,5120,ActiveLife Wholesale,West,4,120,254,Sufficient,Low,3,6,7,187,0,186,81.0,38.0,53.57142857142857,60.32142857142857
+INV-0940,2023-07-07,E,Sports & Fitness Gear,Sports,88,1,490,122,10736,ActiveLife Wholesale,Central,4,183,368,Sufficient,Low,4,7,7,188,0,187,80.0,38.0,59.57142857142857,59.857142857142854
+INV-0945,2023-07-08,E,Sports & Fitness Gear,Sports,125,0,187,33,4125,ActiveLife Wholesale,North,4,50,154,Sufficient,Low,5,8,7,189,1,188,122.0,64.0,71.57142857142857,62.42857142857143
+INV-0950,2023-07-09,E,Sports & Fitness Gear,Sports,33,0,309,97,3201,ActiveLife Wholesale,South,4,146,212,Sufficient,Low,6,9,7,190,1,189,33.0,88.0,67.14285714285714,62.142857142857146
+INV-0955,2023-07-10,E,Sports & Fitness Gear,Sports,49,0,274,42,2058,ActiveLife Wholesale,East,4,63,232,Sufficient,Low,0,10,7,191,0,190,97.0,32.0,68.42857142857143,64.14285714285714
+INV-0960,2023-07-11,E,Sports & Fitness Gear,Sports,161,0,460,69,11109,ActiveLife Wholesale,West,4,104,391,Sufficient,Low,1,11,7,192,0,191,42.0,34.0,69.85714285714286,61.892857142857146
+INV-0965,2023-07-12,E,Sports & Fitness Gear,Sports,27,0,343,54,1458,ActiveLife Wholesale,Central,4,81,289,Sufficient,Low,2,12,7,193,0,192,69.0,81.0,74.85714285714286,62.32142857142857
+INV-0970,2023-07-13,E,Sports & Fitness Gear,Sports,41,0,473,85,3485,ActiveLife Wholesale,North,4,128,388,Sufficient,Low,3,13,7,194,0,193,54.0,80.0,71.0,61.25
+INV-0975,2023-07-14,E,Sports & Fitness Gear,Sports,136,0,107,44,5984,ActiveLife Wholesale,South,4,66,63,Sufficient,Low,4,14,7,195,0,194,85.0,122.0,71.71428571428571,63.07142857142857
+INV-0980,2023-07-15,E,Sports & Fitness Gear,Sports,95,0,101,29,2755,ActiveLife Wholesale,East,4,44,72,Sufficient,Low,5,15,7,196,1,195,44.0,33.0,60.57142857142857,62.535714285714285
+INV-0985,2023-07-16,E,Sports & Fitness Gear,Sports,180,0,324,18,3240,ActiveLife Wholesale,West,4,27,306,Sufficient,Low,6,16,7,197,1,196,29.0,97.0,60.0,61.42857142857143
+INV-0990,2023-07-17,E,Sports & Fitness Gear,Sports,58,0,56,34,1972,ActiveLife Wholesale,Central,4,51,22,Sufficient,Low,0,17,7,198,0,197,18.0,42.0,48.714285714285715,61.17857142857143
+INV-0995,2023-07-18,E,Sports & Fitness Gear,Sports,56,0,230,87,4872,ActiveLife Wholesale,North,4,131,143,Sufficient,Low,1,18,7,199,0,198,34.0,69.0,47.57142857142857,61.607142857142854
+INV-1000,2023-07-19,E,Sports & Fitness Gear,Sports,198,0,340,93,18414,ActiveLife Wholesale,South,4,140,247,Sufficient,Low,2,19,7,200,0,199,87.0,54.0,50.142857142857146,62.035714285714285

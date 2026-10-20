@@ -1,0 +1,982 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Daily Life Analysis | Inventory Intelligence</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root {
+    --bg: #07111f;
+    --panel: #0e1b2d;
+    --panel2: #12233a;
+    --border: #243852;
+    --text: #e8f0fb;
+    --muted: #93a8c2;
+    --blue: #58a6ff;
+    --cyan: #4de0d0;
+    --orange: #ffbd69;
+    --red: #ff7185;
+    --green: #57d6a1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(ellipse at top right, #11294a, transparent 40%), var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 28px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(26px, 4vw, 38px);
+    margin: 8px 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    max-width: 750px;
+}
+
+button, select, input {
+    background: #10223a;
+    border: 1px solid #2b4564;
+    color: var(--text);
+    padding: 11px 13px;
+    border-radius: 9px;
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.primary {
+    background: var(--blue);
+    color: #061322;
+    font-weight: bold;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.card, .panel {
+    background: linear-gradient(145deg, var(--panel), #0a1727);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 19px;
+    min-width: 0;
+}
+
+.metric-label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.metric {
+    font-size: 29px;
+    font-weight: 800;
+    margin: 8px 0 3px;
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.panel h2 {
+    font-size: 17px;
+    margin: 0 0 6px;
+}
+
+.panel > p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.chart-box {
+    height: 300px;
+    position: relative;
+}
+
+.small-chart {
+    height: 250px;
+    position: relative;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+th {
+    color: var(--muted);
+}
+
+td {
+    color: #dce8f8;
+}
+
+.pill {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.low {
+    background: #14372e;
+    color: var(--green);
+}
+
+.medium {
+    background: #3b2c16;
+    color: var(--orange);
+}
+
+.high {
+    background: #421d2b;
+    color: var(--red);
+}
+
+.lifecycle {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stage {
+    border: 1px solid var(--border);
+    background: var(--panel2);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.stage-number {
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.stage h3 {
+    font-size: 14px;
+}
+
+.stage p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.note {
+    border-left: 3px solid var(--cyan);
+    padding: 13px;
+    background: #0d2232;
+    border-radius: 0 10px 10px 0;
+    color: #d2e3f5;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+#error {
+    display: none;
+    color: #ffc1c8;
+    background: #361a27;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 25px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lifecycle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding: 14px;
+    }
+
+    .grid {
+        gap: 9px;
+    }
+
+    .card {
+        padding: 13px;
+    }
+
+    .metric {
+        font-size: 22px;
+    }
+
+    .lifecycle {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <div>
+        <div class="eyebrow">Inventory Intelligence · Analytics</div>
+        <h1>Product Daily Life Analysis</h1>
+        <div class="subtitle">
+            Analyse daily product demand, stock availability, demand changes,
+            and replenishment risk using your inventory history.
+        </div>
+    </div>
+
+    <div>
+        <button onclick="location.href='/'">← Main Dashboard</button>
+        <button onclick="loadAnalysis()">↻ Refresh</button>
+    </div>
+</header>
+
+<div id="error"></div>
+
+<section class="filters">
+    <div class="field">
+        <label for="productSelect">SELECT PRODUCT</label>
+        <select id="productSelect">
+            <option value="">All products</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="periodSelect">ANALYSIS PERIOD</label>
+        <select id="periodSelect">
+            <option value="7">Last 7 days</option>
+            <option value="14">Last 14 days</option>
+            <option value="30" selected>Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="all">All history</option>
+        </select>
+    </div>
+
+    <button class="primary" onclick="loadAnalysis()">Analyse</button>
+</section>
+
+<section class="grid">
+    <div class="card">
+        <div class="metric-label">Total Demand</div>
+        <div class="metric" id="totalDemand">—</div>
+        <div class="hint">Units in selected period</div>
+    </div>
+
+    <div class="card">
+        <div class="metric-label">Average Daily Demand</div>
+        <div class="metric" id="averageDemand">—</div>
+        <div class="hint">Average per date with demand data</div>
+    </div>
+
+    <div class="card">
+        <div class="metric-label">Current Stock</div>
+        <div class="metric" id="currentStock">—</div>
+        <div class="hint" id="stockHint">Selected product inventory</div>
+    </div>
+
+    <div class="card">
+        <div class="metric-label">Estimated Stock Cover</div>
+        <div class="metric" id="stockCover">—</div>
+        <div class="hint">Approximate days remaining</div>
+    </div>
+</section>
+
+<section class="main-grid">
+    <div class="panel">
+        <h2>Daily Demand Analysis</h2>
+        <p>Recorded demand and future forecast are displayed separately.</p>
+        <div class="chart-box">
+            <canvas id="demandChart"></canvas>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>Daily Stock Analysis</h2>
+        <p>Stock observations from the history API, when available.</p>
+        <div class="chart-box">
+            <canvas id="stockChart"></canvas>
+        </div>
+    </div>
+</section>
+
+<section class="main-grid">
+    <div class="panel">
+        <h2>Weekday Demand Pattern</h2>
+        <p>Compare average demand across days of the week.</p>
+        <div class="small-chart">
+            <canvas id="weekdayChart"></canvas>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>Product Health & Insights</h2>
+        <p>Indicators based on the selected demand history and stock.</p>
+        <div id="healthSummary">Loading analysis...</div>
+        <div class="note" id="recommendation">
+            Recommendations will appear after the data loads.
+        </div>
+    </div>
+</section>
+
+<section class="panel" style="margin-bottom:16px">
+    <h2>Product Life-Cycle Review</h2>
+    <p>Use daily data to review the product's operating pattern. These are review stages, not an automatic claim about the product's actual commercial age.</p>
+
+    <div class="lifecycle">
+        <div class="stage">
+            <div class="stage-number">01 · INTRODUCE</div>
+            <h3>Establish baseline</h3>
+            <p>Measure initial demand and stock movement.</p>
+        </div>
+
+        <div class="stage">
+            <div class="stage-number">02 · GROW</div>
+            <h3>Watch demand growth</h3>
+            <p>Compare recent demand with the previous period.</p>
+        </div>
+
+        <div class="stage">
+            <div class="stage-number">03 · STABLE</div>
+            <h3>Optimise replenishment</h3>
+            <p>Use demand, stock and lead time to plan orders.</p>
+        </div>
+
+        <div class="stage">
+            <div class="stage-number">04 · REVIEW</div>
+            <h3>Check for decline or risk</h3>
+            <p>Investigate falling demand, excess stock or stockouts.</p>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>Day-by-Day Product Records</h2>
+    <p>Daily values returned by your backend. Missing values are shown as unavailable rather than fabricated.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Demand</th>
+                    <th>Stock</th>
+                    <th>Promotion</th>
+                    <th>Demand Change</th>
+                    <th>Signal</th>
+                </tr>
+            </thead>
+            <tbody id="dailyRows">
+                <tr><td colspan="6">Loading records...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    Inventory Intelligence · Product Daily Life Analysis
+</footer>
+
+</div>
+
+<script>
+let products = [];
+let demandChart = null;
+let stockChart = null;
+let weekdayChart = null;
+
+function showError(message) {
+    const box = document.getElementById("error");
+    box.textContent = message;
+    box.style.display = "block";
+}
+
+function clearError() {
+    document.getElementById("error").style.display = "none";
+}
+
+function numberValue(value) {
+    if (value === null || value === undefined || value === "") {
+        return null;
+    }
+
+    const n = Number(value);
+    return Number.isFinite(n) ? n : null;
+}
+
+function formatNumber(value) {
+    if (value === null || value === undefined || !Number.isFinite(Number(value))) {
+        return "—";
+    }
+
+    return Number(value).toLocaleString(undefined, {
+        maximumFractionDigits: 1
+    });
+}
+
+function getField(object, names) {
+    for (const name of names) {
+        if (object && object[name] !== null && object[name] !== undefined) {
+            return object[name];
+        }
+    }
+
+    return null;
+}
+
+function normalizeDate(value) {
+    if (!value) return "";
+
+    const text = String(value);
+    return text.length >= 10 ? text.slice(0, 10) : text;
+}
+
+async function getJSON(url) {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        throw new Error(`${url} returned HTTP ${response.status}`);
+    }
+
+    return response.json();
+}
+
+function normalizeHistory(payload) {
+    const records = Array.isArray(payload)
+        ? payload
+        : payload.history || payload.rows || payload.data || payload.records || [];
+
+    return records.map(record => ({
+        date: normalizeDate(getField(record, [
+            "date", "observation_date", "Date", "transaction_date"
+        ])),
+
+        demand: numberValue(getField(record, [
+            "demand", "demand_units", "Demand_Units",
+            "units_sold", "quantity"
+        ])),
+
+        stock: numberValue(getField(record, [
+            "stock_on_hand", "stock", "Stock_On_Hand",
+            "stock_quantity"
+        ])),
+
+        promotion: getField(record, [
+            "promotion_active", "Promotion_Active", "promotion"
+        ])
+    })).filter(record => record.date);
+}
+
+async function initializePage() {
+    try {
+        const response = await getJSON("/api/products");
+
+        products = Array.isArray(response)
+            ? response
+            : response.products || response.items || [];
+
+        const selector = document.getElementById("productSelect");
+
+        products.forEach(product => {
+            const id = getField(product, ["product_id", "id", "Product_ID"]);
+
+            if (id === null) return;
+
+            const name = getField(product, [
+                "product_name", "name", "Product_Name"
+            ]) || id;
+
+            const option = document.createElement("option");
+            option.value = id;
+            option.textContent = `${id} — ${name}`;
+
+            selector.appendChild(option);
+        });
+    } catch (error) {
+        showError(
+            "Could not load products. Make sure your FastAPI backend is running. " +
+            error.message
+        );
+    }
+
+    await loadAnalysis();
+}
+
+async function loadAnalysis() {
+    clearError();
+
+    const productId = document.getElementById("productSelect").value;
+    const period = document.getElementById("periodSelect").value;
+
+    try {
+        const params = new URLSearchParams();
+
+        if (productId) params.set("product_id", productId);
+        if (period !== "all") params.set("days", period);
+
+        const query = params.toString();
+        const url = "/api/history" + (query ? "?" + query : "");
+
+        const response = await getJSON(url);
+        let records = normalizeHistory(response);
+
+        // Apply the period locally too, in case the API ignores "days".
+        if (period !== "all" && records.length) {
+            const cutoff = new Date();
+            cutoff.setDate(cutoff.getDate() - Number(period) + 1);
+            const cutoffDate = cutoff.toISOString().slice(0, 10);
+
+            const filtered = records.filter(record => record.date >= cutoffDate);
+
+            // If all dataset dates are historical and not near today's date,
+            // retain the latest requested number of distinct dates instead.
+            const distinctDates = [...new Set(records.map(record => record.date))];
+
+            records = filtered.length
+                ? filtered
+                : records.filter(record =>
+                    distinctDates.slice(-Number(period)).includes(record.date)
+                );
+        }
+
+        renderAnalysis(records, productId);
+    } catch (error) {
+        showError(
+            "Could not load product history. Check that /api/history returns JSON. " +
+            error.message
+        );
+
+        renderAnalysis([], productId);
+    }
+}
+
+function aggregateDaily(records) {
+    const daily = new Map();
+
+    records.forEach(record => {
+        if (!daily.has(record.date)) {
+            daily.set(record.date, {
+                date: record.date,
+                demand: 0,
+                hasDemand: false,
+                stock: null,
+                promotion: false
+            });
+        }
+
+        const day = daily.get(record.date);
+
+        if (record.demand !== null) {
+            day.demand += record.demand;
+            day.hasDemand = true;
+        }
+
+        if (record.stock !== null) {
+            day.stock = record.stock;
+        }
+
+        if (
+            record.promotion === true ||
+            record.promotion === 1 ||
+            String(record.promotion).toLowerCase() === "yes" ||
+            String(record.promotion).toLowerCase() === "true"
+        ) {
+            day.promotion = true;
+        }
+    });
+
+    return [...daily.values()]
+        .map(day => ({
+            ...day,
+            demand: day.hasDemand ? day.demand : null
+        }))
+        .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function createChart(existingChart, canvasId, type, data) {
+    if (existingChart) {
+        existingChart.destroy();
+    }
+
+    return new Chart(document.getElementById(canvasId), {
+        type,
+        data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                intersect: false,
+                mode: "index"
+            },
+            plugins: {
+                legend: {
+                    labels: { color: "#c5d6eb" }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: "#8fa8c5",
+                        maxTicksLimit: 9
+                    },
+                    grid: {
+                        color: "rgba(130,160,190,.08)"
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: "#8fa8c5" },
+                    grid: {
+                        color: "rgba(130,160,190,.12)"
+                    }
+                }
+            }
+        }
+    });
+}
+
+function renderAnalysis(records, productId) {
+    const rows = aggregateDaily(records);
+    const demandRows = rows.filter(row => row.demand !== null);
+
+    const totalDemand = demandRows.reduce(
+        (sum, row) => sum + row.demand, 0
+    );
+
+    const averageDemand = demandRows.length
+        ? totalDemand / demandRows.length
+        : 0;
+
+    const selectedProduct = products.find(product =>
+        String(getField(product, ["product_id", "id", "Product_ID"])) ===
+        String(productId)
+    );
+
+    // Prefer the product endpoint's current inventory. If it does not provide
+    // stock, use the latest recorded stock for a specifically selected product.
+    // For All products, only show a total when every listed product has a known
+    // current-stock value; never treat an arbitrary history row as the total.
+    let currentStock = null;
+    let stockHint = "Selected product inventory";
+
+    const productStock = product => numberValue(getField(product, [
+        "stock_on_hand", "stock", "Stock_On_Hand", "stock_quantity",
+        "Stock", "current_stock", "Current_Stock", "Stock_Available"
+    ]));
+
+    if (productId) {
+        currentStock = productStock(selectedProduct);
+        if (currentStock === null) {
+            const stockRecords = rows.filter(row => row.stock !== null);
+            if (stockRecords.length) {
+                currentStock = stockRecords[stockRecords.length - 1].stock;
+                stockHint = "Latest recorded stock for selected product";
+            }
+        }
+    } else {
+        const knownStocks = products.map(productStock);
+        if (knownStocks.length && knownStocks.every(value => value !== null)) {
+            currentStock = knownStocks.reduce((sum, value) => sum + value, 0);
+            stockHint = "Combined inventory across all products";
+        } else {
+            stockHint = "Choose a product to view its current stock";
+        }
+    }
+
+    const stockCover = currentStock !== null && averageDemand > 0
+        ? currentStock / averageDemand
+        : null;
+
+    document.getElementById("totalDemand").textContent =
+        formatNumber(totalDemand);
+
+    document.getElementById("averageDemand").textContent =
+        formatNumber(averageDemand);
+
+    document.getElementById("currentStock").textContent =
+        formatNumber(currentStock);
+    document.getElementById("stockHint").textContent = stockHint;
+
+    document.getElementById("stockCover").textContent =
+        stockCover === null ? "—" : formatNumber(stockCover) + " days";
+
+    const labels = rows.map(row => row.date);
+
+    demandChart = createChart(
+        demandChart,
+        "demandChart",
+        "line",
+        {
+            labels,
+            datasets: [{
+                label: "Historical Demand",
+                data: rows.map(row => row.demand),
+                borderColor: "#58a6ff",
+                backgroundColor: "rgba(88,166,255,.12)",
+                fill: true,
+                tension: 0.3,
+                spanGaps: false,
+                pointRadius: 2
+            }]
+        }
+    );
+
+    stockChart = createChart(
+        stockChart,
+        "stockChart",
+        "line",
+        {
+            labels,
+            datasets: [{
+                label: "Recorded Stock",
+                data: rows.map(row => row.stock),
+                borderColor: "#ffbd69",
+                backgroundColor: "rgba(255,189,105,.12)",
+                fill: true,
+                tension: 0.25,
+                spanGaps: false,
+                pointRadius: 2
+            }]
+        }
+    );
+
+    const weekdays = [
+        "Sunday", "Monday", "Tuesday", "Wednesday",
+        "Thursday", "Friday", "Saturday"
+    ];
+
+    const sums = Array(7).fill(0);
+    const counts = Array(7).fill(0);
+
+    demandRows.forEach(row => {
+        const weekday = new Date(row.date + "T12:00:00").getDay();
+        sums[weekday] += row.demand;
+        counts[weekday]++;
+    });
+
+    weekdayChart = createChart(
+        weekdayChart,
+        "weekdayChart",
+        "bar",
+        {
+            labels: weekdays,
+            datasets: [{
+                label: "Average Demand",
+                data: sums.map((sum, index) =>
+                    counts[index] ? sum / counts[index] : null
+                ),
+                backgroundColor: "#58a6ff",
+                borderRadius: 5
+            }]
+        }
+    );
+
+    const recent = demandRows.slice(-7);
+    const previous = demandRows.slice(-14, -7);
+
+    const recentAverage = recent.length
+        ? recent.reduce((sum, row) => sum + row.demand, 0) / recent.length
+        : 0;
+
+    const previousAverage = previous.length
+        ? previous.reduce((sum, row) => sum + row.demand, 0) / previous.length
+        : 0;
+
+    const demandChange = previousAverage > 0
+        ? ((recentAverage - previousAverage) / previousAverage) * 100
+        : null;
+
+    let risk = "LOW";
+    let riskClass = "low";
+    let advice = "No immediate low-stock signal from the available values.";
+
+    if (stockCover !== null && stockCover < 3) {
+        risk = "HIGH";
+        riskClass = "high";
+        advice = "Stock cover is under three average-demand days. Review replenishment and supplier lead time.";
+    } else if (stockCover !== null && stockCover < 7) {
+        risk = "MEDIUM";
+        riskClass = "medium";
+        advice = "Stock cover is under seven average-demand days. Check the reorder level and incoming supply.";
+    }
+
+    if (demandChange !== null && demandChange > 20) {
+        advice = "Demand has increased compared with the previous week. " + advice;
+    } else if (demandChange !== null && demandChange < -20) {
+        advice = "Demand has fallen compared with the previous week. Check promotions and avoid over-ordering. " + advice;
+    }
+
+    document.getElementById("healthSummary").innerHTML = `
+        <p>
+            <strong>Stock pressure:</strong>
+            <span class="pill ${riskClass}">${risk}</span>
+        </p>
+        <p>
+            <strong>Recent demand change:</strong>
+            ${demandChange === null
+                ? "Not enough comparison data"
+                : (demandChange > 0 ? "+" : "") +
+                  formatNumber(demandChange) + "%"}
+        </p>
+        <p><strong>Dates analysed:</strong> ${rows.length}</p>
+    `;
+
+    document.getElementById("recommendation").textContent = advice;
+
+    const tbody = document.getElementById("dailyRows");
+
+    if (!rows.length) {
+        tbody.innerHTML =
+            '<tr><td colspan="6">No daily records returned for this selection.</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = rows.slice().reverse().map((row, index, reversed) => {
+        const previousRow = reversed[index + 1];
+
+        let change = null;
+
+        if (
+            previousRow &&
+            previousRow.demand !== null &&
+            previousRow.demand > 0 &&
+            row.demand !== null
+        ) {
+            change = ((row.demand - previousRow.demand) /
+                previousRow.demand) * 100;
+        }
+
+        let signal = "Normal";
+        let signalClass = "low";
+
+        if (change !== null && change > 20) {
+            signal = "Demand spike";
+            signalClass = "medium";
+        } else if (change !== null && change < -20) {
+            signal = "Demand dip";
+            signalClass = "medium";
+        }
+
+        if (stockCover !== null && stockCover < 3) {
+            signal = "Low stock cover";
+            signalClass = "high";
+        }
+
+        const promotion = row.promotion ? "Yes" : "No / unknown";
+        const changeText = change === null
+            ? "—"
+            : (change > 0 ? "+" : "") + formatNumber(change) + "%";
+
+        return `
+            <tr>
+                <td>${row.date}</td>
+                <td>${formatNumber(row.demand)}</td>
+                <td>${formatNumber(row.stock)}</td>
+                <td>${promotion}</td>
+                <td>${changeText}</td>
+                <td><span class="pill ${signalClass}">${signal}</span></td>
+            </tr>
+        `;
+    }).join("");
+}
+
+initializePage();
+</script>
+</body>
+</html>

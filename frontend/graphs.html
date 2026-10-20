@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08111f">
+<meta name="description" content="Inventory Intelligence demand, stock and model evaluation analytics.">
+<title>Inventory Intelligence | Graphs &amp; Analysis</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{
+  color-scheme:dark;--bg:#08111f;--panel:#111f33;--panel2:#14243a;
+  --border:#273a54;--text:#eaf2ff;--muted:#9eb0c9;
+  --blue:#60a5fa;--cyan:#42d6d0;--green:#86efac;--amber:#ffb86b;--red:#fb7185
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 10% -15%,#17365a 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.5 Inter,Segoe UI,Arial,sans-serif}
+button,select{font:inherit}
+header{padding:20px max(5%,calc((100% - 1400px)/2));border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:#08111fd9}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{height:42px;width:42px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#438bff,#38c9c1);color:#061525;font-size:22px;font-weight:900}
+header h2{margin:0;font-size:18px}
+nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+nav a{color:#b8d7ff;text-decoration:none;padding:8px 10px;border:1px solid transparent;border-radius:8px;font-size:12px}
+nav a:hover,nav a.active{background:#172942;border-color:var(--border);color:white}
+main{max-width:1400px;margin:auto;padding:28px 5%}
+h1{font-size:clamp(25px,4vw,34px);margin:0 0 8px;letter-spacing:-.6px}
+.subtitle{color:var(--muted);margin:0 0 22px}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:16px;padding:15px;background:#0e1b2d;border:1px solid var(--border);border-radius:14px}
+label{display:flex;flex-direction:column;gap:5px;color:#c7d4e5;font-size:11px;font-weight:650}
+select,button{padding:10px 13px;border-radius:9px;border:1px solid var(--border);background:var(--panel);color:var(--text)}
+select{min-width:150px}
+button{background:linear-gradient(100deg,#286bd0,#4f63df);cursor:pointer;font-weight:700}
+button:hover{filter:brightness(1.1)}
+button:disabled{opacity:.55;cursor:wait}
+#message{padding:10px 12px;border:1px solid #29496c;border-radius:10px;background:#10233a;color:#bad6ff;margin:12px 0 18px;font-size:12px}
+#message.error{border-color:#63333f;background:#301d28;color:#ffb5bd}
+#message.success{border-color:#285849;background:#102a27;color:#9ce8c7}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}
+.metric,.panel{background:linear-gradient(145deg,#122137,#0d192a);border:1px solid var(--border);border-radius:15px;padding:18px;min-width:0;box-shadow:0 8px 25px #0002}
+.metric span{color:var(--muted);font-size:12px}
+.metric h2{font-size:clamp(22px,3vw,28px);margin:9px 0 0;overflow-wrap:anywhere}
+.metric small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel.wide{grid-column:1/-1}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.panel h3{margin:0 0 5px;font-size:14px}
+.panel p{color:var(--muted);font-size:12px;margin:0 0 12px}
+.tag{background:#1a334d;color:#a4d0ff;border-radius:7px;padding:4px 7px;font-size:10px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.chart{height:300px;position:relative}
+.empty{height:100%;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:12px;border:1px dashed var(--border);border-radius:10px;padding:16px}
+.footer{color:#7186a1;padding:25px 0 5px;font-size:11px;line-height:1.7}
+.note{color:var(--muted);font-size:11px;margin-top:10px;line-height:1.6}
+@media(max-width:850px){main{padding:22px 4%}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}.panel.wide{grid-column:auto}}
+@media(max-width:480px){header{padding:15px 4%}nav{width:100%}nav a{padding:7px 8px}.controls{align-items:stretch}.controls label,.controls select,.controls button{width:100%}.metric,.panel{padding:13px}.chart{height:260px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo" aria-hidden="true">↗</div>
+    <div><h2>Inventory Intelligence</h2><div style="color:var(--muted);font-size:11px">Demand planning · Stock analytics · Model evaluation</div></div>
+  </div>
+  <nav aria-label="Main navigation">
+    <a href="/">Main Dashboard</a>
+    <a href="/dataset">Dataset Explorer</a>
+    <a href="/product-analysis">Product Analysis</a>
+    <a class="active" href="/graphs" aria-current="page">Graphs &amp; Analysis</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Graphs &amp; Analysis</h1>
+  <p class="subtitle">Explore observed demand, product comparisons, stock levels, demand distribution and saved machine-learning evaluation metrics.</p>
+
+  <section class="controls" aria-label="Graph filters">
+    <label for="product">Product
+      <select id="product"><option value="all">All products</option></select>
+    </label>
+    <label for="period">History period
+      <select id="period">
+        <option value="30">Last 30 days</option>
+        <option value="60">Last 60 days</option>
+        <option value="90" selected>Last 90 days</option>
+        <option value="all">All available dates</option>
+      </select>
+    </label>
+    <button id="refresh" type="button">↻ Refresh graphs</button>
+  </section>
+
+  <p id="message" role="status" aria-live="polite">Loading dataset and model metrics…</p>
+
+  <section class="metrics" aria-label="Selected data summary">
+    <article class="metric"><span>Observed demand</span><h2 id="total">—</h2><small>Units in filtered records</small></article>
+    <article class="metric"><span>Average demand</span><h2 id="average">—</h2><small>Units per valid record</small></article>
+    <article class="metric"><span>Model MAE</span><h2 id="mae">—</h2><small>Lower is generally better</small></article>
+    <article class="metric"><span>Model R²</span><h2 id="r2">—</h2><small>Holdout evaluation score</small></article>
+  </section>
+
+  <section class="grid">
+    <article class="panel wide">
+      <div class="panel-head"><div><h3>1. Historical Demand Trend</h3><p>Daily observed demand summed across the selected records.</p></div><span class="tag">Time series</span></div>
+      <div class="chart"><canvas id="trend" aria-label="Historical daily demand chart"></canvas></div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h3>2. Product-wise Demand</h3><p>Total recorded demand by product in the selected period.</p></div><span class="tag">Comparison</span></div>
+      <div class="chart"><canvas id="products" aria-label="Product-wise demand chart"></canvas></div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h3>3. Stock vs Reorder Level</h3><p>Latest available inventory snapshot compared with reorder thresholds.</p></div><span class="tag">Inventory</span></div>
+      <div class="chart"><canvas id="stock" aria-label="Stock versus reorder level chart"></canvas></div>
+      <div class="note" id="stockNote">Stock values are based on the latest rows available from the backend.</div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h3>4. Demand Distribution</h3><p>Count of valid records grouped into demand ranges.</p></div><span class="tag">Distribution</span></div>
+      <div class="chart"><canvas id="distribution" aria-label="Demand distribution chart"></canvas></div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><h3>5. Stock Status Breakdown</h3><p>Frequency of stock-status labels in the selected records.</p></div><span class="tag">Status</span></div>
+      <div class="chart"><canvas id="status" aria-label="Stock status doughnut chart"></canvas></div>
+    </article>
+    <article class="panel wide">
+      <div class="panel-head"><div><h3>6. Model Evaluation Metrics</h3><p>Saved holdout evaluation values. MAE and RMSE are error measures; R² is a separate fit measure.</p></div><span class="tag">Machine learning</span></div>
+      <div class="chart"><canvas id="evaluation" aria-label="Model evaluation metrics chart"></canvas></div>
+      <div class="note" id="metricNote">Metrics are loaded from the backend evaluation file when available.</div>
+    </article>
+  </section>
+
+  <footer class="footer">
+    Inventory Intelligence · Charts use your backend APIs and dataset. Historical stock is not a live inventory feed. Evaluation metrics describe the saved test evaluation and do not guarantee future accuracy.
+  </footer>
+</main>
+
+<script>
+"use strict";
+
+if (window.Chart) {
+  Chart.defaults.color = "#9eb0c9";
+  Chart.defaults.borderColor = "rgba(158,176,201,0.16)";
+  Chart.defaults.font.family = "Inter, Segoe UI, Arial, sans-serif";
+}
+
+const COLORS = ["#60a5fa","#42d6d0","#b7a2ff","#ffb86b","#fb7185","#86efac","#f472b6","#facc15"];
+const charts = {};
+let allRows = [];
+let currentProducts = [];
+let modelMetrics = {};
+let refreshInProgress = false;
+
+const $ = id => document.getElementById(id);
+
+function value(row, names, fallback = null) {
+  for (const name of names) {
+    if (row && row[name] !== undefined && row[name] !== null && row[name] !== "") return row[name];
+  }
+  return fallback;
+}
+function number(row, names) {
+  const raw = value(row, names, null);
+  if (raw === null) return null;
+  const n = Number(raw);
+  return Number.isFinite(n) ? n : null;
+}
+function productId(row) {
+  return String(value(row, ["Product_ID","product_id"], "Unknown"));
+}
+function demand(row) {
+  return number(row, ["Demand_Units","demand_units","demand"]);
+}
+function recordDate(row) {
+  const raw = value(row, ["Date","date"], "");
+  if (!raw) return "";
+  const d = new Date(raw);
+  return Number.isNaN(d.getTime()) ? String(raw).slice(0,10) : d.toISOString().slice(0,10);
+}
+function fmt(n) {
+  if (n === null || n === undefined || !Number.isFinite(Number(n))) return "—";
+  return Number(n).toLocaleString(undefined,{maximumFractionDigits:2});
+}
+function setMessage(text, kind = "") {
+  $("message").textContent = text;
+  $("message").className = kind;
+}
+async function getJSON(url) {
+  const response = await fetch(url, {headers:{"Accept":"application/json"}});
+  let data = {};
+  try { data = await response.json(); } catch {}
+  if (!response.ok) throw new Error((data && data.detail) || `${url} returned HTTP ${response.status}`);
+  return data;
+}
+function destroyChart(id) {
+  if (charts[id]) {
+    charts[id].destroy();
+    delete charts[id];
+  }
+}
+function emptyChart(id, message) {
+  destroyChart(id);
+  const canvas = $(id);
+  const parent = canvas.parentElement;
+  parent.innerHTML = "";
+  const div = document.createElement("div");
+  div.className = "empty";
+  div.textContent = message;
+  parent.appendChild(div);
+}
+function ensureCanvas(id) {
+  const parent = $(id) ? $(id).parentElement : null;
+  if (!parent) return null;
+  if (!$(`${id}Canvas`)) {
+    // Restore a canvas after an empty-state message.
+    parent.innerHTML = "";
+    const canvas = document.createElement("canvas");
+    canvas.id = id;
+    canvas.setAttribute("aria-label", `${id} chart`);
+    parent.appendChild(canvas);
+  }
+  return $(id);
+}
+function draw(id, type, labels, datasets, extra = {}) {
+  if (!window.Chart) {
+    setMessage("Chart.js did not load. Check your internet connection or CDN access.", "error");
+    return;
+  }
+  const canvas = ensureCanvas(id);
+  if (!canvas) return;
+  destroyChart(id);
+
+  if (!labels.length || !datasets.some(ds => Array.isArray(ds.data) && ds.data.length)) {
+    emptyChart(id, "No data is available for this chart with the current filters.");
+    return;
+  }
+
+  charts[id] = new Chart(canvas, {
+    type,
+    data: {labels, datasets},
+    options: {
+      responsive:true,
+      maintainAspectRatio:false,
+      animation:{duration:250},
+      plugins:{
+        legend:{labels:{usePointStyle:true,boxWidth:8}},
+        tooltip:{enabled:true}
+      },
+      ...extra
+    }
+  });
+}
+function extractRows(result) {
+  if (Array.isArray(result)) return result;
+  if (result && Array.isArray(result.rows)) return result.rows;
+  if (result && Array.isArray(result.data)) return result.data;
+  return [];
+}
+function normalizeProducts(result) {
+  if (Array.isArray(result)) return result;
+  if (result && Array.isArray(result.products)) return result.products;
+  if (result && Array.isArray(result.product_names)) return result.product_names;
+  if (result && Array.isArray(result.rows)) return result.rows;
+  return [];
+}
+function populateProductOptions() {
+  const select = $("product");
+  const previous = select.value;
+  const ids = [...new Set(allRows.map(productId).filter(id => id && id !== "Unknown"))].sort((a,b)=>a.localeCompare(b));
+  select.innerHTML = "";
+  const allOption = document.createElement("option");
+  allOption.value = "all";
+  allOption.textContent = "All products";
+  select.appendChild(allOption);
+  ids.forEach(id => {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = id;
+    select.appendChild(option);
+  });
+  select.value = ids.includes(previous) ? previous : "all";
+}
+function filteredRows() {
+  let rows = allRows.slice();
+  const selected = $("product").value;
+  if (selected !== "all") rows = rows.filter(row => productId(row) === selected);
+
+  const period = $("period").value;
+  if (period !== "all") {
+    const validDates = rows.map(recordDate).filter(Boolean).sort();
+    if (validDates.length) {
+      const latest = new Date(`${validDates[validDates.length - 1]}T00:00:00Z`);
+      latest.setUTCDate(latest.getUTCDate() - Number(period) + 1);
+      const cutoff = latest.toISOString().slice(0,10);
+      rows = rows.filter(row => {
+        const date = recordDate(row);
+        return date && date >= cutoff;
+      });
+    }
+  }
+  return rows;
+}
+function findMetric(names) {
+  // Support metrics saved directly or inside common nested evaluation objects.
+  const candidates = [modelMetrics, modelMetrics.metrics, modelMetrics.evaluation, modelMetrics.results]
+    .filter(item => item && typeof item === "object");
+  for (const obj of candidates) {
+    const found = value(obj, names, null);
+    if (found !== null && Number.isFinite(Number(found))) return Number(found);
+  }
+  return null;
+}
+function inventoryRowsForSelection() {
+  const selected = $("product").value;
+  return currentProducts.filter(p => {
+    const id = value(p, ["Product_ID","product_id"], null);
+    return id !== null && (selected === "all" || String(id) === selected);
+  });
+}
+function renderGraphs() {
+  const rows = filteredRows();
+  const demands = rows.map(demand).filter(v => v !== null);
+  const totalDemand = demands.reduce((sum,n)=>sum+n,0);
+  $("total").textContent = fmt(totalDemand);
+  $("average").textContent = demands.length ? fmt(totalDemand/demands.length) : "—";
+
+  const mae = findMetric(["MAE","mae","mean_absolute_error"]);
+  const rmse = findMetric(["RMSE","rmse","root_mean_squared_error"]);
+  const r2 = findMetric(["R2","r2","R²","r_squared","r2_score"]);
+  $("mae").textContent = fmt(mae);
+  $("r2").textContent = fmt(r2);
+  const testRows = value(modelMetrics, ["test_rows","n_test_samples","test_size"], null);
+  const testStart = value(modelMetrics, ["test_start_date","test_start"], null);
+  const testEnd = value(modelMetrics, ["test_end_date","test_end"], null);
+  const metricParts = [];
+  if (testRows !== null) metricParts.push(`${fmt(testRows)} test rows`);
+  if (testStart || testEnd) metricParts.push(`${testStart || "start unavailable"} to ${testEnd || "end unavailable"}`);
+  $("metricNote").textContent = metricParts.length
+    ? metricParts.join(" · ")
+    : (modelMetrics.available === false || (mae === null && rmse === null && r2 === null)
+      ? (modelMetrics.message || "Evaluation metrics are not available. Train the model and check /api/metrics.")
+      : "Values are read from the saved model evaluation metrics.");
+
+  // 1. Daily demand trend.
+  const daily = new Map();
+  rows.forEach(row => {
+    const date = recordDate(row), n = demand(row);
+    if (date && n !== null) daily.set(date,(daily.get(date)||0)+n);
+  });
+  const days = [...daily.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  draw("trend","line",days.map(x=>x[0]),[{
+    label:"Observed demand (units)",data:days.map(x=>x[1]),
+    borderColor:COLORS[0],backgroundColor:"rgba(96,165,250,.13)",
+    fill:true,tension:.25,pointRadius:0,pointHoverRadius:4,borderWidth:2
+  }],{
+    interaction:{intersect:false,mode:"index"},
+    scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0}},y:{beginAtZero:true,title:{display:true,text:"Demand units"}}}
+  });
+
+  // 2. Product-wise demand.
+  const totals = new Map();
+  rows.forEach(row => {
+    const n = demand(row);
+    if (n !== null) totals.set(productId(row),(totals.get(productId(row))||0)+n);
+  });
+  const productEntries = [...totals.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  draw("products","bar",productEntries.map(x=>x[0]),[{
+    label:"Total demand (units)",data:productEntries.map(x=>x[1]),
+    backgroundColor:productEntries.map((_,i)=>COLORS[i%COLORS.length]),borderRadius:5
+  }],{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}});
+
+  // 3. Stock versus reorder level. Respect product filter.
+  const inventory = inventoryRowsForSelection();
+  const stockValues = inventory.map(p=>number(p,["Stock_On_Hand","stock_on_hand"]));
+  const reorderValues = inventory.map(p=>number(p,["Reorder_Level","reorder_level"]));
+  draw("stock","bar",inventory.map(p=>String(value(p,["Product_ID","product_id"],"Unknown"))),[
+    {label:"Stock on hand",data:stockValues.map(v=>v??0),backgroundColor:COLORS[0],borderRadius:4},
+    {label:"Reorder level",data:reorderValues.map(v=>v??0),backgroundColor:COLORS[3],borderRadius:4}
+  ],{scales:{y:{beginAtZero:true}}});
+  $("stockNote").textContent = inventory.length
+    ? "Historical inventory snapshot from the backend; not verified live stock."
+    : "No product inventory snapshot is available for this selection.";
+
+  // 4. Demand distribution: use fixed bins for comparability.
+  const bins = [
+    {label:"0–19",min:0,max:20},{label:"20–39",min:20,max:40},
+    {label:"40–59",min:40,max:60},{label:"60–79",min:60,max:80},
+    {label:"80–99",min:80,max:100},{label:"100+",min:100,max:Infinity}
+  ];
+  draw("distribution","bar",bins.map(b=>b.label),[{
+    label:"Number of records",
+    data:bins.map(b=>demands.filter(n=>n>=b.min&&n<b.max).length),
+    backgroundColor:COLORS[2],borderRadius:5
+  }],{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}});
+
+  // 5. Stock status breakdown.
+  const statuses = new Map();
+  rows.forEach(row => {
+    const status = String(value(row,["Stock_Status","stock_status"],"Unknown"));
+    statuses.set(status,(statuses.get(status)||0)+1);
+  });
+  const statusEntries = [...statuses.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  draw("status","doughnut",statusEntries.map(x=>x[0]),[{
+    label:"Records",data:statusEntries.map(x=>x[1]),
+    backgroundColor:statusEntries.map((_,i)=>COLORS[i%COLORS.length]),borderColor:"#111f33",borderWidth:2
+  }],{cutout:"60%"});
+
+  // 6. Metrics are deliberately shown in a table-like chart with a note:
+  // MAE/RMSE and R² have different interpretations and scales.
+  const metricLabels = [], metricValues = [];
+  if (mae !== null) {metricLabels.push("MAE");metricValues.push(mae);}
+  if (rmse !== null) {metricLabels.push("RMSE");metricValues.push(rmse);}
+  if (r2 !== null) {metricLabels.push("R²");metricValues.push(r2);}
+  draw("evaluation","bar",metricLabels,[{
+    label:"Saved evaluation value",data:metricValues,
+    backgroundColor:metricLabels.map((_,i)=>[COLORS[1],COLORS[3],COLORS[2]][i]),borderRadius:5
+  }],{
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.label}: ${fmt(ctx.raw)}`}}},
+    scales:{y:{beginAtZero:false}}
+  });
+}
+async function loadData() {
+  if (refreshInProgress) return;
+  refreshInProgress = true;
+  $("refresh").disabled = true;
+  setMessage("Loading dataset, product inventory and model metrics…");
+  try {
+    const [datasetResult, productResult, metricResult] = await Promise.all([
+      getJSON("/api/dataset"),
+      getJSON("/api/products").catch(()=>[]),
+      getJSON("/api/metrics").catch(()=>({available:false,message:"Could not load model metrics."}))
+    ]);
+    allRows = extractRows(datasetResult);
+    currentProducts = normalizeProducts(productResult);
+    modelMetrics = metricResult || {};
+
+    // Some backend versions return product summary under /api/summary instead.
+    if (!currentProducts.length) {
+      try {
+        const summary = await getJSON("/api/summary");
+        currentProducts = normalizeProducts(summary.product_names || summary.products || []);
+      } catch {}
+    }
+
+    if (!allRows.length) throw new Error("The dataset API returned no rows. Check the dataset path and /api/dataset response.");
+    populateProductOptions();
+    renderGraphs();
+    const totalRows = value(datasetResult,["total_rows","totalRows"],allRows.length);
+    setMessage(`Loaded ${fmt(totalRows)} dataset records. Charts reflect the selected product and history period.`, "success");
+  } catch (error) {
+    setMessage(`Unable to load graphs: ${error.message}. Check that FastAPI is running and the API endpoints are available.`, "error");
+  } finally {
+    $("refresh").disabled = false;
+    refreshInProgress = false;
+  }
+}
+$("product").addEventListener("change",renderGraphs);
+$("period").addEventListener("change",renderGraphs);
+$("refresh").addEventListener("click",loadData);
+loadData();
+</script>
+</body>
+</html>

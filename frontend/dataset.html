@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Explorer | Inventory AI</title>
+    <style>
+        :root {
+            --bg: #0b1120;
+            --panel: #131e31;
+            --border: #263750;
+            --text: #e7eefb;
+            --muted: #9aacc5;
+            --blue: #4f8cff;
+            --cyan: #38c9df;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            padding: 22px 30px;
+            background: #101a2c;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        h1 { margin: 0; font-size: 25px; }
+        h2 { margin: 0 0 15px; font-size: 18px; }
+
+        .subtitle {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        nav { display: flex; gap: 10px; flex-wrap: wrap; }
+
+        nav a, button {
+            background: #1b2b45;
+            border: 1px solid #344968;
+            color: var(--text);
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        nav a.active, button.primary {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: white;
+        }
+
+        main { max-width: 1600px; margin: auto; padding: 25px; }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card, .panel {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 19px;
+        }
+
+        .stat-label { color: var(--muted); font-size: 13px; }
+        .stat-value { margin-top: 9px; font-size: 27px; font-weight: 700; }
+        .stat-note { margin-top: 6px; color: var(--muted); font-size: 12px; }
+
+        .panel { margin-bottom: 20px; }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(150px, 1fr));
+            gap: 13px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 7px;
+        }
+
+        input, select {
+            width: 100%;
+            min-width: 0;
+            padding: 11px;
+            border-radius: 7px;
+            border: 1px solid #344968;
+            background: #0c1627;
+            color: var(--text);
+            outline: none;
+        }
+
+        input:focus, select:focus { border-color: var(--cyan); }
+
+        .filter-actions {
+            display: flex;
+            align-items: end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .table-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .table-wrap {
+            overflow: auto;
+            max-height: 620px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            white-space: nowrap;
+            font-size: 12px;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: #1b2b45;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #263750;
+            text-align: left;
+        }
+
+        th { cursor: pointer; color: #c9dcfa; }
+        th:hover { color: var(--cyan); }
+        tbody tr:hover { background: #192941; }
+
+        .status {
+            display: inline-block;
+            padding: 5px 8px;
+            border-radius: 6px;
+            background: #253b58;
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .pagination-controls { display: flex; gap: 8px; align-items: center; }
+        .muted { color: var(--muted); font-size: 13px; }
+        .message { padding: 15px; color: var(--muted); }
+        .error { color: #ff9292; }
+
+        .schema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 10px;
+        }
+
+        .schema-item {
+            border: 1px solid var(--border);
+            background: #0e192a;
+            border-radius: 8px;
+            padding: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .schema-item strong { display: block; margin-bottom: 6px; font-size: 12px; }
+        .schema-item span { color: var(--muted); font-size: 12px; }
+
+        @media (max-width: 850px) {
+            header { padding: 18px; }
+            main { padding: 15px; }
+            .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 480px) {
+            .filters, .stats { grid-template-columns: 1fr; }
+            h1 { font-size: 21px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <h1>Dataset Explorer</h1>
+        <div class="subtitle">AI-Based Inventory Demand Forecasting System · Complete source dataset</div>
+    </div>
+    <nav>
+        <a href="/">Main Dashboard</a>
+        <a href="/dataset" class="active">Dataset Explorer</a>
+        <a href="/docs" target="_blank" rel="noopener">API Docs</a>
+    </nav>
+</header>
+
+<main>
+    <section class="stats">
+        <div class="card">
+            <div class="stat-label">Total Records</div>
+            <div class="stat-value" id="totalRows">—</div>
+            <div class="stat-note">Rows in the source dataset</div>
+        </div>
+        <div class="card">
+            <div class="stat-label">Total Columns</div>
+            <div class="stat-value" id="totalColumns">—</div>
+            <div class="stat-note">Dataset attributes</div>
+        </div>
+        <div class="card">
+            <div class="stat-label">Missing Cells</div>
+            <div class="stat-value" id="missingCells">—</div>
+            <div class="stat-note">Blank or null values</div>
+        </div>
+        <div class="card">
+            <div class="stat-label">Filtered Records</div>
+            <div class="stat-value" id="filteredRows">—</div>
+            <div class="stat-note">Records matching your filters</div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Search and Filter Dataset</h2>
+        <div class="filters">
+            <div>
+                <label for="search">Search all columns</label>
+                <input id="search" placeholder="Product, supplier, ID, region..." />
+            </div>
+            <div>
+                <label for="productFilter">Product</label>
+                <select id="productFilter"><option value="">All products</option></select>
+            </div>
+            <div>
+                <label for="categoryFilter">Category</label>
+                <select id="categoryFilter"><option value="">All categories</option></select>
+            </div>
+            <div>
+                <label for="regionFilter">Region</label>
+                <select id="regionFilter"><option value="">All regions</option></select>
+            </div>
+            <div>
+                <label for="stockFilter">Stock status</label>
+                <select id="stockFilter"><option value="">All stock statuses</option></select>
+            </div>
+            <div>
+                <label for="riskFilter">Stockout risk</label>
+                <select id="riskFilter"><option value="">All risk levels</option></select>
+            </div>
+            <div>
+                <label for="pageSize">Rows per page</label>
+                <select id="pageSize">
+                    <option>10</option>
+                    <option selected>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                    <option>250</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button class="primary" id="applyButton">Apply Filters</button>
+                <button id="resetButton">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="table-top">
+            <div>
+                <h2>Complete Dataset</h2>
+                <div class="muted">Click a column heading to sort. Scroll horizontally to see every column.</div>
+            </div>
+            <div class="filter-actions">
+                <button class="primary" id="csvButton">Download Filtered CSV</button>
+                <button id="excelButton">Download Full Excel</button>
+            </div>
+        </div>
+
+        <div id="tableMessage" class="message">Loading dataset...</div>
+        <div class="table-wrap" id="tableWrap" hidden>
+            <table>
+                <thead><tr id="tableHead"></tr></thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <div class="muted" id="pageInfo">Loading...</div>
+            <div class="pagination-controls">
+                <button id="prevButton">Previous</button>
+                <span id="pageNumber" class="muted">Page 1</span>
+                <button id="nextButton">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Dataset Structure and Data Types</h2>
+        <div class="muted" style="margin-bottom:15px">
+            Column names and inferred data types from the Excel source.
+        </div>
+        <div class="schema-grid" id="schemaGrid">
+            <div class="message">Loading column information...</div>
+        </div>
+    </section>
+</main>
+
+<script>
+    const API = "/api/dataset";
+    let allRows = [];
+    let columns = [];
+    let columnTypes = {};
+    let filteredRows = [];
+    let sortColumn = "";
+    let sortDirection = 1;
+    let currentPage = 1;
+
+    const $ = id => document.getElementById(id);
+
+    function text(value) {
+        if (value === null || value === undefined) return "";
+        return String(value);
+    }
+
+    function escapeHtml(value) {
+        return text(value).replace(/[&<>"']/g, char => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;",
+            '"': "&quot;", "'": "&#39;"
+        })[char]);
+    }
+
+    function formatNumber(value) {
+        return Number(value).toLocaleString();
+    }
+
+    function isMissing(value) {
+        return value === null || value === undefined ||
+            (typeof value === "string" && value.trim() === "");
+    }
+
+    function isDateColumn(column, values) {
+        const name = String(column).toLowerCase();
+        if (name === "date" || name.endsWith("_date") || name.includes("datetime")) {
+            return values.some(value => !isMissing(value) && !Number.isNaN(Date.parse(String(value))));
+        }
+        return false;
+    }
+
+    function inferColumnType(column, values) {
+        const present = values.filter(value => !isMissing(value));
+        if (!present.length) return "Unknown (all values missing)";
+
+        if (isDateColumn(column, present)) return "Date / Datetime";
+
+        const normalized = present.map(value =>
+            typeof value === "string" ? value.trim().toLowerCase() : value
+        );
+        const booleanValues = new Set([true, false, 0, 1, "0", "1", "true", "false", "yes", "no", "y", "n"]);
+        if (normalized.every(value => typeof value === "boolean" ||
+            (typeof value === "number" && (value === 0 || value === 1)) ||
+            ["0", "1", "true", "false", "yes", "no", "y", "n"].includes(String(value)))) {
+            if (String(column).toLowerCase().includes("promotion") ||
+                String(column).toLowerCase().includes("active") ||
+                String(column).toLowerCase().includes("risk")) {
+                return "Boolean / Categorical";
+            }
+        }
+
+        const numeric = present.map(value => {
+            if (typeof value === "number") return value;
+            if (typeof value === "string" && value.trim() !== "") return Number(value.trim());
+            return NaN;
+        });
+        if (numeric.every(Number.isFinite)) {
+            return numeric.every(Number.isInteger) ? "Integer" : "Float / Decimal";
+        }
+
+        if (normalized.every(value => booleanValues.has(value))) return "Boolean / Categorical";
+        return "String / Text";
+    }
+
+    function resolveColumnTypes() {
+        const result = {};
+        columns.forEach(column => {
+            const supplied = columnTypes[column];
+            if (supplied && String(supplied).toLowerCase() !== "unknown") {
+                result[column] = String(supplied);
+            } else {
+                result[column] = inferColumnType(column, allRows.map(row => row[column]));
+            }
+        });
+        columnTypes = result;
+    }
+
+    function countMissingCells() {
+        return allRows.reduce((total, row) =>
+            total + columns.filter(column => isMissing(row[column])).length, 0);
+    }
+
+    function populateSelect(id, column) {
+        const select = $(id);
+        const values = [...new Set(allRows
+            .map(row => text(row[column]).trim())
+            .filter(value => value !== ""))]
+            .sort((a, b) => a.localeCompare(b, undefined, {numeric: true}));
+
+        select.innerHTML = `<option value="">All</option>` +
+            values.map(value =>
+                `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`
+            ).join("");
+    }
+
+    function drawSchema() {
+        $("schemaGrid").innerHTML = columns.map(column => {
+            const count = allRows.filter(row =>
+                isMissing(row[column])
+            ).length;
+            return `<div class="schema-item">
+                <strong>${escapeHtml(column)}</strong>
+                <span>Type: ${escapeHtml(columnTypes[column] || "unknown")}</span><br>
+                <span>Missing: ${formatNumber(count)}</span>
+            </div>`;
+        }).join("");
+    }
+
+    function applyFilters() {
+        const query = $("search").value.trim().toLowerCase();
+        const product = $("productFilter").value;
+        const category = $("categoryFilter").value;
+        const region = $("regionFilter").value;
+        const stock = $("stockFilter").value;
+        const risk = $("riskFilter").value;
+
+        filteredRows = allRows.filter(row => {
+            const matchesSearch = !query || columns.some(column =>
+                text(row[column]).toLowerCase().includes(query)
+            );
+            return matchesSearch &&
+                (!product || text(row.Product_Name) === product) &&
+                (!category || text(row.Category) === category) &&
+                (!region || text(row.Region) === region) &&
+                (!stock || text(row.Stock_Status) === stock) &&
+                (!risk || text(row.Stockout_Risk) === risk);
+        });
+
+        if (sortColumn) sortRows();
+        currentPage = 1;
+        renderTable();
+    }
+
+    function sortRows() {
+        filteredRows.sort((a, b) => {
+            const av = a[sortColumn];
+            const bv = b[sortColumn];
+
+            if (av === null || av === undefined || av === "") return 1;
+            if (bv === null || bv === undefined || bv === "") return -1;
+
+            const an = Number(av);
+            const bn = Number(bv);
+            if (String(av).trim() !== "" && String(bv).trim() !== "" &&
+                Number.isFinite(an) && Number.isFinite(bn)) {
+                return (an - bn) * sortDirection;
+            }
+            return String(av).localeCompare(String(bv), undefined, {
+                numeric: true, sensitivity: "base"
+            }) * sortDirection;
+        });
+    }
+
+    function renderTable() {
+        const pageSize = Number($("pageSize").value);
+        const totalPages = Math.max(1, Math.ceil(filteredRows.length / pageSize));
+        currentPage = Math.min(currentPage, totalPages);
+
+        const start = (currentPage - 1) * pageSize;
+        const pageRows = filteredRows.slice(start, start + pageSize);
+
+        $("tableHead").innerHTML = columns.map(column => {
+            const marker = sortColumn === column
+                ? (sortDirection === 1 ? " ▲" : " ▼") : "";
+            return `<th data-column="${escapeHtml(column)}">${escapeHtml(column)}${marker}</th>`;
+        }).join("");
+
+        $("tableBody").innerHTML = pageRows.map(row =>
+            `<tr>${columns.map(column => {
+                const value = row[column];
+                const rendered = value === null || value === undefined || value === ""
+                    ? "—" : escapeHtml(value);
+                if (column === "Stock_Status" || column === "Stockout_Risk") {
+                    return `<td><span class="status">${rendered}</span></td>`;
+                }
+                return `<td>${rendered}</td>`;
+            }).join("")}</tr>`
+        ).join("");
+
+        $("tableWrap").hidden = false;
+        $("tableMessage").hidden = true;
+        $("filteredRows").textContent = formatNumber(filteredRows.length);
+        $("pageInfo").textContent = filteredRows.length
+            ? `Showing ${formatNumber(start + 1)}–${formatNumber(Math.min(start + pageSize, filteredRows.length))} of ${formatNumber(filteredRows.length)} records`
+            : "No records match your filters.";
+        $("pageNumber").textContent = `Page ${currentPage} of ${totalPages}`;
+        $("prevButton").disabled = currentPage <= 1;
+        $("nextButton").disabled = currentPage >= totalPages;
+
+        $("tableHead").querySelectorAll("th").forEach(th => {
+            th.addEventListener("click", () => {
+                const column = th.dataset.column;
+                if (sortColumn === column) sortDirection *= -1;
+                else {
+                    sortColumn = column;
+                    sortDirection = 1;
+                }
+                sortRows();
+                renderTable();
+            });
+        });
+    }
+
+    function downloadCsv() {
+        const lines = [
+            columns.map(column => csvCell(column)).join(","),
+            ...filteredRows.map(row =>
+                columns.map(column => csvCell(row[column])).join(",")
+            )
+        ];
+        const blob = new Blob(["\uFEFF" + lines.join("\r\n")], {
+            type: "text/csv;charset=utf-8;"
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "inventory_filtered_dataset.csv";
+        link.click();
+        URL.revokeObjectURL(url);
+    }
+
+    function csvCell(value) {
+        const str = text(value);
+        return '"' + str.replace(/"/g, '""') + '"';
+    }
+
+    async function loadDataset() {
+        try {
+            const response = await fetch(API);
+            if (!response.ok) {
+                throw new Error(await response.text() || `HTTP ${response.status}`);
+            }
+
+            const data = await response.json();
+            allRows = Array.isArray(data.rows) ? data.rows : [];
+            columns = Array.isArray(data.columns) && data.columns.length
+                ? data.columns
+                : (allRows.length ? Object.keys(allRows[0]) : []);
+            columnTypes = data.column_types || data.dtypes || {};
+
+            // Infer types from actual returned values when the backend does not
+            // provide usable type metadata (or returns "unknown").
+            resolveColumnTypes();
+
+            $("totalRows").textContent = formatNumber(data.total_rows ?? allRows.length);
+            $("totalColumns").textContent = formatNumber(columns.length);
+            $("missingCells").textContent = formatNumber(
+                data.missing_cells ?? countMissingCells()
+            );
+
+            populateSelect("productFilter", "Product_Name");
+            populateSelect("categoryFilter", "Category");
+            populateSelect("regionFilter", "Region");
+            populateSelect("stockFilter", "Stock_Status");
+            populateSelect("riskFilter", "Stockout_Risk");
+
+            drawSchema();
+            applyFilters();
+        } catch (error) {
+            $("tableMessage").classList.add("error");
+            $("tableMessage").textContent =
+                "Unable to load the dataset. Check that the backend is running and data/dataset.xlsx exists. Details: " + error.message;
+            $("schemaGrid").innerHTML =
+                '<div class="message error">Dataset metadata could not be loaded.</div>';
+        }
+    }
+
+    $("applyButton").addEventListener("click", applyFilters);
+    $("resetButton").addEventListener("click", () => {
+        ["search", "productFilter", "categoryFilter", "regionFilter",
+         "stockFilter", "riskFilter"].forEach(id => $(id).value = "");
+        sortColumn = "";
+        sortDirection = 1;
+        applyFilters();
+    });
+
+    $("search").addEventListener("input", applyFilters);
+    ["productFilter", "categoryFilter", "regionFilter", "stockFilter",
+     "riskFilter", "pageSize"].forEach(id =>
+        $(id).addEventListener("change", applyFilters)
+    );
+
+    $("prevButton").addEventListener("click", () => {
+        if (currentPage > 1) { currentPage--; renderTable(); }
+    });
+    $("nextButton").addEventListener("click", () => {
+        const pages = Math.max(1, Math.ceil(filteredRows.length / Number($("pageSize").value)));
+        if (currentPage < pages) { currentPage++; renderTable(); }
+    });
+
+    $("csvButton").addEventListener("click", downloadCsv);
+    $("excelButton").addEventListener("click", () => {
+        window.location.href = "/api/dataset/excel";
+    });
+
+    loadDataset();
+</script>
+</body>
+</html>

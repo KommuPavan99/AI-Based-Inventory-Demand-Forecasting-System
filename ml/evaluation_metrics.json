@@ -1,0 +1,11 @@
+{
+  "mae": 0.12679771284271374,
+  "rmse": 0.8411537688855623,
+  "r2": 0.9993163917528034,
+  "train_rows": 800,
+  "test_rows": 200,
+  "test_start_date": "2023-06-10",
+  "test_end_date": "2023-07-19",
+  "model_type": "RandomForestRegressor with lag/rolling and calendar features",
+  "note": "Chronological holdout metrics. These are historical test results, not a guarantee of future accuracy."
+}

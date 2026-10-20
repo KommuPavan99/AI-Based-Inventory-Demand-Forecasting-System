@@ -1,0 +1,2389 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09111f">
+<title>Inventory Intelligence | Demand Planning</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #08111f;
+  --panel: #101c2d;
+  --panel2: #14243a;
+  --line: #263951;
+  --text: #edf4ff;
+  --muted: #96a9c2;
+  --blue: #69a5ff;
+  --cyan: #4dd6c7;
+  --green: #5cdaa2;
+  --amber: #ffc36e;
+  --red: #ff7d8b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 10% -15%, #1a3b64 0, transparent 36%),
+    var(--bg);
+  color: var(--text);
+  font: 14px/1.5 Inter, "Segoe UI", Arial, sans-serif;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  max-width: 1540px;
+  margin: auto;
+  padding: 24px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 44px;
+  width: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #438bff, #38c9c1);
+  color: #061525;
+  font-size: 23px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 600;
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status, .pill {
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  margin-right: 6px;
+}
+
+.dot.ok {
+  background: var(--green);
+}
+
+.dot.bad {
+  background: var(--red);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-decoration: none;
+  background: #172942;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px 12px;
+  color: var(--text);
+  font-weight: 650;
+  white-space: nowrap;
+  transition: border-color .2s ease, background .2s ease,
+              transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  border-color: var(--blue);
+}
+
+.btn.primary, .submit {
+  background: linear-gradient(100deg, #3985f7, #5a70ef);
+  border: 0;
+}
+
+.btn.active {
+  background: #21416a;
+  border-color: #438bff;
+  color: #fff;
+}
+
+.btn:disabled, .submit:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+.voice-nav-btn {
+  background: linear-gradient(135deg, #0f766e, #0369a1);
+  border: 1px solid #38bdf8;
+  color: #fff;
+}
+
+.voice-nav-btn:hover {
+  background: linear-gradient(135deg, #0d9488, #0284c7);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px #0284c733;
+}
+
+.banner {
+  margin: 17px 0;
+  padding: 11px 14px;
+  border: 1px solid #29496c;
+  border-radius: 12px;
+  background: #10233a;
+  color: #bad6ff;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.banner strong {
+  color: #fff;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.card, .panel {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #122137, #0d192a);
+  box-shadow: 0 8px 25px #0002;
+}
+
+.card {
+  padding: 16px;
+  min-height: 112px;
+}
+
+.khead {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.kicon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: #1b304b;
+  color: var(--blue);
+}
+
+.value {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -.8px;
+  margin-top: 7px;
+}
+
+.foot {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.panel {
+  padding: 17px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.phead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.tag {
+  background: #1a334d;
+  color: #a4d0ff;
+  border-radius: 7px;
+  padding: 4px 7px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.full {
+  grid-column: 1/-1;
+}
+
+label {
+  display: block;
+  color: #b9c8dc;
+  font-size: 11px;
+  font-weight: 650;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  background: #091525;
+  border: 1px solid #2b405b;
+  border-radius: 9px;
+  color: var(--text);
+  padding: 10px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--blue);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: #c7d4e5;
+  font-size: 12px;
+}
+
+.check input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--blue);
+}
+
+.submit {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+  font-weight: 750;
+}
+
+.message {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 9px;
+  min-height: 16px;
+}
+
+.error {
+  color: var(--red);
+}
+
+.success {
+  color: var(--green);
+}
+
+.result {
+  display: none;
+  margin-top: 15px;
+  background: #0b1929;
+  border: 1px solid #2a4867;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.result-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.qty {
+  font-size: 29px;
+  font-weight: 850;
+  color: #91c3ff;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.metric {
+  background: #14263c;
+  border-radius: 9px;
+  padding: 10px;
+  min-width: 0;
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 14px;
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+
+.alert {
+  padding: 10px;
+  border: 1px solid #5d4826;
+  background: #302819;
+  color: #ffdaa0;
+  border-radius: 9px;
+  font-size: 11px;
+  margin-top: 11px;
+}
+
+.alert.good {
+  border-color: #285849;
+  background: #102a27;
+  color: #9ce8c7;
+}
+
+.alert.danger {
+  border-color: #63333f;
+  background: #301d28;
+  color: #ffb5bd;
+}
+
+.chart {
+  height: 300px;
+  position: relative;
+}
+
+.chart-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chart-tools button {
+  background: #172942;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 6px 9px;
+  font-size: 11px;
+}
+
+.chart-tools button:hover {
+  border-color: var(--blue);
+}
+
+.chart-tools .playing {
+  color: var(--green);
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.tablewrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 650;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 8px;
+}
+
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #203047;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.high {
+  background: #3c202a;
+  color: #ffb4bc;
+}
+
+.medium {
+  background: #3a2e1d;
+  color: #ffd28b;
+}
+
+.low {
+  background: #15372f;
+  color: #92e7c1;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.footer {
+  text-align: center;
+  color: #7186a1;
+  font-size: 10px;
+  padding: 10px;
+}
+
+.notice {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.smallselect {
+  width: auto;
+  padding: 6px;
+  font-size: 11px;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 14px 8px;
+  text-align: center;
+}
+
+/* ==============================
+   Voice Assistant page
+============================== */
+
+.voice-page {
+  display: none;
+  max-width: 1050px;
+  margin: 24px auto;
+}
+
+.voice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.voice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.voice-chat {
+  min-height: 320px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #091525;
+  scroll-behavior: smooth;
+}
+
+.voice-message {
+  max-width: 90%;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.voice-message.user {
+  margin-left: auto;
+  background: #173b61;
+  border: 1px solid #285581;
+}
+
+.voice-message.assistant {
+  margin-right: auto;
+  background: #142a38;
+  border: 1px solid #28534f;
+}
+
+.voice-message.error {
+  color: #ffb5bd;
+  background: #301d28;
+  border-color: #63333f;
+}
+
+.voice-message .message-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 750;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.voice-input {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  background: #091525;
+  border: 1px solid #2b405b;
+  border-radius: 10px;
+  color: var(--text);
+  padding: 12px;
+  outline: none;
+}
+
+.voice-input:focus {
+  border-color: var(--blue);
+}
+
+.voice-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.voice-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.voice-options input {
+  width: auto;
+  accent-color: var(--blue);
+}
+
+.voice-options label {
+  margin: 0;
+}
+
+.voice-status {
+  min-height: 22px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.voice-status.error {
+  color: var(--red);
+}
+
+.voice-quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.voice-quick-questions button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--text);
+  background: #172942;
+  cursor: pointer;
+}
+
+.voice-quick-questions button:hover {
+  border-color: var(--cyan);
+  background: #1b354f;
+}
+
+@media(max-width:1100px) {
+  .actions {
+    gap: 7px;
+  }
+
+  .btn {
+    padding: 8px 10px;
+  }
+}
+
+@media(max-width:1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:600px) {
+  .app {
+    padding: 13px;
+  }
+
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .value {
+    font-size: 22px;
+  }
+
+  .panel {
+    padding: 13px;
+  }
+
+  .fields {
+    gap: 8px;
+  }
+
+  .chart {
+    height: 245px;
+  }
+
+  .top {
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .voice-page {
+    margin-top: 16px;
+  }
+
+  .voice-chat {
+    min-height: 280px;
+    padding: 10px;
+  }
+
+  .voice-message {
+    max-width: 96%;
+  }
+
+  .voice-controls .btn {
+    flex: 1 1 auto;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     INVENTORY DASHBOARD
+========================================= -->
+
+<div class="app" id="dashboardPage">
+
+<header class="top">
+  <div class="brand">
+    <div class="logo" aria-hidden="true">↗</div>
+    <div>
+      <h1>Inventory Intelligence</h1>
+      <div class="sub">
+        AI demand forecasting · Replenishment planning · Stock risk
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <span class="status">
+      <span class="dot" id="apiDot"></span>
+      <span id="apiStatus" aria-live="polite">Connecting…</span>
+    </span>
+
+    <a class="btn" href="/api/reports/replenishment.csv">
+      ↓ Replenishment CSV
+    </a>
+
+    <a class="btn active" href="/dataset">
+      ▤ Dataset Explorer
+    </a>
+
+    <a class="btn" href="/graphs">
+      ▥ Graphs &amp; Analysis
+    </a>
+
+    <button
+      class="btn voice-nav-btn"
+      id="voiceAssistantNavBtn"
+      type="button"
+      onclick="showVoiceAssistant()"
+    >
+      🎙️ Voice Assistant
+    </button>
+
+    <button class="btn" id="refresh" type="button">
+      ↻ Refresh
+    </button>
+  </div>
+</header>
+
+<div class="banner">
+  <span>
+    <strong>Inventory planning workspace</strong>
+    &nbsp; Forecasts are estimates; verify stock and supplier data before purchasing.
+  </span>
+  <span id="dateRange">Loading historical period…</span>
+</div>
+
+<section class="kpis" aria-label="Dataset summary">
+
+  <div class="card">
+    <div class="khead">
+      Historical records <span class="kicon">▤</span>
+    </div>
+    <div class="value" id="records">—</div>
+    <div class="foot">Rows in workbook</div>
+  </div>
+
+  <div class="card">
+    <div class="khead">
+      Products tracked <span class="kicon">▦</span>
+    </div>
+    <div class="value" id="products">—</div>
+    <div class="foot">Distinct product IDs</div>
+  </div>
+
+  <div class="card">
+    <div class="khead">
+      Recorded demand <span class="kicon">↗</span>
+    </div>
+    <div class="value" id="totalDemand">—</div>
+    <div class="foot">Total historical units</div>
+  </div>
+
+  <div class="card">
+    <div class="khead">
+      Average demand <span class="kicon">◷</span>
+    </div>
+    <div class="value" id="avgDemand">—</div>
+    <div class="foot">Units per record</div>
+  </div>
+
+</section>
+
+<div class="layout">
+
+<aside>
+
+  <section class="panel">
+    <div class="phead">
+      <div>
+        <h2>Forecast &amp; reorder planner</h2>
+        <div class="sub">
+          Forecast daily demand and calculate a replenishment suggestion.
+        </div>
+      </div>
+      <span class="tag">Planning</span>
+    </div>
+
+    <form id="form">
+      <div class="fields">
+
+        <div class="field full">
+          <label for="product">Product</label>
+          <select id="product" required>
+            <option value="">Loading products…</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="horizon">Forecast horizon</label>
+          <select id="horizon">
+            <option value="7">Next 7 days</option>
+            <option value="14">Next 14 days</option>
+            <option value="30">Next 30 days</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="unitPrice">Unit price (₹)</label>
+          <input id="unitPrice" type="number" min="0" step=".01" value="100" required>
+        </div>
+
+        <div class="field">
+          <label for="stock">Stock on hand</label>
+          <input id="stock" type="number" min="0" step="1" value="100" required>
+        </div>
+
+        <div class="field">
+          <label for="reserved">Reserved stock</label>
+          <input id="reserved" type="number" min="0" step="1" value="0" required>
+        </div>
+
+        <div class="field">
+          <label for="incoming">Incoming purchase orders</label>
+          <input id="incoming" type="number" min="0" step="1" value="0" required>
+        </div>
+
+        <div class="field">
+          <label for="lead">Supplier lead time (days)</label>
+          <input id="lead" type="number" min="0" max="365" step="1" value="7" required>
+        </div>
+
+        <div class="field">
+          <label for="review">Review period (days)</label>
+          <input id="review" type="number" min="1" max="365" step="1" value="7" required>
+        </div>
+
+        <div class="field">
+          <label for="safety">Safety stock (units)</label>
+          <input id="safety" type="number" min="0" step="1" value="20" required>
+        </div>
+
+        <div class="field">
+          <label for="reorder">Reorder threshold</label>
+          <input id="reorder" type="number" min="0" step="1" value="50" required>
+        </div>
+
+      </div>
+
+      <label class="check">
+        <input id="promo" type="checkbox">
+        Assume promotion active throughout forecast
+      </label>
+
+      <button class="submit" id="run" type="submit">
+        Generate forecast &amp; stock plan
+      </button>
+
+      <div class="message" id="message" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="result" id="result">
+      <div class="result-top">
+        <div>
+          <div class="muted" style="font-size:11px">
+            Suggested purchase quantity
+          </div>
+          <div class="qty" id="orderQty">—</div>
+        </div>
+        <span class="badge medium" id="riskBadge">—</span>
+      </div>
+
+      <div class="sub" id="recText"></div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span>Total forecast demand</span>
+          <strong id="forecastTotal">—</strong>
+        </div>
+        <div class="metric">
+          <span>Net available stock</span>
+          <strong id="net">—</strong>
+        </div>
+        <div class="metric">
+          <span>Reorder point</span>
+          <strong id="rop">—</strong>
+        </div>
+        <div class="metric">
+          <span>Estimated stock cover</span>
+          <strong id="cover">—</strong>
+        </div>
+        <div class="metric">
+          <span>Suggested order cost</span>
+          <strong id="cost">—</strong>
+        </div>
+        <div class="metric">
+          <span>Forecast method</span>
+          <strong id="method">—</strong>
+        </div>
+      </div>
+
+      <div class="alert" id="riskMessage"></div>
+
+      <div style="margin-top:10px">
+        <a id="forecastCsv" class="btn" href="#" download>
+          ↓ Download forecast CSV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <div>
+        <h2>Planning notes</h2>
+        <div class="sub">How the recommendation is calculated</div>
+      </div>
+      <span class="tag">Rules</span>
+    </div>
+
+    <p class="notice">
+      Reorder point = forecast demand during supplier lead time + safety stock.
+      <br><br>
+      Order-up-to level = forecast demand during lead time and review period + safety stock.
+      <br><br>
+      Suggested quantity = order-up-to level − net available stock, rounded up and never below zero.
+      Confirm that the backend uses these same rules. This starter implementation does not enforce
+      supplier pack sizes, minimum order quantities, shelf life, or budget limits.
+    </p>
+  </section>
+
+</aside>
+
+<section>
+
+  <section class="panel">
+    <div class="phead">
+      <div>
+        <h2>Demand trend &amp; forecast</h2>
+        <div class="sub">
+          Historical demand and forecast are shown separately. The marker moves along valid chart points.
+        </div>
+      </div>
+
+      <div class="chart-tools">
+        <span class="tag">Analytics</span>
+        <button id="animationToggle" type="button" aria-pressed="true">Ⅱ Pause</button>
+        <button id="animationRestart" type="button">↻ Restart</button>
+      </div>
+    </div>
+
+    <div class="chart">
+      <canvas id="demandChart" role="img" aria-label="Historical and forecast demand line chart"></canvas>
+    </div>
+
+    <div class="notice" id="chartNote" style="margin-top:8px">
+      Loading demand data…
+    </div>
+  </section>
+
+  <div class="two">
+
+    <section class="panel">
+      <div class="phead">
+        <div>
+          <h2>Model performance</h2>
+          <div class="sub">Chronological holdout evaluation</div>
+        </div>
+        <span class="tag">ML</span>
+      </div>
+
+      <div class="value" id="mae">—</div>
+      <div class="foot">Mean absolute error (units)</div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span>RMSE</span>
+          <strong id="rmse">—</strong>
+        </div>
+        <div class="metric">
+          <span>R²</span>
+          <strong id="r2">—</strong>
+        </div>
+      </div>
+
+      <p class="notice" id="metricNote" style="margin-top:10px">
+        Metrics load after model training.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="phead">
+        <div>
+          <h2>Inventory alerts</h2>
+          <div class="sub">Based on latest historical snapshot labels.</div>
+        </div>
+        <span class="tag">Risk</span>
+      </div>
+
+      <div class="value" id="highRisk">—</div>
+      <div class="foot">Products marked high/medium historical stockout risk</div>
+
+      <div class="notice" id="alertSummary" style="margin-top:10px">
+        Loading product status…
+      </div>
+    </section>
+
+  </div>
+
+  <section class="panel">
+    <div class="phead">
+      <div>
+        <h2>Product inventory snapshot</h2>
+        <div class="sub">Latest row available for each product in the workbook.</div>
+      </div>
+      <span class="tag">Inventory</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Historical stock</th>
+            <th>Reorder level</th>
+            <th>Supplier</th>
+            <th>Recorded status</th>
+            <th>Stockout risk</th>
+          </tr>
+        </thead>
+        <tbody id="productRows">
+          <tr>
+            <td colspan="7" class="empty">Loading…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="notice" style="margin-top:10px">
+      These are historical workbook values, not verified live stock counts.
+    </p>
+  </section>
+
+</section>
+</div>
+
+<footer class="footer">
+  Inventory Intelligence · Decision support only · Verify current inventory,
+  incoming orders, promotions and supplier lead times before ordering.
+</footer>
+</div>
+
+<!-- =========================================
+     VOICE ASSISTANT PAGE
+========================================= -->
+
+<main class="app voice-page" id="voicePage">
+
+  <header class="voice-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🎙</div>
+      <div>
+        <h1>Inventory Voice Assistant</h1>
+        <div class="sub">
+          Ask about your dataset, products, demand forecasts, and inventory risks.
+        </div>
+      </div>
+    </div>
+
+    <button class="btn" type="button" onclick="showDashboard()">
+      ← Back to Dashboard
+    </button>
+  </header>
+
+  <div class="voice-layout">
+
+    <section class="panel">
+      <div class="phead">
+        <div>
+          <h2>Ask your inventory assistant</h2>
+          <div class="sub">
+            Type a question or use your microphone.
+          </div>
+        </div>
+        <span class="tag">AI Assistant</span>
+      </div>
+
+      <div
+        class="voice-chat"
+        id="voiceChat"
+        role="log"
+        aria-live="polite"
+        aria-label="Conversation"
+      >
+        <div class="voice-message assistant">
+          <span class="message-label">ASSISTANT</span>
+          Hello! I can help you explore your inventory data.
+          Try asking “Explain the dataset” or “Find record INV-0001”.
+        </div>
+      </div>
+
+      <label for="voiceQuestion" style="margin-top:16px">
+        Your question
+      </label>
+
+      <textarea
+        id="voiceQuestion"
+        class="voice-input"
+        placeholder="For example: Explain the dataset, find record INV-0001, or summarize inventory risks..."
+      ></textarea>
+
+      <div class="voice-controls">
+        <button class="btn primary" id="voiceAskBtn" type="button">
+          ➤ Ask Assistant
+        </button>
+
+        <button class="btn" id="voiceMicBtn" type="button">
+          🎤 Speak
+        </button>
+
+        <button class="btn" id="voiceClearBtn" type="button">
+          🗑 Clear Chat
+        </button>
+      </div>
+
+      <div class="voice-options">
+        <input type="checkbox" id="voiceReadAloud" checked>
+        <label for="voiceReadAloud">
+          Read assistant responses aloud
+        </label>
+      </div>
+
+      <div class="voice-status" id="voiceStatus" role="status" aria-live="polite">
+        Ready.
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="phead">
+        <div>
+          <h2>Try asking</h2>
+          <div class="sub">Select a question to get started.</div>
+        </div>
+      </div>
+
+      <div class="voice-quick-questions">
+        <button type="button" data-question="Explain the dataset">
+          Explain the dataset
+        </button>
+
+        <button type="button" data-question="Find record INV-0001">
+          Find record INV-0001
+        </button>
+
+        <button type="button" data-question="Summarize inventory risks">
+          Inventory risks
+        </button>
+
+        <button type="button" data-question="Which products need reorder?">
+          Reorder suggestions
+        </button>
+
+        <button type="button" data-question="Explain the demand forecast">
+          Explain demand forecasts
+        </button>
+      </div>
+
+      <p class="notice" style="margin-top:16px">
+        Voice answers are provided by your backend endpoint.
+        If a question fails, verify that
+        <code>POST /api/voice/query</code> is running and correctly processes
+        the requested question.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+
+let productsData = [];
+let chart = null;
+let animationPaused = false;
+let animationFrame = null;
+let animationProgress = 0;
+let lastFrameTime = 0;
+let chartSeries = { actual: [], forecast: [] };
+
+const fmt = n => {
+  const v = Number(n);
+  return Number.isFinite(v)
+    ? v.toLocaleString("en-IN", { maximumFractionDigits: 2 })
+    : "—";
+};
+
+const rupee = n => {
+  const v = Number(n);
+  return Number.isFinite(v)
+    ? v.toLocaleString("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 2
+      })
+    : "—";
+};
+
+async function api(url, options = {}) {
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      Accept: "application/json",
+      ...(options.headers || {})
+    }
+  });
+
+  let data = {};
+
+  try {
+    data = await response.json();
+  } catch {}
+
+  if (!response.ok) {
+    throw Error(
+      data.detail ||
+      data.message ||
+      `Request failed (${response.status})`
+    );
+  }
+
+  return data;
+}
+
+function status(text, kind = "") {
+  $("apiStatus").textContent = text;
+  $("apiDot").className = "dot " + kind;
+}
+
+function msg(text, kind = "") {
+  $("message").textContent = text;
+  $("message").className = "message " + kind;
+}
+
+function firstNumber(obj, keys) {
+  for (const key of keys) {
+    const n = Number(obj?.[key]);
+
+    if (
+      obj?.[key] !== null &&
+      obj?.[key] !== undefined &&
+      Number.isFinite(n)
+    ) {
+      return n;
+    }
+  }
+
+  return null;
+}
+
+function getRiskClass(value) {
+  const text = String(value ?? "").toLowerCase();
+
+  if (
+    text.includes("high") ||
+    text.includes("critical") ||
+    text.includes("stockout")
+  ) return "high";
+
+  if (
+    text.includes("medium") ||
+    text.includes("moderate") ||
+    text.includes("reorder")
+  ) return "medium";
+
+  if (
+    text.includes("low") ||
+    text.includes("healthy") ||
+    text.includes("normal") ||
+    text.includes("adequate")
+  ) return "low";
+
+  return "medium";
+}
+
+/* =========================================
+   Dashboard chart animation
+========================================= */
+
+const movingMarkerPlugin = {
+  id: "movingMarker",
+
+  afterDatasetsDraw(instance) {
+    if (animationPaused) return;
+
+    const dsIndex = chartSeries.forecast.length ? 1 : 0;
+    const meta = instance.getDatasetMeta(dsIndex);
+
+    if (!meta?.data?.length) return;
+
+    const raw = instance.data.datasets[dsIndex].data;
+    const valid = [];
+
+    meta.data.forEach((point, i) => {
+      if (
+        raw[i] !== null &&
+        raw[i] !== undefined &&
+        Number.isFinite(Number(raw[i]))
+      ) {
+        valid.push(point);
+      }
+    });
+
+    if (!valid.length) return;
+
+    const ctx = instance.ctx;
+    const n = valid.length;
+    const pos = animationProgress % n;
+    const left = valid[Math.floor(pos)];
+    const right = valid[(Math.floor(pos) + 1) % n];
+    const f = pos - Math.floor(pos);
+
+    if (!left || !right) return;
+
+    const x = left.x + (right.x - left.x) * f;
+    const y = left.y + (right.y - left.y) * f;
+
+    ctx.save();
+
+    ctx.beginPath();
+    ctx.arc(x, y, 12, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(77,214,199,.15)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(x, y, 6, 0, Math.PI * 2);
+    ctx.fillStyle = "#08111f";
+    ctx.fill();
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = dsIndex === 1 ? "#4dd6c7" : "#69a5ff";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(x, y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+
+    ctx.restore();
+  }
+};
+
+function stopAnimationLoop() {
+  if (animationFrame !== null) {
+    cancelAnimationFrame(animationFrame);
+  }
+
+  animationFrame = null;
+  lastFrameTime = 0;
+}
+
+function animationLoop(timestamp) {
+  if (animationPaused || !chart) {
+    animationFrame = null;
+    return;
+  }
+
+  if (!lastFrameTime) lastFrameTime = timestamp;
+
+  animationProgress += (timestamp - lastFrameTime) * .00055;
+  lastFrameTime = timestamp;
+
+  const n = chartSeries.forecast.length
+    ? chartSeries.forecast.filter(v => v !== null && v !== undefined).length
+    : chartSeries.actual.filter(v => v !== null && v !== undefined).length;
+
+  if (n > 1 && animationProgress >= n) {
+    animationProgress = 0;
+  }
+
+  chart.draw();
+  animationFrame = requestAnimationFrame(animationLoop);
+}
+
+function startAnimationLoop() {
+  stopAnimationLoop();
+
+  if (!animationPaused && chart) {
+    animationFrame = requestAnimationFrame(animationLoop);
+  }
+}
+
+function updateAnimationButton() {
+  $("animationToggle").textContent = animationPaused ? "▶ Play" : "Ⅱ Pause";
+  $("animationToggle").setAttribute(
+    "aria-pressed",
+    String(animationPaused)
+  );
+  $("animationToggle").classList.toggle("playing", !animationPaused);
+}
+
+function setChartData(labels, actual, forecast = [], forecastLabels = []) {
+  chartSeries = {
+    actual: [...actual],
+    forecast: [...forecast]
+  };
+
+  const allLabels = [...labels, ...forecastLabels];
+  const actualData = [
+    ...actual,
+    ...Array(forecastLabels.length).fill(null)
+  ];
+
+  const forecastData = [
+    ...Array(labels.length).fill(null),
+    ...forecast
+  ];
+
+  if (forecast.length && actual.length) {
+    forecastData[labels.length - 1] = actual[actual.length - 1];
+  }
+
+  const datasets = [
+    {
+      label: "Historical demand",
+      data: actualData,
+      borderColor: "#69a5ff",
+      backgroundColor: "rgba(105,165,255,.10)",
+      fill: true,
+      tension: .25,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      borderWidth: 2,
+      spanGaps: false
+    },
+    {
+      label: "Forecast demand",
+      data: forecastData,
+      borderColor: "#4dd6c7",
+      backgroundColor: "rgba(77,214,199,.08)",
+      fill: false,
+      tension: .25,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      borderDash: [6, 4],
+      borderWidth: 2,
+      spanGaps: false
+    }
+  ];
+
+  if (chart) {
+    chart.data.labels = allLabels;
+
+    chart.data.datasets.forEach((ds, i) => {
+      ds.data = datasets[i].data;
+    });
+
+    chart.update("none");
+  } else {
+    chart = new Chart($("demandChart"), {
+      type: "line",
+      data: {
+        labels: allLabels,
+        datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        interaction: {
+          mode: "index",
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: "#d9e7f8",
+              usePointStyle: true,
+              boxWidth: 8
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: c => c.raw == null
+                ? ""
+                : `${c.dataset.label}: ${fmt(c.raw)} units`
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: "#96a9c2",
+              maxTicksLimit: 9,
+              maxRotation: 0
+            },
+            grid: {
+              color: "rgba(38,57,81,.45)"
+            }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: "#96a9c2"
+            },
+            grid: {
+              color: "rgba(38,57,81,.45)"
+            },
+            title: {
+              display: true,
+              text: "Demand units",
+              color: "#96a9c2"
+            }
+          }
+        }
+      },
+      plugins: [movingMarkerPlugin]
+    });
+  }
+
+  animationProgress = 0;
+
+  $("chartNote").textContent = forecast.length
+    ? "The moving marker follows the forecast line. Hover over the chart to inspect daily values."
+    : "Showing historical demand. Generate a forecast to add the future-demand line.";
+
+  startAnimationLoop();
+}
+
+/* =========================================
+   Dashboard product and inventory data
+========================================= */
+
+function renderProducts(items) {
+  productsData = Array.isArray(items) ? items : [];
+
+  const select = $("product");
+  const previous = select.value;
+
+  select.replaceChildren();
+
+  if (!productsData.length) {
+    select.add(new Option("No products returned", ""));
+    select.disabled = true;
+  } else {
+    select.disabled = false;
+
+    productsData.forEach(p => {
+      select.add(
+        new Option(
+          `${p.Product_ID ?? "?"} — ${p.Product_Name ?? "Unnamed product"}`,
+          p.Product_ID ?? ""
+        )
+      );
+    });
+
+    if (productsData.some(p => String(p.Product_ID) === previous)) {
+      select.value = previous;
+    }
+  }
+
+  const body = $("productRows");
+  body.replaceChildren();
+
+  let risks = 0;
+
+  productsData.forEach(p => {
+    const tr = document.createElement("tr");
+
+    const values = [
+      `${p.Product_ID ?? "—"} · ${p.Product_Name ?? "—"}`,
+      p.Category,
+      fmt(p.Stock_On_Hand),
+      fmt(p.Reorder_Level),
+      p.Supplier,
+      p.Stock_Status,
+      p.Stockout_Risk
+    ];
+
+    values.forEach((value, index) => {
+      const td = document.createElement("td");
+
+      if (index === 5 || index === 6) {
+        const badge = document.createElement("span");
+        badge.className = "badge " + getRiskClass(value);
+        badge.textContent = value ?? "Unknown";
+        td.appendChild(badge);
+      } else {
+        td.textContent = value ?? "—";
+      }
+
+      tr.appendChild(td);
+    });
+
+    body.appendChild(tr);
+
+    if (/high|medium|moderate/i.test(String(p.Stockout_Risk ?? ""))) {
+      risks++;
+    }
+  });
+
+  if (!productsData.length) {
+    body.innerHTML =
+      '<tr><td colspan="7" class="empty">No product data available.</td></tr>';
+  }
+
+  $("highRisk").textContent = fmt(risks);
+
+  $("alertSummary").textContent = risks
+    ? `${risks} of ${productsData.length} products have a historical Medium/High stockout-risk label. Re-check current stock before acting.`
+    : "No products are marked Medium/High in the latest historical snapshot.";
+}
+
+async function loadHistory(productId = "") {
+  const url = productId
+    ? `/api/history?product_id=${encodeURIComponent(productId)}`
+    : "/api/history";
+
+  const history = await api(url);
+
+  if (!Array.isArray(history)) {
+    throw Error("The /api/history response was not a list.");
+  }
+
+  const clean = history
+    .filter(x => x && x.date !== undefined)
+    .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+
+  setChartData(
+    clean.map(x => String(x.date)),
+    clean.map(x => Number(x.demand) || 0)
+  );
+}
+
+function selectProduct(id) {
+  const p = productsData.find(x => String(x.Product_ID) === String(id));
+
+  if (!p) return;
+
+  $("unitPrice").value = p.Unit_Price ?? 100;
+  $("stock").value = p.Stock_On_Hand ?? 0;
+  $("lead").value = p.Lead_Time_Days ?? 7;
+  $("reorder").value = p.Reorder_Level ?? 0;
+}
+
+async function load() {
+  const refresh = $("refresh");
+  refresh.disabled = true;
+
+  try {
+    status("Connecting…");
+
+    const health = await api("/api/health");
+
+    if (health.dataset_found === false) {
+      throw Error("Dataset file was not found. Check the DATA_PATH in backend/app.py.");
+    }
+
+    const summary = await api("/api/summary");
+
+    $("records").textContent = fmt(summary.records);
+    $("products").textContent = fmt(summary.products);
+    $("totalDemand").textContent = fmt(summary.total_demand);
+    $("avgDemand").textContent = fmt(summary.average_demand);
+
+    $("dateRange").textContent =
+      summary.date_start && summary.date_end
+        ? `Data: ${summary.date_start} → ${summary.date_end}`
+        : "Historical period loaded";
+
+    renderProducts(summary.product_names);
+
+    const metrics = await api("/api/metrics");
+
+    const available =
+      metrics.available === true ||
+      (
+        metrics.available === undefined &&
+        (metrics.mae !== undefined || metrics.rmse !== undefined)
+      );
+
+    const mae = firstNumber(metrics, ["mae", "MAE"]);
+    const rmse = firstNumber(metrics, ["rmse", "RMSE"]);
+    const r2 = firstNumber(metrics, [
+      "r2", "R2", "r_squared", "r2_score", "R²"
+    ]);
+
+    if (available) {
+      $("mae").textContent = mae === null ? "N/A" : fmt(mae);
+      $("rmse").textContent = rmse === null ? "N/A" : fmt(rmse);
+      $("r2").textContent = r2 === null ? "N/A" : r2.toFixed(3);
+
+      const count = metrics.test_rows ?? metrics.test_samples;
+      const start = metrics.test_start_date ?? metrics.test_start;
+      const end = metrics.test_end_date ?? metrics.test_end;
+
+      $("metricNote").textContent = [
+        count != null ? `${count} test rows` : null,
+        start && end ? `${start} to ${end}` : null
+      ].filter(Boolean).join(" · ") ||
+        "Metrics loaded. Confirm the test period and check for data leakage.";
+    } else {
+      $("mae").textContent = "—";
+      $("rmse").textContent = "—";
+      $("r2").textContent = "—";
+
+      $("metricNote").textContent =
+        metrics.message || "Train the model to create evaluation metrics.";
+    }
+
+    status(
+      health.model_ready
+        ? "Backend and model ready"
+        : "Backend ready · model not trained",
+      health.model_ready ? "ok" : ""
+    );
+
+    if (productsData.length) {
+      selectProduct(productsData[0].Product_ID);
+      await loadHistory(productsData[0].Product_ID);
+    } else {
+      await loadHistory();
+    }
+
+    msg("Dashboard data loaded.", "success");
+
+  } catch (error) {
+    status("Backend unavailable", "bad");
+
+    msg(
+      `Could not load dashboard data: ${error.message}. Start the API from the project root with: python -m uvicorn backend.app:app --reload`,
+      "error"
+    );
+
+    $("chartNote").textContent =
+      "Chart data could not be loaded. Check the backend and API routes.";
+
+    $("productRows").innerHTML =
+      '<tr><td colspan="7" class="empty">Could not load product data.</td></tr>';
+
+  } finally {
+    refresh.disabled = false;
+  }
+}
+
+/* Product selection */
+$("product").addEventListener("change", async event => {
+  const id = event.target.value;
+  selectProduct(id);
+
+  try {
+    await loadHistory(id);
+    msg("Product history loaded.", "success");
+  } catch (error) {
+    msg(`Could not load product history: ${error.message}`, "error");
+  }
+});
+
+/* Refresh */
+$("refresh").addEventListener("click", load);
+
+/* Chart controls */
+$("animationToggle").addEventListener("click", () => {
+  animationPaused = !animationPaused;
+  updateAnimationButton();
+
+  if (animationPaused) {
+    stopAnimationLoop();
+    if (chart) chart.draw();
+  } else {
+    startAnimationLoop();
+  }
+});
+
+$("animationRestart").addEventListener("click", () => {
+  animationProgress = 0;
+  lastFrameTime = 0;
+
+  if (!animationPaused) {
+    startAnimationLoop();
+  } else if (chart) {
+    chart.draw();
+  }
+});
+
+/* Forecast submission */
+$("form").addEventListener("submit", async event => {
+  event.preventDefault();
+  $("result").style.display = "none";
+
+  const stock = Number($("stock").value);
+  const reserved = Number($("reserved").value);
+  const incoming = Number($("incoming").value);
+  const unitPrice = Number($("unitPrice").value);
+  const lead = Number($("lead").value);
+  const review = Number($("review").value);
+  const safety = Number($("safety").value);
+  const reorder = Number($("reorder").value);
+
+  const values = [
+    stock, reserved, incoming, unitPrice,
+    lead, review, safety, reorder
+  ];
+
+  if (
+    values.some(v => !Number.isFinite(v) || v < 0) ||
+    review < 1 ||
+    lead > 365 ||
+    review > 365 ||
+    ![stock, reserved, incoming, lead, review, safety, reorder]
+      .every(Number.isInteger)
+  ) {
+    msg(
+      "Enter valid non-negative values. Stock quantities and day counts must be whole numbers; review period must be 1–365 days.",
+      "error"
+    );
+    return;
+  }
+
+  if (reserved > stock) {
+    msg("Reserved stock cannot exceed stock on hand.", "error");
+    return;
+  }
+
+  const product = productsData.find(
+    p => String(p.Product_ID) === String($("product").value)
+  );
+
+  if (!product) {
+    msg("Choose a product after product data has loaded.", "error");
+    return;
+  }
+
+  const horizon = Number($("horizon").value);
+
+  $("run").disabled = true;
+  $("run").textContent = "Forecasting…";
+  msg("Generating forecast and replenishment plan…");
+
+  try {
+    const result = await api("/api/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        product_id: product.Product_ID,
+        horizon_days: horizon,
+        promotion_active: $("promo").checked,
+        stock_on_hand: stock,
+        reserved_stock: reserved,
+        incoming_stock: incoming,
+        safety_stock: safety,
+        review_period_days: review,
+        reorder_level: reorder
+      })
+    });
+
+    const inv = result.inventory_plan;
+
+    if (!inv) {
+      throw Error("Prediction response is missing inventory_plan.");
+    }
+
+    $("orderQty").textContent =
+      `${fmt(inv.suggested_order_quantity)} units`;
+
+    const risk = String(inv.stockout_risk ?? "Unknown");
+
+    $("riskBadge").textContent = `${risk} risk`;
+    $("riskBadge").className = "badge " + getRiskClass(risk);
+
+    $("recText").textContent =
+      `${result.product?.Product_Name ?? product.Product_Name ?? product.Product_ID} · ${result.forecast_start ?? ""} to ${result.forecast_end ?? ""} · ${result.forecast_method ?? "Forecast"}`;
+
+    $("forecastTotal").textContent =
+      `${fmt(result.total_forecast_demand)} units`;
+
+    const net = firstNumber(inv, ["net_available_stock"]);
+    $("net").textContent = net === null ? "N/A" : `${fmt(net)} units`;
+
+    const rop = firstNumber(inv, ["reorder_point_units"]);
+    $("rop").textContent = rop === null ? "N/A" : `${fmt(rop)} units`;
+
+    const cover = firstNumber(inv, ["estimated_days_of_cover"]);
+    $("cover").textContent = cover === null ? "N/A" : `${fmt(cover)} days`;
+
+    const cost = firstNumber(inv, ["estimated_order_cost"]);
+    $("cost").textContent = cost === null ? "N/A" : rupee(cost);
+
+    $("method").textContent = String(result.forecast_method ?? "Unknown");
+
+    const alert = $("riskMessage");
+
+    alert.textContent =
+      inv.recommendation ??
+      "Review the forecast and current stock before placing an order.";
+
+    alert.className =
+      "alert " +
+      (
+        risk.toLowerCase() === "high"
+          ? "danger"
+          : risk.toLowerCase() === "low"
+            ? "good"
+            : ""
+      );
+
+    $("result").style.display = "block";
+
+    $("forecastCsv").href =
+      `/api/reports/forecast.csv?product_id=${encodeURIComponent(product.Product_ID)}&horizon_days=${horizon}&promotion_active=${$("promo").checked}`;
+
+    const history = await api(
+      `/api/history?product_id=${encodeURIComponent(product.Product_ID)}`
+    );
+
+    const sorted = Array.isArray(history)
+      ? history
+          .filter(x => x && x.date !== undefined)
+          .sort((a, b) => String(a.date).localeCompare(String(b.date)))
+      : [];
+
+    const daily = Array.isArray(result.daily_forecast)
+      ? result.daily_forecast
+      : [];
+
+    setChartData(
+      sorted.map(x => String(x.date)),
+      sorted.map(x => Number(x.demand) || 0),
+      daily.map(x => Number(x.predicted_demand) || 0),
+      daily.map(x => String(x.date ?? ""))
+    );
+
+    msg(
+      `Forecast complete. Unit price entered: ${rupee(unitPrice)}. Verify current data before acting.`,
+      "success"
+    );
+
+  } catch (error) {
+    msg(`Forecast failed: ${error.message}`, "error");
+
+  } finally {
+    $("run").disabled = false;
+    $("run").textContent = "Generate forecast & stock plan";
+  }
+});
+
+
+/* =========================================
+   Voice Assistant navigation
+========================================= */
+
+function showVoiceAssistant() {
+  window.location.href = "/voice-assistant";
+}
+
+function showDashboard() {
+  window.location.href = "/";
+}
+
+/* =========================================
+   Voice Assistant chat
+========================================= */
+
+function setVoiceStatus(text, isError = false) {
+  const element = $("voiceStatus");
+
+  element.textContent = text;
+  element.classList.toggle("error", isError);
+}
+
+function addVoiceMessage(text, role = "assistant") {
+  const chat = $("voiceChat");
+  const message = document.createElement("div");
+
+  message.className = `voice-message ${role}`;
+
+  const label = document.createElement("span");
+  label.className = "message-label";
+  label.textContent = role === "user" ? "YOU" : "ASSISTANT";
+
+  const content = document.createElement("div");
+  content.textContent = String(text ?? "");
+
+  message.append(label, content);
+  chat.appendChild(message);
+
+  chat.scrollTop = chat.scrollHeight;
+
+  return message;
+}
+
+function stopSpeaking() {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+function speakVoiceResponse(text) {
+  if (!$("voiceReadAloud").checked) return;
+
+  if (!("speechSynthesis" in window)) {
+    setVoiceStatus("Response received. Speech playback is unavailable in this browser.");
+    return;
+  }
+
+  stopSpeaking();
+
+  const utterance = new SpeechSynthesisUtterance(String(text));
+  utterance.lang = "en-IN";
+  utterance.rate = 1;
+  utterance.pitch = 1;
+
+  utterance.onstart = () => {
+    setVoiceStatus("Reading the response aloud…");
+  };
+
+  utterance.onend = () => {
+    setVoiceStatus("Response received.");
+  };
+
+  utterance.onerror = () => {
+    setVoiceStatus("Response received, but speech playback failed.");
+  };
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function extractVoiceAnswer(data) {
+  if (typeof data === "string") {
+    return data;
+  }
+
+  if (!data || typeof data !== "object") {
+    return "The server returned an empty or unsupported response.";
+  }
+
+  for (const key of [
+    "answer",
+    "response",
+    "reply",
+    "message",
+    "text"
+  ]) {
+    if (typeof data[key] === "string" && data[key].trim()) {
+      return data[key];
+    }
+  }
+
+  if (data.record && typeof data.record === "object") {
+    return JSON.stringify(data.record, null, 2);
+  }
+
+  if (data.data && typeof data.data === "object") {
+    return JSON.stringify(data.data, null, 2);
+  }
+
+  return JSON.stringify(data, null, 2);
+}
+
+async function askVoiceAssistant() {
+  const question = $("voiceQuestion").value.trim();
+
+  if (!question) {
+    setVoiceStatus("Please type or speak a question.", true);
+    $("voiceQuestion").focus();
+    return;
+  }
+
+  const button = $("voiceAskBtn");
+
+  button.disabled = true;
+  button.textContent = "Asking…";
+
+  addVoiceMessage(question, "user");
+  $("voiceQuestion").value = "";
+
+  setVoiceStatus("Contacting the inventory assistant…");
+  stopSpeaking();
+
+  try {
+    const response = await fetch("/api/voice/query", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ question })
+    });
+
+    let data;
+
+    try {
+      data = await response.json();
+    } catch {
+      throw Error(
+        `The server did not return JSON (HTTP ${response.status}).`
+      );
+    }
+
+    if (!response.ok) {
+      throw Error(
+        data.detail ||
+        data.message ||
+        `Request failed with HTTP ${response.status}.`
+      );
+    }
+
+    const answer = extractVoiceAnswer(data);
+
+    addVoiceMessage(answer, "assistant");
+    setVoiceStatus("Response received.");
+    speakVoiceResponse(answer);
+
+  } catch (error) {
+    addVoiceMessage(
+      `Unable to get an answer: ${error.message}. Check that the backend is running and that POST /api/voice/query is available.`,
+      "error"
+    );
+
+    setVoiceStatus(error.message, true);
+
+  } finally {
+    button.disabled = false;
+    button.textContent = "➤ Ask Assistant";
+  }
+}
+
+function clearVoiceChat() {
+  stopSpeaking();
+
+  if (voiceListening && voiceRecognition) {
+    voiceRecognition.stop();
+  }
+
+  $("voiceChat").replaceChildren();
+
+  addVoiceMessage(
+    "Conversation cleared. Ask me a question about your inventory data.",
+    "assistant"
+  );
+
+  setVoiceStatus("Ready.");
+}
+
+function useVoiceQuestion(question) {
+  $("voiceQuestion").value = question;
+  $("voiceQuestion").focus();
+}
+
+$("voiceAskBtn").addEventListener("click", askVoiceAssistant);
+$("voiceClearBtn").addEventListener("click", clearVoiceChat);
+
+$("voiceQuestion").addEventListener("keydown", event => {
+  if (
+    event.key === "Enter" &&
+    !event.shiftKey &&
+    !event.isComposing
+  ) {
+    event.preventDefault();
+    askVoiceAssistant();
+  }
+});
+
+document.querySelectorAll("[data-question]").forEach(button => {
+  button.addEventListener("click", () => {
+    useVoiceQuestion(button.dataset.question);
+  });
+});
+
+/* =========================================
+   Browser microphone / speech recognition
+========================================= */
+
+const SpeechRecognitionAPI =
+  window.SpeechRecognition ||
+  window.webkitSpeechRecognition;
+
+let voiceRecognition = null;
+let voiceListening = false;
+
+if (SpeechRecognitionAPI) {
+  voiceRecognition = new SpeechRecognitionAPI();
+
+  voiceRecognition.lang = "en-IN";
+  voiceRecognition.continuous = false;
+  voiceRecognition.interimResults = false;
+  voiceRecognition.maxAlternatives = 1;
+
+  voiceRecognition.onstart = () => {
+    voiceListening = true;
+    $("voiceMicBtn").textContent = "⏹ Stop Listening";
+
+    setVoiceStatus("Listening… Please speak your question.");
+  };
+
+  voiceRecognition.onresult = event => {
+    const transcript =
+      event.results?.[0]?.[0]?.transcript?.trim();
+
+    if (transcript) {
+      $("voiceQuestion").value = transcript;
+      setVoiceStatus("Speech recognized. Sending your question…");
+      askVoiceAssistant();
+    } else {
+      setVoiceStatus(
+        "No speech was recognized. Please try again.",
+        true
+      );
+    }
+  };
+
+  voiceRecognition.onerror = event => {
+    const descriptions = {
+      "not-allowed": "Microphone permission was denied.",
+      "service-not-allowed": "The browser does not allow speech recognition.",
+      "audio-capture": "No working microphone was detected.",
+      "no-speech": "No speech was detected. Try speaking again.",
+      "network": "Speech recognition encountered a network error.",
+      "aborted": "Speech recognition was stopped."
+    };
+
+    setVoiceStatus(
+      descriptions[event.error] ||
+      `Speech recognition error: ${event.error}`,
+      true
+    );
+  };
+
+  voiceRecognition.onend = () => {
+    voiceListening = false;
+    $("voiceMicBtn").textContent = "🎤 Speak";
+  };
+}
+
+function toggleVoiceRecognition() {
+  if (!voiceRecognition) {
+    setVoiceStatus(
+      "Speech recognition is not supported by this browser. Try a supported browser or type your question instead.",
+      true
+    );
+    return;
+  }
+
+  if (voiceListening) {
+    voiceRecognition.stop();
+    return;
+  }
+
+  try {
+    stopSpeaking();
+    voiceRecognition.start();
+  } catch (error) {
+    setVoiceStatus(
+      `Could not start microphone: ${error.message}`,
+      true
+    );
+  }
+}
+
+$("voiceMicBtn").addEventListener("click", toggleVoiceRecognition);
+
+/* =========================================
+   Initialization and cleanup
+========================================= */
+
+window.addEventListener("beforeunload", () => {
+  stopAnimationLoop();
+  stopSpeaking();
+
+  if (voiceListening && voiceRecognition) {
+    voiceRecognition.stop();
+  }
+});
+
+updateAnimationButton();
+load();
+</script>
+
+</body>
+</html>
