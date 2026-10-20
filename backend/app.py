@@ -1410,15 +1410,14 @@ def _fmt_num(value, decimals: int = 2) -> str:
 
 @app.get("/voice-assistant", include_in_schema=False)
 def voice_assistant():
-    return FileResponse(FRONTEND_PATH / "voice_assistant.html")
+    page_path = FRONTEND_PATH / "voice_assistant.html"
+
     if not page_path.is_file():
         raise HTTPException(
             status_code=404,
-            detail=(
-                "frontend/voice_assistant.html was not found. "
-                "Create that file in the frontend folder first."
-            ),
+            detail="frontend/voice_assistant.html was not found."
         )
+
     return FileResponse(page_path, media_type="text/html")
 
 
