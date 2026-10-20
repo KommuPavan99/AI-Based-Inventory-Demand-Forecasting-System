@@ -16,6 +16,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -40,6 +41,19 @@ app = FastAPI(
         "transactions, replenishment and dataset exploration."
     ),
     version="1.2.0",
+)
+
+# Allow the InfinityFree-hosted frontend to call this Render API.
+# Keep this middleware before the route definitions.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://finalyearaimini.infinityfree.me",
+        "http://finalyearaimini.infinityfree.me",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Serve optional frontend assets.
