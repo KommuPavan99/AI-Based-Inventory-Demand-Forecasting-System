@@ -1409,9 +1409,8 @@ def _fmt_num(value, decimals: int = 2) -> str:
 
 
 @app.get("/voice-assistant", include_in_schema=False)
-def voice_assistant_page():
-    """Serve the optional browser-based voice assistant page."""
-    page_path = FRONTEND_PATH / "voice_assistant.html"
+def voice_assistant():
+    return FileResponse(FRONTEND_PATH / "voice_assistant.html")
     if not page_path.is_file():
         raise HTTPException(
             status_code=404,
