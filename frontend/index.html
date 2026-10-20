@@ -805,15 +805,15 @@ tr:last-child td {
       <span id="apiStatus" aria-live="polite">Connecting…</span>
     </span>
 
-    <a class="btn" href="/api/reports/replenishment.csv">
+    <a class="btn" href="https://ai-based-inventory-demand-forecasting.onrender.com/api/reports/replenishment.csv">
       ↓ Replenishment CSV
     </a>
 
-    <a class="btn active" href="/dataset">
+    <a class="btn active" href="https://ai-based-inventory-demand-forecasting.onrender.com/dataset">
       ▤ Dataset Explorer
     </a>
 
-    <a class="btn" href="/graphs">
+    <a class="btn" href="https://ai-based-inventory-demand-forecasting.onrender.com/graphs">
       ▥ Graphs &amp; Analysis
     </a>
 
@@ -1313,8 +1313,17 @@ const rupee = n => {
     : "—";
 };
 
+// Backend API hosted on Render. Keep this URL in sync with your Render service.
+const API_BASE_URL = "https://ai-based-inventory-demand-forecasting.onrender.com";
+
+function backendUrl(path) {
+  // Accept both relative API paths and already-absolute URLs.
+  if (/^https?:\/\//i.test(path)) return path;
+  return `${API_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 async function api(url, options = {}) {
-  const response = await fetch(url, {
+  const response = await fetch(backendUrl(url), {
     ...options,
     headers: {
       Accept: "application/json",
@@ -2059,11 +2068,15 @@ $("form").addEventListener("submit", async event => {
 ========================================= */
 
 function showVoiceAssistant() {
-  window.location.href = "/voice-assistant";
+  $("dashboardPage").style.display = "none";
+  $("voicePage").style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function showDashboard() {
-  window.location.href = "/";
+  $("voicePage").style.display = "none";
+  $("dashboardPage").style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /* =========================================
@@ -2187,7 +2200,7 @@ async function askVoiceAssistant() {
   stopSpeaking();
 
   try {
-    const response = await fetch("/api/voice/query", {
+    const response = await fetch(backendUrl("/api/voice/query"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
